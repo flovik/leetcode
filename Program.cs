@@ -730,6 +730,9 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/generate-parentheses/
     var n = 3;
-    var sol = new GenerateParantheses();
+    var sol = new GenerateParanthesesAnotherTry();
     sol.GenerateParenthesis(n);
+
+    // n = 5;
+    // sol.GenerateParenthesis(n);
 }
