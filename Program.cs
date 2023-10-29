@@ -739,7 +739,16 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/daily-temperatures/
-    var T = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
-    var sol = new DailyTemperatures();
-    sol.DailyTemperatures2(T);
+    //var T = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
+    //var sol = new DailyTemperatures();
+    //sol.DailyTemperatures2(T);
+}
+
+{
+    // https://leetcode.com/problems/car-fleet/
+    var target = 12;
+    var position = new int[] { 10, 8, 0, 5, 3 };
+    var speed = new int[] { 2, 4, 1, 1, 3 };
+    var sol = new CarFleet();
+    sol.CarFleet2(target, position, speed);
 }
