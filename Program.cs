@@ -4,6 +4,7 @@ using Sandbox.DataStructures;
 using Sandbox.Solutions;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Medium;
+
 {
     //CopyListWithRandomPointer
     //var head = new Node(7);
@@ -89,7 +90,6 @@ using Sandbox.Solutions.Medium;
     //var root = new TreeNode(3, node9, node20);
     //var sol = a.ZigzagLevelOrder(root);
     //sol = a.ZigzagLevelOrder(null);
-
 }
 
 {
@@ -110,7 +110,6 @@ using Sandbox.Solutions.Medium;
     //};
 
     //sol.SpiralOrder(spiral);
-
 }
 
 //{
@@ -179,7 +178,6 @@ using Sandbox.Solutions.Medium;
     //sol.NumIslands(arr);
 }
 
-
 {
     //https://leetcode.com/problems/add-two-numbers-ii/
     //reverse linked lists and just do some summing
@@ -208,7 +206,6 @@ using Sandbox.Solutions.Medium;
     //var arr = new int[] { 2, 0, 2, 1, 1, 0 };
     //var a = new SortColors();
     //a.Solution(arr);
-
 }
 
 {
@@ -312,7 +309,6 @@ using Sandbox.Solutions.Medium;
     //};
 
     //sol.PacificAtlantic(heights);
-
 }
 
 {
@@ -336,7 +332,6 @@ using Sandbox.Solutions.Medium;
 
     //subs = "abbcccbbbcaaccbababcbcabca";
     //sol.Sol(subs);
-
 }
 
 {
@@ -404,7 +399,6 @@ using Sandbox.Solutions.Medium;
 
     //var sol = new Search2DMatrix();
     //sol.SearchMatrix(matrix, target);
-
 }
 
 {
@@ -746,9 +740,15 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/car-fleet/
-    var target = 12;
-    var position = new int[] { 10, 8, 0, 5, 3 };
-    var speed = new int[] { 2, 4, 1, 1, 3 };
-    var sol = new CarFleet();
-    sol.CarFleet2(target, position, speed);
+    //var target = 12;
+    //var position = new int[] { 10, 8, 0, 5, 3 };
+    //var speed = new int[] { 2, 4, 1, 1, 3 };
+    //var sol = new CarFleet();
+    //sol.CarFleet2(target, position, speed);
+}
+
+{
+    // https://leetcode.com/problems/valid-palindrome/description/
+    var sol = new ValidPalindrome();
+    sol.IsPalindrome(",,,,,,,,,,,,acva");
 }
