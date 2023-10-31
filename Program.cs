@@ -749,6 +749,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/valid-palindrome/description/
-    var sol = new ValidPalindrome();
-    sol.IsPalindrome(",,,,,,,,,,,,acva");
+    // var sol = new ValidPalindrome();
+    // sol.IsPalindrome(",,,,,,,,,,,,acva");
+}
+
+{
+    // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+    var sol = new TwoSum2InputArrayIsSorted();
+    sol.TwoSum(new int[] { 2, 7, 11, 15 }, 9);
 }
