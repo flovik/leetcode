@@ -755,6 +755,11 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
-    var sol = new TwoSum2InputArrayIsSorted();
-    sol.TwoSum(new int[] { 2, 7, 11, 15 }, 9);
+    // var sol = new TwoSum2InputArrayIsSorted();
+    // sol.TwoSum(new int[] { 2, 7, 11, 15 }, 9);
+}
+
+{
+    var sol = new _3Sum();
+    sol.ThreeSum(new[] { -1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4 });
 }
