@@ -760,6 +760,11 @@ using Sandbox.Solutions.Medium;
 }
 
 {
-    var sol = new _3Sum();
-    sol.ThreeSum(new[] { -1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4 });
+    // var sol = new _3Sum();
+    // sol.ThreeSum(new[] { -1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4 });
+}
+
+{
+    var sol = new ContainerWithMostWater();
+    sol.MaxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 });
 }
