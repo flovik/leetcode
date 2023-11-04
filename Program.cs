@@ -3,6 +3,7 @@ using System.Text;
 using Sandbox.DataStructures;
 using Sandbox.Solutions;
 using Sandbox.Solutions.Easy;
+using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
 
 {
@@ -765,6 +766,12 @@ using Sandbox.Solutions.Medium;
 }
 
 {
-    var sol = new ContainerWithMostWater();
-    sol.MaxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 });
+    // var sol = new ContainerWithMostWater();
+    // sol.MaxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 });
+}
+
+{
+    // https://leetcode.com/problems/trapping-rain-water/
+    var sol = new TrappingRainWater();
+    sol.Trap2(new int[] { 4, 2, 0, 3, 2, 5 });
 }

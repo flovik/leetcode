@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="DataStructures\" />
-    <Folder Include="Solutions\Hard\" />
   </ItemGroup>
 
 </Project>
