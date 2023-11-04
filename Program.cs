@@ -772,6 +772,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/trapping-rain-water/
-    var sol = new TrappingRainWater();
-    sol.Trap2(new int[] { 4, 2, 0, 3, 2, 5 });
+    // var sol = new TrappingRainWater();
+    // sol.Trap2(new int[] { 4, 2, 0, 3, 2, 5 });
+}
+
+{
+    // https://leetcode.com/problems/binary-search/description/
+    var sol = new BinarySearch();
+    sol.Search(new int[] { -1, 0, 3, 5, 9, 12 }, 6);
 }
