@@ -778,6 +778,15 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/binary-search/description/
-    var sol = new BinarySearch();
-    sol.Search(new int[] { -1, 0, 3, 5, 9, 12 }, 6);
+    // var sol = new BinarySearch();
+    // sol.Search(new int[] { -1, 0, 3, 5, 9, 12 }, 6);
+}
+
+{
+    // https://leetcode.com/problems/search-a-2d-matrix/
+    var sol = new SearchA2DMatrix();
+    sol.SearchMatrix(new[]
+    {
+        new[] { 1, 3 },
+    }, 3);
 }
