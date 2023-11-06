@@ -784,9 +784,15 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/search-a-2d-matrix/
-    var sol = new SearchA2DMatrix();
-    sol.SearchMatrix(new[]
-    {
-        new[] { 1, 3 },
-    }, 3);
+    // var sol = new SearchA2DMatrix();
+    // sol.SearchMatrix(new[]
+    // {
+    //     new[] { 1, 3 },
+    // }, 3);
+}
+
+{
+    // https://leetcode.com/problems/koko-eating-bananas/
+    var sol = new KokoEatingBananas();
+    sol.MinEatingSpeed(new[] { 3, 6, 7, 11 }, 8);
 }

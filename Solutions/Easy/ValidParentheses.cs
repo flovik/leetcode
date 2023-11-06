@@ -1,8 +1,9 @@
-﻿namespace Sandbox.Solutions;
+﻿namespace Sandbox.Solutions.Easy;
 
 public class ValidParentheses
 {
     private readonly Stack<char> st = new();
+
     public bool IsValid(string s)
     {
         foreach (var character in s)
@@ -14,18 +15,22 @@ public class ValidParentheses
                     case '(' when character == ')':
                         st.Pop();
                         break;
+
                     case '{' when character == '}':
                         st.Pop();
                         break;
+
                     case '[' when character == ']':
                         st.Pop();
                         break;
+
                     default:
                         st.Push(character);
                         break;
                 }
             }
-            else st.Push(character);
+            else
+                st.Push(character);
         }
 
         return st.Count == 0;

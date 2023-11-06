@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="DataStructures\" />
+    <Folder Include="Solutions\Templates\" />
   </ItemGroup>
 
 </Project>
