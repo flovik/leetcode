@@ -793,6 +793,13 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/koko-eating-bananas/
-    var sol = new KokoEatingBananas();
-    sol.MinEatingSpeed(new[] { 3, 6, 7, 11 }, 8);
+    // var sol = new KokoEatingBananas();
+    // sol.MinEatingSpeed(new[] { 3, 6, 7, 11 }, 8);
+}
+
+{
+    // https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
+
+    var sol = new CapacityToShipPackagesWithinDDays();
+    sol.ShipWithinDays(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5);
 }
