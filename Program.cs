@@ -800,6 +800,12 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
 
-    var sol = new CapacityToShipPackagesWithinDDays();
-    sol.ShipWithinDays(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5);
+    // var sol = new CapacityToShipPackagesWithinDDays();
+    // sol.ShipWithinDays(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5);
+}
+
+{
+    // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+    var sol = new FindMinimumInRotatedArray();
+    sol.FindMin(new int[] { 1000, 1002, 1003, 999 });
 }
