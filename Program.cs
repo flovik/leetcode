@@ -806,6 +806,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
-    var sol = new FindMinimumInRotatedArray();
-    sol.FindMin(new int[] { 1000, 1002, 1003, 999 });
+    // var sol = new FindMinimumInRotatedArray();
+    // sol.FindMin(new int[] { 1000, 1002, 1003, 999 });
+}
+
+{
+    // https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+    var sol = new SearchInRotatedSortedArray2();
+    sol.Search(new int[] { 5, 1, 2, 3, 4 }, 1);
 }
