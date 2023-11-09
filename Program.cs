@@ -819,11 +819,17 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/time-based-key-value-store
     // [[],["a","bar",1],["x","b",3],["b",3],["foo","bar2",4],["foo",4],["foo",5]]
-    var map = new TimeBasedKeyValueStore();
-    map.Set("a", "bar", 1);
-    map.Set("x", "b", 3);
-    map.Get("b", 3);
-    map.Set("foo", "bar2", 4);
-    map.Get("foo", 4);
-    map.Get("foo", 5);
+    // var map = new TimeBasedKeyValueStore();
+    // map.Set("a", "bar", 1);
+    // map.Set("x", "b", 3);
+    // map.Get("b", 3);
+    // map.Set("foo", "bar2", 4);
+    // map.Get("foo", 4);
+    // map.Get("foo", 5);
+}
+
+{
+    // https://leetcode.com/problems/reverse-linked-list/
+    var sol = new ReverseLinkedListEasy();
+    sol.ReverseList(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))));
 }
