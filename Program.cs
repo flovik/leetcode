@@ -836,7 +836,14 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/merge-two-sorted-lists/
-    var sol = new MergeTwoSortedLists();
-    sol.MergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4))),
-        new ListNode(1, new ListNode(3, new ListNode(4))));
+    //var sol = new MergeTwoSortedLists();
+    //sol.MergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4))),
+    //    new ListNode(1, new ListNode(3, new ListNode(4))));
+}
+
+{
+    // https://leetcode.com/problems/reorder-list/description/
+
+    var sol = new ReorderList();
+    sol.ReorderListSolution2(new ListNode(1, new ListNode(2)));
 }
