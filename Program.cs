@@ -830,6 +830,13 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/reverse-linked-list/
-    var sol = new ReverseLinkedListEasy();
-    sol.ReverseList(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))));
+    // var sol = new ReverseLinkedListEasy();
+    // sol.ReverseList(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))));
+}
+
+{
+    // https://leetcode.com/problems/merge-two-sorted-lists/
+    var sol = new MergeTwoSortedLists();
+    sol.MergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4))),
+        new ListNode(1, new ListNode(3, new ListNode(4))));
 }
