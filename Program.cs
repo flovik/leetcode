@@ -850,6 +850,10 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
-    var sol = new RemoveNthNodeFromEndOfList();
-    sol.RemoveNthFromEnd(new ListNode(1), 1);
+    //var sol = new RemoveNthNodeFromEndOfList();
+    //sol.RemoveNthFromEnd(new ListNode(1), 1);
+}
+
+{
+    // https://leetcode.com/problems/linked-list-cycle/description/
 }
