@@ -857,3 +857,10 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/linked-list-cycle/description/
 }
+
+{
+    // https://leetcode.com/problems/add-two-numbers/description/
+    var sol = new AddTwoNumbers();
+    sol.AddTwoNumbersSolution(new ListNode(2, new ListNode(4, new ListNode(3))),
+        new ListNode(5, new ListNode(6, new ListNode(4))));
+}
