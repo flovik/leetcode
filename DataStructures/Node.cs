@@ -6,10 +6,10 @@ public class Node
     public Node next;
     public Node random;
 
-    public Node(int _val)
+    public Node(int _val, Node _next = null, Node _random = null)
     {
         val = _val;
-        next = null;
-        random = null;
+        next = _next;
+        random = _random;
     }
 }

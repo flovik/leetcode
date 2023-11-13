@@ -860,7 +860,19 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/add-two-numbers/description/
-    var sol = new AddTwoNumbers();
-    sol.AddTwoNumbersSolution(new ListNode(2, new ListNode(4, new ListNode(3))),
-        new ListNode(5, new ListNode(6, new ListNode(4))));
+    //var sol = new AddTwoNumbers();
+    //sol.AddTwoNumbersSolution(new ListNode(2, new ListNode(4, new ListNode(3))),
+    //    new ListNode(5, new ListNode(6, new ListNode(4))));
+}
+
+{
+    // https://leetcode.com/problems/copy-list-with-random-pointer/
+    var sol = new CopyListWithRandomPointer2();
+
+    var one = new Node(1);
+    var seven = new Node(7);
+    one.next = seven;
+    seven.random = one;
+
+    sol.CopyRandomList(one);
 }
