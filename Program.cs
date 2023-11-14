@@ -867,12 +867,19 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/copy-list-with-random-pointer/
-    var sol = new CopyListWithRandomPointer2();
+    // var sol = new CopyListWithRandomPointer2();
+    //
+    // var one = new Node(1);
+    // var seven = new Node(7);
+    // one.next = seven;
+    // seven.random = one;
+    //
+    // sol.CopyRandomList(one);
+}
 
-    var one = new Node(1);
-    var seven = new Node(7);
-    one.next = seven;
-    seven.random = one;
+{
+    // https://leetcode.com/problems/find-the-duplicate-number/description/
 
-    sol.CopyRandomList(one);
+    var sol = new FindTheDuplicateNumber();
+    sol.FindDuplicate(new[] { 3, 1, 3, 4, 2 });
 }
