@@ -880,6 +880,17 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/find-the-duplicate-number/description/
 
-    var sol = new FindTheDuplicateNumber();
-    sol.FindDuplicate(new[] { 3, 1, 3, 4, 2 });
+    // var sol = new FindTheDuplicateNumber();
+    // sol.FindDuplicate(new[] { 3, 1, 3, 4, 2 });
+}
+
+{
+    // https://leetcode.com/problems/lru-cache/
+    var lruCache = new LRUCache(2);
+    lruCache.Put(2, 1);
+    lruCache.Put(2, 2);
+    lruCache.Get(2);    // return 1
+    lruCache.Put(1, 1); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
+    lruCache.Put(4, 1); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
+    lruCache.Get(2);    // return -1 (not found)
 }
