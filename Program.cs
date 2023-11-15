@@ -886,11 +886,21 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/lru-cache/
-    var lruCache = new LRUCache(2);
-    lruCache.Put(2, 1);
-    lruCache.Put(2, 2);
-    lruCache.Get(2);    // return 1
-    lruCache.Put(1, 1); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
-    lruCache.Put(4, 1); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
-    lruCache.Get(2);    // return -1 (not found)
+    //var lruCache = new LRUCache(2);
+    //lruCache.Put(2, 1);
+    //lruCache.Put(2, 2);
+    //lruCache.Get(2);    // return 1
+    //lruCache.Put(1, 1); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
+    //lruCache.Put(4, 1); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
+    //lruCache.Get(2);    // return -1 (not found)
+}
+
+{
+    // https://leetcode.com/problems/merge-k-sorted-lists/
+    var sol = new MergeKSortedLists();
+    sol.MergeKLists(new[]
+    {
+        new ListNode(1, new ListNode(2, new ListNode(2))),
+        new ListNode(1, new ListNode(1, new ListNode(2))),
+    });
 }
