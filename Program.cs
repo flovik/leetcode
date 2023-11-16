@@ -897,10 +897,16 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/merge-k-sorted-lists/
-    var sol = new MergeKSortedLists();
-    sol.MergeKLists(new[]
-    {
-        new ListNode(1, new ListNode(2, new ListNode(2))),
-        new ListNode(1, new ListNode(1, new ListNode(2))),
-    });
+    //var sol = new MergeKSortedLists();
+    //sol.MergeKLists(new[]
+    //{
+    //    new ListNode(1, new ListNode(2, new ListNode(2))),
+    //    new ListNode(1, new ListNode(1, new ListNode(2))),
+    //});
+}
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+    var sol = new BestTimeToBuyAndSellStock();
+    sol.MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 });
 }
