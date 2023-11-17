@@ -907,6 +907,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-    var sol = new BestTimeToBuyAndSellStock();
-    sol.MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 });
+    //var sol = new BestTimeToBuyAndSellStock();
+    //sol.MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 });
+}
+
+{
+    // https://leetcode.com/problems/longest-substring-without-repeating-characters/
+    var sol = new LongestSubstringWithoutRepeatingCharacters();
+    sol.LengthOfLongestSubstring("a");
 }
