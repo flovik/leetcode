@@ -913,6 +913,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-substring-without-repeating-characters/
-    var sol = new LongestSubstringWithoutRepeatingCharacters();
-    sol.LengthOfLongestSubstring("a");
+    //var sol = new LongestSubstringWithoutRepeatingCharacters();
+    //sol.LengthOfLongestSubstring("a");
+}
+
+{
+    // https://leetcode.com/problems/longest-repeating-character-replacement/
+    var sol = new LongestRepeatingCharacterReplacement();
+    sol.CharacterReplacement("AABABAAAA", 1);
 }
