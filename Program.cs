@@ -919,6 +919,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-repeating-character-replacement/
-    var sol = new LongestRepeatingCharacterReplacement();
-    sol.CharacterReplacement("AABABAAAA", 1);
+    //var sol = new LongestRepeatingCharacterReplacement();
+    //sol.CharacterReplacement("AABABAAAA", 1);
+}
+
+{
+    // https://leetcode.com/problems/permutation-in-string/
+    var sol = new PermutationInString();
+    sol.CheckInclusion("ab", "eidbaooo");
 }
