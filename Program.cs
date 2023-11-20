@@ -886,7 +886,7 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/lru-cache/
-    //var lruCache = new LRUCache(2);
+    // var lruCache = new LRUCache(2);
     //lruCache.Put(2, 1);
     //lruCache.Put(2, 2);
     //lruCache.Get(2);    // return 1
@@ -897,7 +897,7 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/merge-k-sorted-lists/
-    //var sol = new MergeKSortedLists();
+    // var sol = new MergeKSortedLists();
     //sol.MergeKLists(new[]
     //{
     //    new ListNode(1, new ListNode(2, new ListNode(2))),
@@ -925,6 +925,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/permutation-in-string/
-    var sol = new PermutationInString();
-    sol.CheckInclusion("ab", "eidbaooo");
+    //var sol = new PermutationInString();
+    //sol.CheckInclusion("ab", "eidbaooo");
+}
+
+{
+    // https://leetcode.com/problems/sliding-window-maximum/
+    var sol = new SlidingWindowMaximum();
+    sol.MaxSlidingWindow(new[] { -7, -8, 7, 5, 7, 1, 6, 0 }, 4);
 }
