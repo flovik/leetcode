@@ -931,6 +931,11 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/sliding-window-maximum/
-    var sol = new SlidingWindowMaximum();
-    sol.MaxSlidingWindow(new[] { -7, -8, 7, 5, 7, 1, 6, 0 }, 4);
+    //var sol = new SlidingWindowMaximum();
+    //sol.MaxSlidingWindow(new[] { -7, -8, 7, 5, 7, 1, 6, 0 }, 4);
+}
+{
+    // https://leetcode.com/problems/minimum-window-substring/
+    var sol = new MinimumWindowSubstring();
+    sol.MinWindow("BANNCBEODEBANC", "ABC");
 }
