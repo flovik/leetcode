@@ -936,6 +936,10 @@ using Sandbox.Solutions.Medium;
 }
 {
     // https://leetcode.com/problems/minimum-window-substring/
-    var sol = new MinimumWindowSubstring();
-    sol.MinWindow("BANNCBEODEBANC", "ABC");
+    //var sol = new MinimumWindowSubstring();
+    //sol.MinWindow("BANNCBEODEBANC", "ABC");
+}
+
+{
+    // https://leetcode.com/problems/invert-binary-tree/description/
 }
