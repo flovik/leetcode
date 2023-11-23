@@ -951,3 +951,7 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 }
+
+{
+    // https://leetcode.com/problems/diameter-of-binary-tree/
+}
