@@ -955,3 +955,18 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/diameter-of-binary-tree/
 }
+
+{
+    // https://leetcode.com/problems/balanced-binary-tree/
+    //var sol = new BalancedBinaryTree();
+
+    //var root = new TreeNode(1,
+    //    new TreeNode(2, new TreeNode(3, new TreeNode(4))),
+    //    new TreeNode(2, null, new TreeNode(3, null, new TreeNode(4))));
+
+    //sol.IsBalanced(root);
+}
+
+{
+    // https://leetcode.com/problems/same-tree/
+}
