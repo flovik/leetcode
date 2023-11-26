@@ -970,3 +970,10 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/same-tree/
 }
+
+{
+    // https://leetcode.com/problems/subtree-of-another-tree/
+    var sol = new SubtreeOfAnotherTree();
+    var subRoot = new TreeNode(4, new TreeNode(1, null, new TreeNode(2)));
+    sol.IsSubtree(new TreeNode(3, new TreeNode(4, new TreeNode(1), new TreeNode(2)), new TreeNode(5)), subRoot);
+}
