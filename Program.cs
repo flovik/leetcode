@@ -985,3 +985,9 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/binary-tree-level-order-traversal/
 }
+
+{
+    // https://leetcode.com/problems/binary-tree-right-side-view/
+    var sol = new BinaryTreeRightSideView();
+    sol.RightSideView(new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3)));
+}
