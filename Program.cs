@@ -988,6 +988,10 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/binary-tree-right-side-view/
-    var sol = new BinaryTreeRightSideView();
-    sol.RightSideView(new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3)));
+    //var sol = new BinaryTreeRightSideView();
+    //sol.RightSideView(new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3)));
+}
+
+{
+    // https://leetcode.com/problems/count-good-nodes-in-binary-tree/
 }
