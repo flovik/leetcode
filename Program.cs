@@ -995,3 +995,9 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/count-good-nodes-in-binary-tree/
 }
+
+{
+    // https://leetcode.com/problems/validate-binary-search-tree/
+    var sol = new ValidateTheBinarySearchTree();
+    sol.IsValidBST(new TreeNode(2, new TreeNode(1), new TreeNode(3)));
+}
