@@ -998,6 +998,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/validate-binary-search-tree/
-    var sol = new ValidateTheBinarySearchTree();
-    sol.IsValidBST(new TreeNode(2, new TreeNode(1), new TreeNode(3)));
+    //var sol = new ValidateTheBinarySearchTree();
+    //sol.IsValidBST(new TreeNode(2, new TreeNode(1), new TreeNode(3)));
+}
+
+{
+    // https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+    var sol = new KthSmallestElementinaBST();
+    sol.KthSmallest(new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4)), 1);
 }
