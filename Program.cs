@@ -1004,6 +1004,10 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/kth-smallest-element-in-a-bst/
-    var sol = new KthSmallestElementinaBST();
-    sol.KthSmallest(new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4)), 1);
+    //var sol = new KthSmallestElementinaBST();
+    //sol.KthSmallest(new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4)), 1);
+}
+
+{
+    // https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 }
