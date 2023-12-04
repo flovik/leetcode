@@ -1015,3 +1015,11 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/binary-tree-maximum-path-sum/
 }
+
+{
+    // https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+    var sol = new SerializeandDeserializeBinaryTree();
+    var data = sol.serialize(new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5))));
+    Console.WriteLine(data);
+    Console.WriteLine(sol.deserialize("[]"));
+}
