@@ -1018,8 +1018,18 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
-    var sol = new SerializeandDeserializeBinaryTree();
-    var data = sol.serialize(new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5))));
-    Console.WriteLine(data);
-    Console.WriteLine(sol.deserialize("[]"));
+    //var sol = new SerializeandDeserializeBinaryTree();
+    //var data = sol.serialize(new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5))));
+    //Console.WriteLine(data);
+    //Console.WriteLine(sol.deserialize("[]"));
+}
+
+{
+    // https://leetcode.com/problems/kth-largest-element-in-a-stream/
+    var sol = new KthLargestElementinaStream(3, new[] { 4, 5, 8, 2 });
+
+    sol.Add(3);
+    sol.Add(5);
+    sol.Add(10);
+    sol.Add(9);
 }
