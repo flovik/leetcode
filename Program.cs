@@ -1026,10 +1026,14 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/kth-largest-element-in-a-stream/
-    var sol = new KthLargestElementinaStream(3, new[] { 4, 5, 8, 2 });
+    //var sol = new KthLargestElementinaStream(3, new[] { 4, 5, 8, 2 });
 
-    sol.Add(3);
-    sol.Add(5);
-    sol.Add(10);
-    sol.Add(9);
+    //sol.Add(3);
+    //sol.Add(5);
+    //sol.Add(10);
+    //sol.Add(9);
+}
+
+{
+    // https://leetcode.com/problems/last-stone-weight/
 }
