@@ -1037,3 +1037,7 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/last-stone-weight/
 }
+
+{
+    // https://leetcode.com/problems/k-closest-points-to-origin/
+}
