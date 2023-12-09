@@ -1045,3 +1045,9 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/kth-largest-element-in-an-array/
 }
+
+{
+    // https://leetcode.com/problems/task-scheduler/
+    var sol = new Sandbox.Solutions.Medium.TaskScheduler();
+    sol.LeastInterval(new[] { 'A', 'A', 'A', 'B', 'B', 'B' }, 2);
+}
