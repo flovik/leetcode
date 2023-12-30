@@ -1080,12 +1080,58 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/design-add-and-search-words-data-structure/description/
-    var wordDictionary = new WordDictionary();
-    wordDictionary.AddWord("bad");
-    wordDictionary.AddWord("dad");
-    wordDictionary.AddWord("mad");
-    wordDictionary.Search("pad"); // return False
-    wordDictionary.Search("bad"); // return True
-    wordDictionary.Search(".ad"); // return True
-    wordDictionary.Search("b.."); // return True
+    //var wordDictionary = new WordDictionary();
+    //wordDictionary.AddWord("bad");
+    //wordDictionary.AddWord("dad");
+    //wordDictionary.AddWord("mad");
+    //wordDictionary.Search("pad"); // return False
+    //wordDictionary.Search("bad"); // return True
+    //wordDictionary.Search(".ad"); // return True
+    //wordDictionary.Search("b.."); // return True
+}
+
+{
+    // https://leetcode.com/problems/word-search-ii/
+    var sol = new WordSearch2();
+    // var board = new char[][]
+    // {
+    //     new char[] { 'o', 'a', 'a', 'n' },
+    //     new char[] { 'e', 't', 'a', 'e' },
+    //     new char[] { 'i', 'h', 'k', 'r' },
+    //     new char[] { 'i', 'f', 'l', 'v' }
+    // };
+    //
+    // var words = new string[] { "oath", "oathmeal", "eat", "rain" };
+
+    // var board = new char[][]
+    // {
+    //     new char[] { 'a', 'a' },
+    // };
+    //
+    // var words = new string[] { "aa", "a" };
+    //
+    // var board = new char[][]
+    // {
+    //     new char[] { 'a', 'b' },
+    // };
+    //
+    // var words = new string[] { "ba" };
+    // char[][] board = new char[][]
+    // {
+    //     new char[] { 'a', 'b', 'c', 'e' },
+    //     new char[] { 'x', 'x', 'c', 'd' },
+    //     new char[] { 'x', 'x', 'b', 'a' }
+    // };
+    //
+    // var words = new string[] { "abc", "abcd" };
+
+    char[][] board = new char[][]
+    {
+        new char[] { 'a', 'a' },
+        new char[] { 'a', 'a' },
+    };
+
+    var words = new string[] { "aaaaa" };
+
+    sol.FindWords(board, words);
 }
