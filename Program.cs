@@ -1125,13 +1125,19 @@ using Sandbox.Solutions.Medium;
     //
     // var words = new string[] { "abc", "abcd" };
 
-    char[][] board = new char[][]
-    {
-        new char[] { 'a', 'a' },
-        new char[] { 'a', 'a' },
-    };
+    //char[][] board = new char[][]
+    //{
+    //    new char[] { 'a', 'a' },
+    //    new char[] { 'a', 'a' },
+    //};
 
-    var words = new string[] { "aaaaa" };
+    //var words = new string[] { "aaaaa" };
 
-    sol.FindWords(board, words);
+    //sol.FindWords(board, words);
+}
+
+{
+    // https://leetcode.com/problems/subsets/
+    var sol = new SubsetsSolution();
+    sol.Subsets(new int[] { 1, 2, 3 });
 }
