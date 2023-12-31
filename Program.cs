@@ -1138,6 +1138,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/subsets/
-    var sol = new SubsetsSolution();
-    sol.Subsets(new int[] { 1, 2, 3 });
+    // var sol = new SubsetsSolution();
+    // sol.Subsets(new int[] { 1, 2, 3 });
+}
+
+{
+    // https://leetcode.com/problems/subsets-ii/
+    var sol = new Subsets2();
+    sol.SubsetsWithDup(new int[] { 1, 2, 2 });
 }
