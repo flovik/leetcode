@@ -1144,6 +1144,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/subsets-ii/
-    var sol = new Subsets2();
-    sol.SubsetsWithDup(new int[] { 1, 2, 2 });
+    //var sol = new Subsets2();
+    //sol.SubsetsWithDup(new int[] { 1, 2, 2 });
+}
+
+{
+    // https://leetcode.com/problems/combination-sum/description/
+    var sol = new CombinationSumSolution();
+    sol.CombinationSum(new[] { 2, 3, 6, 7 }, 7);
 }
