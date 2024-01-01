@@ -1150,6 +1150,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/combination-sum/description/
-    var sol = new CombinationSumSolution();
-    sol.CombinationSum(new[] { 2, 3, 6, 7 }, 7);
+    //var sol = new CombinationSumSolution();
+    //sol.CombinationSum(new[] { 2, 3, 6, 7 }, 7);
+}
+
+{
+    // https://leetcode.com/problems/permutations/description/
+    var sol = new Permutations();
+    sol.Permute(new[] { 1, 2, 3 });
 }
