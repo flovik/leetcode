@@ -1163,3 +1163,16 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/combination-sum-ii/description/
 }
+
+{
+    // https://leetcode.com/problems/word-search/description/
+    var sol = new WordSearchSolution();
+    char[][] board = new char[][]
+    {
+        new char[] { 'A', 'B', 'C', 'E' },
+        new char[] { 'S', 'F', 'C', 'S' },
+        new char[] { 'A', 'D', 'E', 'E' }
+    };
+
+    sol.Exist(board, "SEE");
+}
