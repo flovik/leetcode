@@ -2,7 +2,7 @@
 
 public class PalindromePartitioning
 {
-    private IList<IList<string>> _result = new List<IList<string>>(140);
+    private readonly IList<IList<string>> _result = new List<IList<string>>(140);
 
     public IList<IList<string>> Partition(string s)
     {

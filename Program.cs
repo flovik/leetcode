@@ -1178,6 +1178,12 @@ using Sandbox.Solutions.Medium;
 }
 {
     // https://leetcode.com/problems/palindrome-partitioning/description/
-    var sol = new PalindromePartitioning();
-    sol.Partition("aabb");
+    //var sol = new PalindromePartitioning();
+    //sol.Partition("aabb");
+}
+
+{
+    // https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+    var sol = new LetterCombinationsOfaPhoneNumberSolution();
+    sol.LetterCombinations("23");
 }
