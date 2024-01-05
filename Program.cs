@@ -1184,6 +1184,16 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
-    var sol = new LetterCombinationsOfaPhoneNumberSolution();
-    sol.LetterCombinations("23");
+    // var sol = new LetterCombinationsOfaPhoneNumberSolution();
+    // sol.LetterCombinations("23");
+}
+
+{
+    // https://leetcode.com/problems/n-queens/description/
+    //var sol = new NQueens();
+    //sol.SolveNQueens(1);
+}
+
+{
+    // https://leetcode.com/problems/climbing-stairs/description/
 }
