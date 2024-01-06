@@ -1214,6 +1214,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-palindromic-substring/
-    var sol = new LongestPalindromicSubstring();
-    sol.LongestPalindrome("bb");
+    //var sol = new LongestPalindromicSubstring();
+    //sol.LongestPalindrome("bb");
+}
+
+{
+    // https://leetcode.com/problems/palindromic-substrings/description/
+    var sol = new PalindromicSubstrings();
+    sol.CountSubstrings("aaa");
 }
