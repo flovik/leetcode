@@ -4,6 +4,7 @@ public class HouseRobber
 {
     public int Rob(int[] nums)
     {
+        // we can skip the second house if it is smaller than first
         if (nums.Length >= 2)
             nums[1] = Math.Max(nums[1], nums[0]);
 
