@@ -1200,6 +1200,10 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/min-cost-climbing-stairs/description/
-    var sol = new MinCostClimbingStairsSolution();
-    sol.MinCostClimbingStairs(new int[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 });
+    //var sol = new MinCostClimbingStairsSolution();
+    //sol.MinCostClimbingStairs(new int[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 });
+}
+
+{
+    // https://leetcode.com/problems/house-robber/description/
 }
