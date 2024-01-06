@@ -1207,3 +1207,13 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/house-robber/description/
 }
+
+{
+    // https://leetcode.com/problems/house-robber2/description/
+}
+
+{
+    // https://leetcode.com/problems/longest-palindromic-substring/
+    var sol = new LongestPalindromicSubstring();
+    sol.LongestPalindrome("bb");
+}
