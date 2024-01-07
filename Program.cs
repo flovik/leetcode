@@ -1226,6 +1226,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/decode-ways/
-    var sol = new DecodeWays();
-    sol.NumDecodings("226226");
+    //var sol = new DecodeWays();
+    //sol.NumDecodings("226226");
+}
+
+{
+    // https://leetcode.com/problems/coin-change/description/
+    var sol = new CoinChangeSol();
+    sol.CoinChange(new[] { 1, 2, 5 }, 11);
 }

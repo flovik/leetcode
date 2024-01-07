@@ -7,7 +7,7 @@ public class CoinChange
         //base array, first value is 0
         //if has a MaxValue, cannot compute the amount with existing coins
         int[] dp = new int[amount + 1];
-        Array.Fill(dp, int.MaxValue);
+        Array.Fill(dp, -1);
         dp[0] = 0;
         Array.Sort(coins);
         for (int i = 1; i <= amount; i++) //calculate the minimal amount for all the possible amounts
