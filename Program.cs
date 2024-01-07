@@ -1220,6 +1220,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/palindromic-substrings/description/
-    var sol = new PalindromicSubstrings();
-    sol.CountSubstrings("aaa");
+    //var sol = new PalindromicSubstrings();
+    //sol.CountSubstrings("aaa");
+}
+
+{
+    // https://leetcode.com/problems/decode-ways/
+    var sol = new DecodeWays();
+    sol.NumDecodings("226226");
 }
