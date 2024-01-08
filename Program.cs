@@ -1232,6 +1232,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/coin-change/description/
-    var sol = new CoinChangeSol();
-    sol.CoinChange(new[] { 1, 2, 5 }, 11);
+    //var sol = new CoinChangeSol();
+    //sol.CoinChange(new[] { 1, 2, 5 }, 11);
+}
+
+{
+    // https://leetcode.com/problems/maximum-product-subarray/
+    var sol = new MaximumProductSubarraySolution();
+    sol.MaxProduct(new int[] { -2, 0, -1 });
 }
