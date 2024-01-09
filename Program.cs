@@ -1238,6 +1238,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/maximum-product-subarray/
-    var sol = new MaximumProductSubarraySolution();
-    sol.MaxProduct(new int[] { -2, 0, -1 });
+    //var sol = new MaximumProductSubarraySolution();
+    //sol.MaxProduct(new int[] { -2, 0, -1 });
+}
+
+{
+    // https://leetcode.com/problems/word-break/description/
+    var sol = new WordBreakSolution();
+    sol.WordBreak("leetcode", new List<string> { "leet", "code" });
 }
