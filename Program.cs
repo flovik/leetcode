@@ -1251,5 +1251,5 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/longest-increasing-subsequence/description/
     var sol = new LongestIncreasingSubsequenceSolution();
-    sol.LengthOfLIS(new int[] { 1, 3, 6, 7, 9, 4, 10, 5, 6 });
+    sol.LengthOfLIS_BinarySearch(new int[] { 3, 5, 6, 2, 5, 4, 19, 5, 6, 7, 12 });
 }
