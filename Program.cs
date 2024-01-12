@@ -1244,6 +1244,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/word-break/description/
-    var sol = new WordBreakSolution();
-    sol.WordBreak("leetcode", new List<string> { "leet", "code" });
+    //var sol = new WordBreakSolution();
+    //sol.WordBreak("leetcode", new List<string> { "leet", "code" });
+}
+
+{
+    // https://leetcode.com/problems/longest-increasing-subsequence/description/
+    var sol = new LongestIncreasingSubsequenceSolution();
+    sol.LengthOfLIS(new int[] { 1, 3, 6, 7, 9, 4, 10, 5, 6 });
 }
