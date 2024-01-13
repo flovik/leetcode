@@ -1250,6 +1250,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-increasing-subsequence/description/
-    var sol = new LongestIncreasingSubsequenceSolution();
-    sol.LengthOfLIS_BinarySearch(new int[] { 3, 5, 6, 2, 5, 4, 19, 5, 6, 7, 12 });
+    //var sol = new LongestIncreasingSubsequenceSolution();
+    //sol.LengthOfLIS_BinarySearch(new int[] { 3, 5, 6, 2, 5, 4, 19, 5, 6, 7, 12 });
+}
+
+{
+    // https://leetcode.com/problems/partition-equal-subset-sum/description/
+    var sol = new PartitionEqualSubsetSum();
+    sol.CanPartition(new[] { 1, 5, 11, 5 });
 }
