@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Text;
-using Sandbox.DataStructures;
-using Sandbox.Solutions;
-using Sandbox.Solutions.Easy;
-using Sandbox.Solutions.Hard;
+﻿using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
 
 {
@@ -1256,6 +1251,35 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/partition-equal-subset-sum/description/
-    var sol = new PartitionEqualSubsetSum();
-    sol.CanPartition(new[] { 1, 5, 11, 5 });
+    //var sol = new PartitionEqualSubsetSum();
+    //sol.CanPartition(new[] { 1, 5, 11, 5 });
+}
+
+{
+    // https://leetcode.com/problems/number-of-islands/description/
+    //char[][] grid = new char[][]
+    //{
+    //    new char[] { '1', '1', '0', '0', '0' },
+    //    new char[] { '1', '1', '0', '0', '0' },
+    //    new char[] { '0', '0', '1', '0', '0' },
+    //    new char[] { '0', '0', '0', '1', '1' }
+    //};
+
+    //var sol = new NumberOfIslandsSolution();
+    //sol.NumIslands(grid);
+}
+
+{
+    // https://leetcode.com/problems/clone-graph/description/
+    var sol = new CloneGraphSolution();
+    var node1 = new Sandbox.Solutions.Medium.GraphNode(1);
+    var node2 = new Sandbox.Solutions.Medium.GraphNode(2);
+    var node3 = new Sandbox.Solutions.Medium.GraphNode(3);
+    var node4 = new Sandbox.Solutions.Medium.GraphNode(4);
+
+    node1.neighbors = new List<GraphNode>() { node2, node4 };
+    node2.neighbors = new List<GraphNode>() { node1, node3 };
+    node3.neighbors = new List<GraphNode>() { node2, node4 };
+    node4.neighbors = new List<GraphNode>() { node1, node3 };
+    sol.CloneGraph(node1);
 }
