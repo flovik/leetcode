@@ -1271,15 +1271,33 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/clone-graph/description/
-    var sol = new CloneGraphSolution();
-    var node1 = new Sandbox.Solutions.Medium.GraphNode(1);
-    var node2 = new Sandbox.Solutions.Medium.GraphNode(2);
-    var node3 = new Sandbox.Solutions.Medium.GraphNode(3);
-    var node4 = new Sandbox.Solutions.Medium.GraphNode(4);
+    //var sol = new CloneGraphSolution();
+    //var node1 = new GraphNode(1);
+    //var node2 = new GraphNode(2);
+    //var node3 = new GraphNode(3);
+    //var node4 = new GraphNode(4);
 
-    node1.neighbors = new List<GraphNode>() { node2, node4 };
-    node2.neighbors = new List<GraphNode>() { node1, node3 };
-    node3.neighbors = new List<GraphNode>() { node2, node4 };
-    node4.neighbors = new List<GraphNode>() { node1, node3 };
-    sol.CloneGraph(node1);
+    //node1.neighbors = new List<GraphNode> { node2, node4 };
+    //node2.neighbors = new List<GraphNode> { node1, node3 };
+    //node3.neighbors = new List<GraphNode> { node2, node4 };
+    //node4.neighbors = new List<GraphNode> { node1, node3 };
+    //sol.CloneGraph(node1);
+}
+
+{
+    // https://leetcode.com/problems/max-area-of-island/description/
+    var grid = new[]
+    {
+        new [] {0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+        new [] {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+        new [] {0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+        new [] {0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
+        new [] {0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
+        new [] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+        new [] {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+        new [] {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
+    };
+
+    var sol = new MaxAreaOfIslands();
+    sol.MaxAreaOfIsland(grid);
 }
