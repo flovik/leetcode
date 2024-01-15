@@ -1301,3 +1301,23 @@ using Sandbox.Solutions.Medium;
     var sol = new MaxAreaOfIslands();
     sol.MaxAreaOfIsland(grid);
 }
+
+{
+    // https://leetcode.com/problems/pacific-atlantic-water-flow/description/
+    // int[][] heights = {
+    //     new[] {1, 2, 2, 3, 5},
+    //     new[] {3, 2, 3, 4, 4},
+    //     new[] {2, 4, 5, 3, 1},
+    //     new[] {6, 7, 1, 4, 5},
+    //     new[] {5, 1, 1, 2, 4}
+    // };
+
+    int[][] heights = {
+        new[] {1, 1},
+        new[] {1, 1},
+        new[] {1, 1},
+    };
+
+    var sol = new PacificAtlanticWaterFlow();
+    sol.PacificAtlantic(heights);
+}
