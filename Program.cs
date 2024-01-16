@@ -1312,12 +1312,25 @@ using Sandbox.Solutions.Medium;
     //     new[] {5, 1, 1, 2, 4}
     // };
 
-    int[][] heights = {
-        new[] {1, 1},
-        new[] {1, 1},
-        new[] {1, 1},
-    };
+    //int[][] heights = {
+    //    new[] {1, 1},
+    //    new[] {1, 1},
+    //    new[] {1, 1},
+    //};
 
-    var sol = new PacificAtlanticWaterFlow();
-    sol.PacificAtlantic(heights);
+    //var sol = new PacificAtlanticWaterFlow();
+    //sol.PacificAtlantic(heights);
+}
+
+{
+    // https://leetcode.com/problems/surrounded-regions/description/
+    char[][] charArray = new char[][]
+    {
+        new char[] { 'X', 'X', 'X', 'X' },
+        new char[] { 'X', 'O', 'O', 'X' },
+        new char[] { 'X', 'X', 'O', 'X' },
+        new char[] { 'X', 'X', 'O', 'X' }
+    };
+    var sol = new SurroundedRegions();
+    sol.Solve(charArray);
 }
