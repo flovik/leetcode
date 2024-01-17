@@ -1324,13 +1324,26 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/surrounded-regions/description/
-    char[][] charArray = new char[][]
+    //char[][] charArray = new char[][]
+    //{
+    //    new char[] { 'X', 'X', 'X', 'X' },
+    //    new char[] { 'X', 'O', 'O', 'X' },
+    //    new char[] { 'X', 'X', 'O', 'X' },
+    //    new char[] { 'X', 'X', 'O', 'X' }
+    //};
+    //var sol = new SurroundedRegions();
+    //sol.Solve(charArray);
+}
+
+{
+    // https://leetcode.com/problems/rotting-oranges/description/
+    int[][] grid = new int[][]
     {
-        new char[] { 'X', 'X', 'X', 'X' },
-        new char[] { 'X', 'O', 'O', 'X' },
-        new char[] { 'X', 'X', 'O', 'X' },
-        new char[] { 'X', 'X', 'O', 'X' }
+        new int[] {2, 1, 1},
+        new int[] {1, 1, 0},
+        new int[] {0, 1, 1}
     };
-    var sol = new SurroundedRegions();
-    sol.Solve(charArray);
+
+    var sol = new RottingOranges();
+    sol.OrangesRotting(grid);
 }
