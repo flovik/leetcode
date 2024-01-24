@@ -1337,13 +1337,19 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/rotting-oranges/description/
-    int[][] grid = new int[][]
-    {
-        new int[] {2, 1, 1},
-        new int[] {1, 1, 0},
-        new int[] {0, 1, 1}
-    };
+    //int[][] grid = new int[][]
+    //{
+    //    new int[] {2, 1, 1},
+    //    new int[] {1, 1, 0},
+    //    new int[] {0, 1, 1}
+    //};
 
-    var sol = new RottingOranges();
-    sol.OrangesRotting(grid);
+    //var sol = new RottingOranges();
+    //sol.OrangesRotting(grid);
+}
+
+{
+    // https://leetcode.com/problems/course-schedule/
+    var sol = new CourseScheduleSolution();
+    sol.CanFinish(4, new[] { new[] { 2, 0 }, new[] { 1, 0 }, new[] { 3, 1 }, new[] { 3, 2 }, new[] { 1, 3 } });
 }
