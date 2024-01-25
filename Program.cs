@@ -1350,6 +1350,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/course-schedule/
-    var sol = new CourseScheduleSolution();
-    sol.CanFinish(4, new[] { new[] { 2, 0 }, new[] { 1, 0 }, new[] { 3, 1 }, new[] { 3, 2 }, new[] { 1, 3 } });
+    //var sol = new CourseScheduleSolution();
+    //sol.CanFinish(4, new[] { new[] { 2, 0 }, new[] { 1, 0 }, new[] { 3, 1 }, new[] { 3, 2 }, new[] { 1, 3 } });
+}
+
+{
+    // https://leetcode.com/problems/course-schedule-ii/description/
+    var sol = new CourseSchedule2();
+    sol.FindOrder(8, new[] { new int[] { 1, 0 }, new int[] { 2, 6 }, new int[] { 1, 7 }, new int[] { 6, 4 }, new int[] { 7, 0 }, new int[] { 0, 5 }, });
 }
