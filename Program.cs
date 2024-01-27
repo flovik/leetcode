@@ -1363,5 +1363,5 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/redundant-connection/description/
     var sol = new RedundantConnection();
-    sol.FindRedundantConnection(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 4 }, new[] { 1, 5 }, });
+    sol.FindRedundantConnectionUnionFind(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 4 }, new[] { 1, 5 }, });
 }
