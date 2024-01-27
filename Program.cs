@@ -1356,6 +1356,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/course-schedule-ii/description/
-    var sol = new CourseSchedule2();
-    sol.FindOrder(8, new[] { new int[] { 1, 0 }, new int[] { 2, 6 }, new int[] { 1, 7 }, new int[] { 6, 4 }, new int[] { 7, 0 }, new int[] { 0, 5 }, });
+    //var sol = new CourseSchedule2();
+    //sol.FindOrder(8, new[] { new int[] { 1, 0 }, new int[] { 2, 6 }, new int[] { 1, 7 }, new int[] { 6, 4 }, new int[] { 7, 0 }, new int[] { 0, 5 }, });
+}
+
+{
+    // https://leetcode.com/problems/redundant-connection/description/
+    var sol = new RedundantConnection();
+    sol.FindRedundantConnection(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 4 }, new[] { 1, 5 }, });
 }
