@@ -1362,6 +1362,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/redundant-connection/description/
-    var sol = new RedundantConnection();
-    sol.FindRedundantConnectionUnionFind(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 4 }, new[] { 1, 5 }, });
+    //var sol = new RedundantConnection();
+    //sol.FindRedundantConnectionUnionFind(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 4 }, new[] { 1, 5 }, });
+}
+
+{
+    // https://leetcode.com/problems/word-ladder/description/
+    var sol = new WordLadder();
+    sol.LadderLength("hit", "cog", new List<string> { "hot", "dot", "dog", "lot", "log", "cog" });
 }
