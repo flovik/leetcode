@@ -1368,6 +1368,13 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/word-ladder/description/
-    var sol = new WordLadder();
-    sol.LadderLength("hit", "cog", new List<string> { "hot", "dot", "dog", "lot", "log", "cog" });
+    //var sol = new WordLadder();
+    //sol.LadderLength("hit", "cog", new List<string> { "hot", "dot", "dog", "lot", "log", "cog" });
+}
+
+{
+    // https://leetcode.com/problems/insert-interval/description/
+    var sol = new InsertInterval();
+    sol.Insert(new[] { new[] { 2, 3 }, new[] { 4, 5 }, new[] { 6, 7 }, new[] { 8, 10 }, new[] { 13, 16 }, },
+        new[] { 4, 8 });
 }
