@@ -1374,7 +1374,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/insert-interval/description/
-    var sol = new InsertInterval();
-    sol.Insert(new[] { new[] { 2, 3 }, new[] { 4, 5 }, new[] { 6, 7 }, new[] { 8, 10 }, new[] { 13, 16 }, },
-        new[] { 4, 8 });
+    //var sol = new InsertInterval();
+    //sol.Insert(new[] { new[] { 2, 3 }, new[] { 4, 5 }, new[] { 6, 7 }, new[] { 8, 10 }, new[] { 13, 16 }, },
+    //    new[] { 4, 8 });
+}
+
+{
+    var sol = new MergeIntervals();
+    sol.Merge(new[] { new[] { 1, 4 }, new[] { 0, 4 }, });
 }
