@@ -1380,6 +1380,12 @@ using Sandbox.Solutions.Medium;
 }
 
 {
-    var sol = new MergeIntervals();
-    sol.Merge(new[] { new[] { 1, 4 }, new[] { 0, 4 }, });
+    //var sol = new MergeIntervals();
+    //sol.Merge(new[] { new[] { 1, 4 }, new[] { 0, 4 }, });
+}
+
+{
+    // https://leetcode.com/problems/non-overlapping-intervals/description/
+    var sol = new NonOverlappingIntervals();
+    sol.EraseOverlapIntervals(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 3 } });
 }
