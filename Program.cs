@@ -1386,6 +1386,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/non-overlapping-intervals/description/
-    var sol = new NonOverlappingIntervals();
-    sol.EraseOverlapIntervals(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 3 } });
+    //var sol = new NonOverlappingIntervals();
+    //sol.EraseOverlapIntervals(new[] { new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }, new[] { 1, 3 } });
+}
+
+{
+    // https://leetcode.com/problems/minimum-interval-to-include-each-query/description/
+    var sol = new MinimumIntervalToIncludeEachQuery();
+    sol.MinInterval(new[] { new[] { 6, 6 }, new[] { 5, 5 }, new[] { 10, 10 }, new[] { 3, 6 }, new[] { 9, 9 } }, new[] { 7, 9, 2, 4, 5 });
 }
