@@ -1392,6 +1392,10 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/minimum-interval-to-include-each-query/description/
-    var sol = new MinimumIntervalToIncludeEachQuery();
-    sol.MinInterval(new[] { new[] { 6, 6 }, new[] { 5, 5 }, new[] { 10, 10 }, new[] { 3, 6 }, new[] { 9, 9 } }, new[] { 7, 9, 2, 4, 5 });
+    //var sol = new MinimumIntervalToIncludeEachQuery();
+    //sol.MinInterval(new[] { new[] { 6, 6 }, new[] { 5, 5 }, new[] { 10, 10 }, new[] { 3, 6 }, new[] { 9, 9 } }, new[] { 7, 9, 2, 4, 5 });
+}
+
+{
+    // https://leetcode.com/problems/maximum-subarray/description/
 }
