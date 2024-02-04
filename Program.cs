@@ -1399,3 +1399,13 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/maximum-subarray/description/
 }
+
+{
+    // https://leetcode.com/problems/jump-game/description/
+}
+
+{
+    // https://leetcode.com/problems/jump-game-ii/description/
+    var sol = new JumpGame2();
+    sol.Jump(new int[] { 2, 3, 1, 4, 4, 0, 0, 0, 1, 1, 0 });
+}
