@@ -1406,6 +1406,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/jump-game-ii/description/
-    var sol = new JumpGame2();
-    sol.Jump(new int[] { 2, 3, 1, 4, 4, 0, 0, 0, 1, 1, 0 });
+    //var sol = new JumpGame2();
+    //sol.Jump(new int[] { 2, 3, 1, 4, 4, 0, 0, 0, 1, 1, 0 });
+}
+
+{
+    // https://leetcode.com/problems/gas-station/
+    var sol = new GasStation();
+    sol.CanCompleteCircuit(new int[] { 1, 2, 3, 4, 5 }, new[] { 3, 4, 5, 1, 2 });
 }
