@@ -1418,6 +1418,15 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/hand-of-straights/description/
-    var sol = new HandOfStraights();
-    sol.IsNStraightHand(new[] { 1, 1, 2, 2, 3, 3 }, 2);
+    //var sol = new HandOfStraights();
+    //sol.IsNStraightHand(new[] { 1, 1, 2, 2, 3, 3 }, 2);
+}
+
+{
+    // https://leetcode.com/problems/merge-triplets-to-form-target-triplet/description/
+    int[][] triplets = new int[][] { new int[] { 2, 5, 3 }, new int[] { 1, 8, 4 }, new int[] { 1, 7, 5 } };
+    int[] target = new int[] { 2, 7, 5 };
+
+    var sol = new MergeTripletsToFormTargetTriplet();
+    sol.MergeTriplets(triplets, target);
 }
