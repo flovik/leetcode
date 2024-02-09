@@ -1412,6 +1412,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/gas-station/
-    var sol = new GasStation();
-    sol.CanCompleteCircuit(new int[] { 1, 2, 3, 4, 5 }, new[] { 3, 4, 5, 1, 2 });
+    //var sol = new GasStation();
+    //sol.CanCompleteCircuit(new int[] { 1, 2, 3, 4, 5 }, new[] { 3, 4, 5, 1, 2 });
+}
+
+{
+    // https://leetcode.com/problems/hand-of-straights/description/
+    var sol = new HandOfStraights();
+    sol.IsNStraightHand(new[] { 1, 1, 2, 2, 3, 3 }, 2);
 }
