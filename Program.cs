@@ -1424,9 +1424,15 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/merge-triplets-to-form-target-triplet/description/
-    int[][] triplets = new int[][] { new int[] { 2, 5, 3 }, new int[] { 1, 8, 4 }, new int[] { 1, 7, 5 } };
-    int[] target = new int[] { 2, 7, 5 };
+    //int[][] triplets = new int[][] { new int[] { 2, 5, 3 }, new int[] { 1, 8, 4 }, new int[] { 1, 7, 5 } };
+    //int[] target = new int[] { 2, 7, 5 };
 
-    var sol = new MergeTripletsToFormTargetTriplet();
-    sol.MergeTriplets(triplets, target);
+    //var sol = new MergeTripletsToFormTargetTriplet();
+    //sol.MergeTriplets(triplets, target);
+}
+
+{
+    // https://leetcode.com/problems/partition-labels/description/
+    var sol = new PartitionLabelss();
+    sol.PartitionLabels("ababcbacadefegdehijhklij");
 }
