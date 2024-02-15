@@ -1433,6 +1433,22 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/partition-labels/description/
-    var sol = new PartitionLabelss();
-    sol.PartitionLabels("ababcbacadefegdehijhklij");
+    //var sol = new PartitionLabelss();
+    //sol.PartitionLabels("ababcbacadefegdehijhklij");
+}
+
+{
+    // https://leetcode.com/problems/valid-parenthesis-string/description/
+}
+
+{
+    // https://leetcode.com/problems/unique-paths/description/
+    //var sol = new UniquePathss();
+    //sol.UniquePaths(3, 2);
+}
+
+{
+    // https://leetcode.com/problems/longest-common-subsequence/description/
+    var sol = new LongestCommonSubsequence();
+    sol.LongestCommonSubsequenceSol("abcde", "ace");
 }
