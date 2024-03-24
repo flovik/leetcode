@@ -1449,6 +1449,24 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-common-subsequence/description/
-    var sol = new LongestCommonSubsequence();
-    sol.LongestCommonSubsequenceSol("abcde", "ace");
+    //var sol = new LongestCommonSubsequence();
+    //sol.LongestCommonSubsequenceSol("abcde", "ace");
+}
+
+{
+    // https://leetcode.com/problems/coin-change-ii/
+    //var sol = new CoinChange2();
+    //sol.ChangeDpOptimizedSpace(6, new[] { 1, 2, 5 });
+}
+
+{
+    // https://leetcode.com/problems/target-sum/
+    //var sol = new TargetSum();
+    //sol.FindTargetSumWaysDpOptimization(new[] { 1, 1, 1, 1, 1 }, 2);
+}
+
+{
+    // https://leetcode.com/problems/interleaving-string/description/
+    var sol = new InterleavingString();
+    sol.IsInterleave("aabcc", "dbbca", "aadbbbaccc");
 }
