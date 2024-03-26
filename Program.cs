@@ -1467,6 +1467,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/interleaving-string/description/
-    var sol = new InterleavingString();
-    sol.IsInterleave("aabcc", "dbbca", "aadbbbaccc");
+    //var sol = new InterleavingString();
+    //sol.IsInterleave("aabcc", "dbbca", "aadbbbaccc");
+}
+
+{
+    // https://leetcode.com/problems/edit-distance/https://leetcode.com/problems/edit-distance/
+    var sol = new EditDistance();
+    sol.MinDistance("horse", "ros");
 }
