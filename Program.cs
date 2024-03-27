@@ -1473,6 +1473,20 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/edit-distance/https://leetcode.com/problems/edit-distance/
-    var sol = new EditDistance();
-    sol.MinDistance("horse", "ros");
+    //var sol = new EditDistance();
+    //sol.MinDistance("horse", "ros");
+}
+
+{
+    // https://leetcode.com/problems/longest-increasing-path-in-a-matrix/description/
+    //var sol = new LongestIncreasingPathinaMatrix();
+    //int[][] matrix = new[] { new int[] { 9, 9, 4 }, new[] { 6, 6, 8 }, new[] { 2, 1, 1 } };
+    ////matrix = new[] { new int[] { 1, 2 } };
+    //sol.LongestIncreasingPath(matrix);
+}
+
+{
+    // https://leetcode.com/problems/distinct-subsequences/description/
+    var sol = new DistinctSubsequences();
+    sol.NumDistinct("babgbag", "bag");
 }
