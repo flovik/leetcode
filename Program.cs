@@ -1,4 +1,5 @@
-﻿using Sandbox.Solutions.Hard;
+﻿using Sandbox.Solutions.Easy;
+using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
 
 {
@@ -1489,4 +1490,20 @@ using Sandbox.Solutions.Medium;
     // https://leetcode.com/problems/distinct-subsequences/description/
     //var sol = new DistinctSubsequences();
     //sol.NumDistinct("babgbag", "bag");
+}
+
+{
+    // https://leetcode.com/problems/number-of-1-bits/description/
+    //var sol = new NumberOf1Bits();
+    //sol.HammingWeight(11);
+}
+
+{
+    // https://leetcode.com/problems/regular-expression-matching/
+    var sol = new RegularExpressionMatching();
+    //sol.IsMatch("accb", ".*");
+    //sol.IsMatch("accb", ".*b");
+    //sol.IsMatch("b", "a*b");
+    //sol.IsMatch("a", ".*");
+    sol.IsMatch("aa", "a*");
 }
