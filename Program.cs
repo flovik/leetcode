@@ -1500,10 +1500,16 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/regular-expression-matching/
-    var sol = new RegularExpressionMatching();
-    //sol.IsMatch("accb", ".*");
-    //sol.IsMatch("accb", ".*b");
-    //sol.IsMatch("b", "a*b");
-    //sol.IsMatch("a", ".*");
-    sol.IsMatch("aa", "a*");
+    //var sol = new RegularExpressionMatching();
+    ////sol.IsMatch("accb", ".*");
+    ////sol.IsMatch("accb", ".*b");
+    ////sol.IsMatch("b", "a*b");
+    ////sol.IsMatch("a", ".*");
+    //sol.IsMatch("aa", "a*");
+}
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
+    var sol = new BestTimetoBuyandSellStockwithCooldown();
+    sol.MaxProfitOptimized(new int[] { 1 });
 }
