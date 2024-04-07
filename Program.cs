@@ -1501,15 +1501,28 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/regular-expression-matching/
     //var sol = new RegularExpressionMatching();
-    ////sol.IsMatch("accb", ".*");
-    ////sol.IsMatch("accb", ".*b");
-    ////sol.IsMatch("b", "a*b");
-    ////sol.IsMatch("a", ".*");
+    //sol.IsMatch("accb", ".*");
+    //sol.IsMatch("accb", ".*b");
+    //sol.IsMatch("b", "a*b");
+    //sol.IsMatch("a", ".*");
     //sol.IsMatch("aa", "a*");
 }
 
 {
     // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
-    var sol = new BestTimetoBuyandSellStockwithCooldown();
-    sol.MaxProfitOptimized(new int[] { 1 });
+    //var sol = new BestTimetoBuyandSellStockwithCooldown();
+    //sol.MaxProfitOptimized(new int[] { 1 });
+}
+
+{
+    // https://leetcode.com/problems/valid-parenthesis-string/description/
+}
+
+{
+    // https://leetcode.com/problems/rotate-image/description/
+    var sol = new RotateImageSol();
+
+    int[][] matrix = new[] { new[] { 5, 1, 9, 11 }, new[] { 2, 4, 8, 10 }, new[] { 13, 3, 6, 7 }, new[] { 15, 14, 12, 16 } };
+
+    sol.Rotate(matrix);
 }
