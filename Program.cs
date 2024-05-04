@@ -1520,9 +1520,21 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/rotate-image/description/
-    var sol = new RotateImageSol();
+    //var sol = new RotateImageSol();
 
-    int[][] matrix = new[] { new[] { 5, 1, 9, 11 }, new[] { 2, 4, 8, 10 }, new[] { 13, 3, 6, 7 }, new[] { 15, 14, 12, 16 } };
+    //int[][] matrix = new[] { new[] { 5, 1, 9, 11 }, new[] { 2, 4, 8, 10 }, new[] { 13, 3, 6, 7 }, new[] { 15, 14, 12, 16 } };
 
-    sol.Rotate(matrix);
+    //sol.Rotate(matrix);
+}
+
+{
+    // https://leetcode.com/problems/min-cost-to-connect-all-points/description/
+    var sol = new MinCostToConnectAllPoints();
+    sol.MinCostConnectPoints(new int[][]
+    {
+        new int[] { 2, -3 },
+        new int[] { -17, -8 },
+        new int[] { 13, 8 },
+        new int[] { -17, -15 },
+    });
 }
