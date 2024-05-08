@@ -1530,11 +1530,74 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/min-cost-to-connect-all-points/description/
     var sol = new MinCostToConnectAllPoints();
-    sol.MinCostConnectPoints(new int[][]
-    {
-        new int[] { 2, -3 },
-        new int[] { -17, -8 },
-        new int[] { 13, 8 },
-        new int[] { -17, -15 },
-    });
+    //sol.MinCostConnectPoints(new int[][]
+    //{
+    //    new int[] { 2, -3 },
+    //    new int[] { -17, -8 },
+    //    new int[] { 13, 8 },
+    //    new int[] { -17, -15 },
+    //});
+}
+
+{
+    // https://leetcode.com/problems/network-delay-time/description/
+    var sol = new NetworkDelayTime();
+    //sol.NetworkDelayTimeSol(new int[][]
+    //{
+    //    new int[] { 1, 2, 4 },
+    //    new int[] { 1, 3, 1 },
+    //    new int[] { 3, 2, 2 },
+    //    new int[] { 3, 4, 4 },
+    //    new int[] { 2, 5, 4 },
+    //    new int[] { 4, 5, 4 },
+    //}, 5, 1);
+
+    //sol.NetworkDelayTimeSol(new int[][]
+    //{
+    //    new int[] { 1, 2, 1 },
+    //    new int[] { 2, 1, 3 },
+    //}, 2, 2);
+}
+
+{
+    // https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
+    //var sol = new CheapestFlightsWithingKStops();
+
+    //sol.FindCheapestPriceBellmanFord(4, new int[][]
+    //{
+    //    new int[] { 0, 1, 1 },
+    //    new int[] { 0, 2, 5 },
+    //    new int[] { 1, 2, 1 },
+    //    new int[] { 2, 3, 1 },
+    //}, 0, 3, 1);
+
+    //sol.FindCheapestPriceBellmanFord(11, new int[][]
+    //{
+    //    new int[] { 0, 3, 3 },
+    //    new int[] { 3, 4, 3 },
+    //    new int[] { 4, 1, 3 },
+    //    new int[] { 0, 5, 1 },
+    //    new int[] { 5, 1, 100 },
+    //    new int[] { 0, 6, 2 },
+    //    new int[] { 6, 1, 100 },
+    //    new int[] { 0, 7, 1 },
+    //    new int[] { 7, 8, 1 },
+    //    new int[] { 8, 9, 1 },
+    //    new int[] { 9, 1, 1 },
+    //    new int[] { 1, 10, 1 },
+    //    new int[] { 10, 2, 1 },
+    //    new int[] { 1, 2, 100 }
+    //}, 0, 2, 4);
+}
+
+{
+    // https://leetcode.com/problems/minimum-size-subarray-sum
+    //var sol = new MinimumSizeSubarraySum();
+    //sol.MinSubArrayLen(7, new[] { 2, 3, 1, 2, 4, 3 });
+}
+
+{
+    // https://leetcode.com/problems/simplify-path
+    var sol = new SimplifyPath();
+    sol.SimplifyPathSol("/a/./b/../../c/");
 }
