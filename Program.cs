@@ -1,4 +1,5 @@
-﻿using Sandbox.Solutions.Easy;
+﻿using Sandbox.DataStructures;
+using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
 
@@ -1598,6 +1599,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/simplify-path
-    var sol = new SimplifyPath();
-    sol.SimplifyPathSol("/a/./b/../../c/");
+    //var sol = new SimplifyPath();
+    //sol.SimplifyPathSol("/a/./b/../../c/");
+}
+
+{
+    // https://leetcode.com/problems/partition-list
+    var sol = new PartitionList();
+    sol.Partition(new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2)))))), 3);
 }
