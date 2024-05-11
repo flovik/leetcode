@@ -1605,6 +1605,44 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/partition-list
-    var sol = new PartitionList();
-    sol.Partition(new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2)))))), 3);
+    //var sol = new PartitionList();
+    //sol.Partition(new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2)))))), 3);
+}
+
+{
+    // https://leetcode.com/problems/h-index/
+    //var sol = new HIndex();
+    //sol.HIndexSol(new int[] { 3, 0, 6, 1, 5 });
+}
+
+{
+    // https://leetcode.com/problems/insert-delete-getrandom-o1
+}
+
+{
+    // https://leetcode.com/problems/reconstruct-itinerary/description/
+    var sol = new ReconstructItinerary();
+    sol.FindItinerary(new List<IList<string>>
+    {
+        new List<string>
+        {
+            "JFK","SFO"
+        },
+        new List<string>
+        {
+            "JFK","ATL"
+        },
+        new List<string>
+        {
+            "SFO","ATL"
+        },
+        new List<string>
+        {
+            "ATL","JFK"
+        },
+        new List<string>
+        {
+            "ATL","SFO"
+        },
+    });
 }
