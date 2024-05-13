@@ -1621,28 +1621,51 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/reconstruct-itinerary/description/
-    var sol = new ReconstructItinerary();
-    sol.FindItinerary(new List<IList<string>>
-    {
-        new List<string>
-        {
-            "JFK","SFO"
-        },
-        new List<string>
-        {
-            "JFK","ATL"
-        },
-        new List<string>
-        {
-            "SFO","ATL"
-        },
-        new List<string>
-        {
-            "ATL","JFK"
-        },
-        new List<string>
-        {
-            "ATL","SFO"
-        },
-    });
+    //var sol = new ReconstructItinerary();
+    //sol.FindItinerary(new List<IList<string>>
+    //{
+    //    new List<string>
+    //    {
+    //        "JFK","SFO"
+    //    },
+    //    new List<string>
+    //    {
+    //        "JFK","ATL"
+    //    },
+    //    new List<string>
+    //    {
+    //        "SFO","ATL"
+    //    },
+    //    new List<string>
+    //    {
+    //        "ATL","JFK"
+    //    },
+    //    new List<string>
+    //    {
+    //        "ATL","SFO"
+    //    },
+    //});
+}
+
+{
+    //var sol = new CheckifGridSatisfiesConditions();
+    //sol.SatisfiesConditions(new int[][]
+    //{
+    //    new[] { 1, 0, 2 },
+    //    new[] { 1, 0, 2 }
+    //});
+}
+
+{
+    //var sol = new MaximumPointsInsideTheSquare();
+    //sol.MaxPointsInsideSquare(new int[][]
+    //{
+    //    new[] { 1, -1 }
+    //}, "a");
+}
+
+{
+    // https://leetcode.com/contest/biweekly-contest-130/problems/minimum-substring-partition-of-equal-character-frequency/
+    var sol = new MinimumSubstringPartitionofEqualCharacterFrequency();
+    sol.MinimumSubstringsInPartition("ababcc");
 }
