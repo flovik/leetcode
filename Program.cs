@@ -1666,6 +1666,46 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/contest/biweekly-contest-130/problems/minimum-substring-partition-of-equal-character-frequency/
-    var sol = new MinimumSubstringPartitionofEqualCharacterFrequency();
-    sol.MinimumSubstringsInPartition("ababcc");
+    //var sol = new MinimumSubstringPartitionofEqualCharacterFrequency();
+    //sol.MinimumSubstringsInPartition("ababcc");
+}
+
+{
+    // https://leetcode.com/problems/largest-divisible-subset/description/
+    //var sol = new LargestDivisibleSubset();
+    //sol.LargestDivisibleSubsetSol(new int[] { 5, 9, 18, 36 });
+}
+
+{
+    // https://leetcode.com/problems/maximum-length-of-pair-chain/description/
+    //var sol = new MaximumLengthofPairChain();
+    //sol.FindLongestChain(new int[][]
+    //{
+    //    new int[]
+    //    {
+    //        1, 2
+    //    },
+    //    new int[]
+    //    {
+    //        2, 3
+    //    },
+    //    new int[]
+    //    {
+    //        3, 4
+    //    },
+    //    new int[]
+    //    {
+    //        4, 5
+    //    },
+    //    new int[]
+    //    {
+    //        7 ,9
+    //    },
+    //});
+}
+
+{
+    // https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
+    var sol = new NumberofLongestIncreasingSubsequence();
+    sol.FindNumberOfLIS(new int[] { 1, 3, 5, 4, 7 });
 }
