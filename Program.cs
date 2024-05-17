@@ -1706,6 +1706,20 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
-    var sol = new NumberofLongestIncreasingSubsequence();
-    sol.FindNumberOfLIS(new int[] { 1, 3, 5, 4, 7 });
+    //var sol = new NumberofLongestIncreasingSubsequence();
+    //sol.FindNumberOfLIS(new int[] { 1, 3, 5, 4, 7 });
+}
+
+{
+    //var sol = new DeleteAndEarn();
+    //sol.DeleteAndEarnSol(new int[]
+    //{
+    //    1, 1, 1
+    //});
+}
+
+{
+    // https://leetcode.com/problems/longest-string-chain/description/
+    var sol = new LongestStringChain();
+    sol.LongestStrChain(new[] { "a", "b", "ba", "bca", "bda", "bdca" });
 }
