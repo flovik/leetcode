@@ -1720,6 +1720,43 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-string-chain/description/
-    var sol = new LongestStringChain();
-    sol.LongestStrChain(new[] { "a", "b", "ba", "bca", "bda", "bdca" });
+    //var sol = new LongestStringChain();
+    //sol.LongestStrChain(new[] { "a", "b", "ba", "bca", "bda", "bdca" });
+}
+
+{
+    // https://leetcode.com/problems/russian-doll-envelopes/description/
+    var sol = new RussianDollEnvelopes();
+    //sol.MaxEnvelopes(new int[][]
+    //{
+    //    new[] { 2, 100 },
+    //    new[] { 3, 200 },
+    //    new[] { 4, 300 },
+    //    new[] { 5, 500 },
+    //    new[] { 5, 400 },
+    //    new[] { 5, 250 },
+    //    new[] { 6, 370 },
+    //    new[] { 6, 360 },
+    //    new[] { 7, 380 },
+    //});
+    //sol.MaxEnvelopes(new int[][]
+    //{
+    //    new[] {15,8}, new[] {2,20}, new[] {2,14}, new[] {4,17},
+    //    new[] {8,19}, new[] {8,9}, new[] {5,7}, new[] {11,19},
+    //    new[] {8,11}, new[] {13,11}, new[] {2,13}, new[] {11,19},
+    //    new[] {8,11}, new[] {13,11}, new[] {2,13}, new[] {11,19},
+    //    new[] {16,1}, new[] {18,13}, new[] {14,17}, new[] {18,19}
+    //});
+}
+
+{
+    //var sol = new PartitionEqualSubsetSum();
+    //sol.CanPartitionDp(new int[] { 1, 4, 4, 7 });
+}
+
+{
+    // https://leetcode.com/problems/last-stone-weight-ii/description/
+    var sol = new LastStoneWeight2();
+    //sol.LastStoneWeightII(new[] { 1, 2 });
+    sol.LastStoneWeightIIDp(new int[] { 31, 26, 33, 21, 40 });
 }
