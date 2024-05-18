@@ -37,4 +37,31 @@ public class PartitionEqualSubsetSum
 
         return false;
     }
+
+    public bool CanPartitionDp(int[] nums)
+    {
+        // knapsack 0/1
+        var sum = nums.Sum();
+
+        if (sum % 2 == 1)
+            return false;
+
+        sum /= 2;
+
+        var dp = new bool[sum + 1];
+        dp[0] = true;
+
+        foreach (var num in nums)
+        {
+            for (int j = sum; j > 0; j--)
+            {
+                if (j < num)
+                    continue;
+
+                dp[j] = dp[j - num] || dp[j];
+            }
+        }
+
+        return dp[sum];
+    }
 }
