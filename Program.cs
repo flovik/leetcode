@@ -1764,6 +1764,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/special-array-ii/description/
-    var sol = new SpecialArray2();
-    sol.IsArraySpecial(new[] { 4, 3, 1, 6 }, new[] { new[] { 0, 2 }, new[] { 2, 3 } });
+    //var sol = new SpecialArray2();
+    //sol.IsArraySpecial(new[] { 4, 3, 1, 6 }, new[] { new[] { 0, 2 }, new[] { 2, 3 } });
+}
+
+{
+    // https://leetcode.com/problems/sum-of-digit-differences-of-all-pairs/description/
+    var sol = new SumOfDigitDifferencesOfAllPairs();
+    sol.SumDigitDifferences(new int[] { 554, 528 });
 }
