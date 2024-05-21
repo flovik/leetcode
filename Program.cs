@@ -1,4 +1,5 @@
-﻿using Sandbox.DataStructures;
+﻿using NUnit.Framework.Constraints;
+using Sandbox.DataStructures;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
@@ -1756,7 +1757,13 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/last-stone-weight-ii/description/
-    var sol = new LastStoneWeight2();
-    //sol.LastStoneWeightII(new[] { 1, 2 });
-    sol.LastStoneWeightIIDp(new int[] { 31, 26, 33, 21, 40 });
+    //var sol = new LastStoneWeight2();
+    ////sol.LastStoneWeightII(new[] { 1, 2 });
+    //sol.LastStoneWeightIIDp(new int[] { 31, 26, 33, 21, 40 });
+}
+
+{
+    // https://leetcode.com/problems/special-array-ii/description/
+    var sol = new SpecialArray2();
+    sol.IsArraySpecial(new[] { 4, 3, 1, 6 }, new[] { new[] { 0, 2 }, new[] { 2, 3 } });
 }
