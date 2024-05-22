@@ -1770,6 +1770,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/sum-of-digit-differences-of-all-pairs/description/
-    var sol = new SumOfDigitDifferencesOfAllPairs();
-    sol.SumDigitDifferences(new int[] { 554, 528 });
+    //var sol = new SumOfDigitDifferencesOfAllPairs();
+    //sol.SumDigitDifferences(new int[] { 554, 528 });
+}
+
+{
+    // https://leetcode.com/problems/combination-sum-iv/description/
+    var sol = new CombinationSum4();
+    sol.CombinationSum4Sol(new int[] { 1, 2, 3 }, 5);
 }
