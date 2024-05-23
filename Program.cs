@@ -1776,6 +1776,11 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/combination-sum-iv/description/
-    var sol = new CombinationSum4();
-    sol.CombinationSum4Sol(new int[] { 1, 2, 3 }, 5);
+    //var sol = new CombinationSum4();
+    //sol.CombinationSum4Sol(new int[] { 1, 2, 3 }, 5);
+}
+
+{
+    var sol = new PartitiontoKEqualSumSubsets();
+    sol.CanPartitionKSubsets(new[] { 4, 3, 2, 3, 5, 2, 1 }, 4);
 }
