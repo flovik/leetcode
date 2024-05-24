@@ -1781,6 +1781,18 @@ using Sandbox.Solutions.Medium;
 }
 
 {
-    var sol = new PartitiontoKEqualSumSubsets();
-    sol.CanPartitionKSubsets(new[] { 4, 3, 2, 3, 5, 2, 1 }, 4);
+    //var sol = new PartitiontoKEqualSumSubsets();
+    //sol.CanPartitionKSubsets(new[] { 4, 3, 2, 3, 5, 2, 1 }, 4);
+}
+
+{
+    // https://leetcode.com/problems/perfect-squares/description/
+    //var sol = new PerfectSquaresSol();
+    //sol.NumSquares(10000);
+}
+
+{
+    // https://leetcode.com/problems/minimum-cost-for-tickets/description/
+    var sol = new MinimumCostForTickets();
+    sol.MincostTickets(new[] { 1, 4, 6, 7, 8, 20 }, new[] { 2, 7, 15 });
 }
