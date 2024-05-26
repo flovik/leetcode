@@ -1793,6 +1793,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/minimum-cost-for-tickets/description/
-    var sol = new MinimumCostForTickets();
-    sol.MincostTickets(new[] { 1, 4, 6, 7, 8, 20 }, new[] { 2, 7, 15 });
+    //var sol = new MinimumCostForTickets();
+    //sol.MincostTickets(new[] { 1, 4, 6, 7, 8, 20 }, new[] { 2, 7, 15 });
+}
+
+{
+    // https://leetcode.com/problems/longest-arithmetic-subsequence/description/
+    var sol = new LongestArithmeticSubsequence();
+    sol.LongestArithSeqLength(new int[] { 44, 46, 22, 68, 45, 66, 43, 9, 37, 30, 50, 67, 32, 47, 44, 11, 15, 4, 11, 6, 20, 64, 54, 54, 61, 63, 23, 43, 3, 12, 51, 61, 16, 57, 14, 12, 55, 17, 18, 25, 19, 28, 45, 56, 29, 39, 52, 8, 1, 21, 17, 21, 23, 70, 51, 61, 21, 52, 25, 28 });
 }
