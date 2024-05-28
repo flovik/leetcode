@@ -1805,6 +1805,26 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/
-    var sol = new LongestArithmeticSubsequenceofGivenDifference();
-    sol.LongestSubsequence(new int[] { 1, 5, 7, 8, 5, 3, 4, 2, 1 }, -2);
+    //var sol = new LongestArithmeticSubsequenceofGivenDifference();
+    //sol.LongestSubsequence(new int[] { 1, 5, 7, 8, 5, 3, 4, 2, 1 }, -2);
+}
+
+{
+    // https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/description/
+    //var sol = new MaximumProductofSplittedBinaryTree();
+    //sol.MaxProduct(new TreeNode(1, null,
+    //    new TreeNode(2, new TreeNode(3), new TreeNode(4, new TreeNode(5), new TreeNode(6)))));
+}
+
+{
+    // https://leetcode.com/problems/matrix-block-sum/description/
+    var sol = new MatrixBlockSum();
+    sol.MatrixBlockSumSol(new int[][]
+    {
+        new[] { 67, 64, 78 },
+        new[] { 99, 98, 38 },
+        new[] { 82, 46, 46 },
+        new[] { 6,52,55 },
+        new[] { 55,99,45 },
+    }, 1);
 }
