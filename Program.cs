@@ -1818,13 +1818,17 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/matrix-block-sum/description/
-    var sol = new MatrixBlockSum();
-    sol.MatrixBlockSumSol(new int[][]
-    {
-        new[] { 67, 64, 78 },
-        new[] { 99, 98, 38 },
-        new[] { 82, 46, 46 },
-        new[] { 6,52,55 },
-        new[] { 55,99,45 },
-    }, 1);
+    //var sol = new MatrixBlockSum();
+    //sol.MatrixBlockSumSol(new int[][]
+    //{
+    //    new[] { 67, 64, 78 },
+    //    new[] { 99, 98, 38 },
+    //    new[] { 82, 46, 46 },
+    //    new[] { 6,52,55 },
+    //    new[] { 55,99,45 },
+    //}, 1);
+}
+
+{
+    // https://leetcode.com/problems/range-sum-query-2d-immutable/description/
 }
