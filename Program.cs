@@ -1835,12 +1835,16 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/dungeon-game/description/
-    var sol = new DungeonGame();
-    sol.CalculateMinimumHP(
-        new int[][]
-        {
-            new[] { -2, -3, 3 },
-            new[] { -5, -10, 1 },
-            new []{10, 30, -5}
-        });
+    //var sol = new DungeonGame();
+    //sol.CalculateMinimumHP(
+    //    new int[][]
+    //    {
+    //        new[] { -2, -3, 3 },
+    //        new[] { -5, -10, 1 },
+    //        new []{10, 30, -5}
+    //    });
+}
+
+{
+    // https://leetcode.com/problems/triangle/description/
 }
