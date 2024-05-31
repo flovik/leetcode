@@ -1832,3 +1832,15 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/range-sum-query-2d-immutable/description/
 }
+
+{
+    // https://leetcode.com/problems/dungeon-game/description/
+    var sol = new DungeonGame();
+    sol.CalculateMinimumHP(
+        new int[][]
+        {
+            new[] { -2, -3, 3 },
+            new[] { -5, -10, 1 },
+            new []{10, 30, -5}
+        });
+}
