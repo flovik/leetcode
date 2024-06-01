@@ -1870,6 +1870,7 @@ using Sandbox.Solutions.Medium;
 }
 
 {
+    // delete and earn
     int DeleteAndEarn(int[] nums)
     {
         var dict = new Dictionary<int, int>(nums.Length);
@@ -1895,5 +1896,27 @@ using Sandbox.Solutions.Medium;
         }
 
         return dp[max];
+    }
+}
+
+{
+    // combination sum 4
+    int CombinationSum4(int[] nums, int target)
+    {
+        var dp = new int[target + 1];
+        dp[0] = 1;
+
+        for (var i = 1; i <= target; i++)
+        {
+            foreach (var num in nums)
+            {
+                if (num > i)
+                    continue;
+
+                dp[i] += dp[i - num];
+            }
+        }
+
+        return dp[target];
     }
 }
