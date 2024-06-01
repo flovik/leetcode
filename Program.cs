@@ -1860,11 +1860,40 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/minimum-falling-path-sum/
-    var sol = new MinimumFallingPathSum();
-    sol.MinFallingPathSum(new int[][]
+    //var sol = new MinimumFallingPathSum();
+    //sol.MinFallingPathSum(new int[][]
+    //{
+    //    new int[] { 2, 1, 3 },
+    //    new int[] { 6, 5, 4 },
+    //    new int[] { 7, 8, 9 },
+    //});
+}
+
+{
+    int DeleteAndEarn(int[] nums)
     {
-        new int[] { 2, 1, 3 },
-        new int[] { 6, 5, 4 },
-        new int[] { 7, 8, 9 },
-    });
+        var dict = new Dictionary<int, int>(nums.Length);
+        var max = 0;
+
+        foreach (var num in nums)
+        {
+            if (dict.ContainsKey(num))
+                dict[num] += num;
+            else
+                dict.Add(num, num);
+
+            max = Math.Max(max, num);
+        }
+
+        var dp = new int[max + 1];
+        dp[1] = dict.GetValueOrDefault(1, 0);
+
+        for (var i = 2; i <= max; i++)
+        {
+            var cur = dict.GetValueOrDefault(i, 0);
+            dp[i] = Math.Max(dp[i - 1], dp[i - 2] + cur);
+        }
+
+        return dp[max];
+    }
 }
