@@ -1851,9 +1851,20 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/maximal-square/description/
-    var sol = new MaximumSquare();
-    sol.MaximalSquare(new[]
+    //var sol = new MaximumSquare();
+    //sol.MaximalSquare(new[]
+    //{
+    //    new []{'0', '1'},
+    //});
+}
+
+{
+    // https://leetcode.com/problems/minimum-falling-path-sum/
+    var sol = new MinimumFallingPathSum();
+    sol.MinFallingPathSum(new int[][]
     {
-        new []{'0', '1'},
+        new int[] { 2, 1, 3 },
+        new int[] { 6, 5, 4 },
+        new int[] { 7, 8, 9 },
     });
 }
