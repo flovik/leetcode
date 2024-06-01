@@ -1848,3 +1848,12 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/triangle/description/
 }
+
+{
+    // https://leetcode.com/problems/maximal-square/description/
+    var sol = new MaximumSquare();
+    sol.MaximalSquare(new[]
+    {
+        new []{'0', '1'},
+    });
+}
