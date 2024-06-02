@@ -1920,3 +1920,9 @@ using Sandbox.Solutions.Medium;
         return dp[target];
     }
 }
+
+{
+    // https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/
+    var sol = new CheckifThereisaValidPartitionForTheArray();
+    sol.ValidPartition(new int[] { 803201, 803201, 803201, 803201, 803202, 803203 });
+}
