@@ -2004,21 +2004,68 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/daily-temperatures/description/
-    int[] temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
-    var monoStack = new Stack<int>(temperatures.Length);
+    //int[] temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
+    // the logic of monotonic stack is to keep in stack the biggest element UNTIL
+    // a new biggest element is not found, here is actually a decreasing mono stack
+    //var monoStack = new Stack<int>(temperatures.Length);
 
-    var greater = new int[temperatures.Length];
+    //var greater = new int[temperatures.Length];
 
-    for (int i = 0; i < temperatures.Length; i++)
+    //for (int i = 0; i < temperatures.Length; i++)
+    //{
+    //    while (monoStack.Count > 0 && temperatures[monoStack.Peek()] < temperatures[i])
+    //    {
+    //        var st = monoStack.Pop();
+    //        greater[st] = i - st; // how far we've found the greater temperature
+    //    }
+
+    //    monoStack.Push(i);
+    //}
+
+    //return greater;
+}
+
+{
+    // https://leetcode.com/problems/car-fleet/
+
+    var sol = CarFleet(17, new[] { 8, 12, 16, 11, 7 }, new[] { 6, 9, 10, 9, 7 });
+
+    int CarFleet(int target, int[] position, int[] speed)
     {
-        while (monoStack.Count > 0 && temperatures[monoStack.Peek()] < temperatures[i])
+        // we need strictly increasing monotonic stack
+        // because we can merge cars together based on formula
+        // (target - curPos) / speed
+        // and if the new fleet value bigger or equal to top of stack (bigger means will get to destination slower), then merge them
+
+        var monoStack = new Stack<(int, double)>(position.Length);
+        var minHeap = new PriorityQueue<(int, double), int>(position.Length);
+
+        for (int i = 0; i < position.Length; i++)
         {
-            var st = monoStack.Pop();
-            greater[st] = i - st; // how far we've found the greater temperature
+            minHeap.Enqueue((position[i], speed[i]), position[i]);
         }
 
-        monoStack.Push(i);
-    }
+        var (firstFleetPos, firstFleetSpeed) = minHeap.Dequeue();
+        monoStack.Push((firstFleetPos, firstFleetSpeed));
 
-    return greater;
+        while (minHeap.Count != 0)
+        {
+            var (currentPos, currentSpeed) = minHeap.Dequeue();
+
+            while (monoStack.Count > 0 &&
+                   EstimatedTimeOfArrival(monoStack.Peek().Item1, monoStack.Peek().Item2) <= EstimatedTimeOfArrival(currentPos, currentSpeed))
+            {
+                var (_, prevSpeed) = monoStack.Pop();
+                var newSpeed = Math.Min(prevSpeed, currentSpeed);
+                currentSpeed = newSpeed;
+            }
+
+            monoStack.Push((currentPos, currentSpeed));
+        }
+
+        return monoStack.Count;
+
+        // we need Ceiling, because we can have (10 - 6) / 3 which should be treated as 2, not 1
+        double EstimatedTimeOfArrival(int currentPosition, double currentSpeed) => (target - currentPosition) / currentSpeed;
+    }
 }
