@@ -1998,6 +1998,27 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/next-greater-element-iii/description/
-    var sol = new NextGreaterElement3();
-    sol.NextGreaterElement(21);
+    //var sol = new NextGreaterElement3();
+    //sol.NextGreaterElement(21);
+}
+
+{
+    // https://leetcode.com/problems/daily-temperatures/description/
+    int[] temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
+    var monoStack = new Stack<int>(temperatures.Length);
+
+    var greater = new int[temperatures.Length];
+
+    for (int i = 0; i < temperatures.Length; i++)
+    {
+        while (monoStack.Count > 0 && temperatures[monoStack.Peek()] < temperatures[i])
+        {
+            var st = monoStack.Pop();
+            greater[st] = i - st; // how far we've found the greater temperature
+        }
+
+        monoStack.Push(i);
+    }
+
+    return greater;
 }
