@@ -1989,3 +1989,15 @@ using Sandbox.Solutions.Medium;
         return sb.Length == 0 ? "0" : sb.ToString();
     }
 }
+
+{
+    // https://leetcode.com/problems/next-greater-element-ii/description/
+    //var sol = new NextGreaterElement2();
+    //sol.NextGreaterElements(new int[] { 1, 2, 2, 4, 3 });
+}
+
+{
+    // https://leetcode.com/problems/next-greater-element-iii/description/
+    var sol = new NextGreaterElement3();
+    sol.NextGreaterElement(21);
+}
