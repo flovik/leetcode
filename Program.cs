@@ -1,4 +1,5 @@
-﻿using NUnit.Framework.Constraints;
+﻿using System.Text;
+using NUnit.Framework.Constraints;
 using Sandbox.DataStructures;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
@@ -1923,6 +1924,68 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/
-    var sol = new CheckifThereisaValidPartitionForTheArray();
-    sol.ValidPartition(new int[] { 803201, 803201, 803201, 803201, 803202, 803203 });
+    //var sol = new CheckifThereisaValidPartitionForTheArray();
+    //sol.ValidPartition(new int[] { 803201, 803201, 803201, 803201, 803202, 803203 });
+}
+
+{
+    // https://leetcode.com/problems/next-greater-element-i/description/
+    //var sol = new NextGreaterElement1();
+    //sol.NextGreaterElement(new int[] { 4, 1, 2 }, new int[] { 1, 3, 4, 2 });
+}
+
+{
+    // https://leetcode.com/problems/remove-k-digits/description/
+
+    RemoveKdigits("1432219", 3);
+
+    string RemoveKdigits(string num, int k)
+    {
+        if (num.Length <= k)
+            return "0";
+
+        if (k == 0)
+            return num;
+
+        var monoStack = new Stack<int>(k);
+
+        for (var i = 0; i < num.Length; i++)
+        {
+            // here the operator is increasing, so it will generate the increasing order
+            while (k > 0 && monoStack.Count > 0 && num[monoStack.Peek()] > num[i])
+            {
+                monoStack.Pop();
+                k--;
+            }
+
+            // ignore leading zeros (if still in that for loop)
+            if (monoStack.Count == 0 && num[i] == '0')
+                continue;
+
+            monoStack.Push(i);
+        }
+
+        // only increasing num "112"
+        while (k > 0 && monoStack.Count > 0)
+        {
+            k--;
+            monoStack.Pop();
+        }
+
+        var sb = new StringBuilder(monoStack.Count);
+
+        // add another stack to reverse string
+        var stack = new Stack<int>(monoStack.Count);
+
+        while (monoStack.Count > 0)
+            stack.Push(monoStack.Pop());
+
+        while (stack.Count > 0)
+        {
+            var i = stack.Pop();
+            sb.Append(num[i]);
+        }
+
+        return sb.Length == 0 ? "0" : sb.ToString();
+    }
 }
