@@ -2081,3 +2081,62 @@ using Sandbox.Solutions.Medium;
     //var sol = new MaximumSubarrayMinProduct();
     //sol.MaxSumMinProduct(new int[] { 2, 3, 3, 1, 2 });
 }
+
+{
+    // https://leetcode.com/problems/trapping-rain-water/description/
+    var sol = Trap(new int[] { 766, 576, 765 });
+    int Trap(int[] height)
+    {
+        var result = 0;
+        var size = height.Length;
+        var monoStack = new Stack<int>(size);
+        var nextGreater = new int[size];
+
+        Array.Fill(nextGreater, -1);
+
+        for (var i = 0; i < size; i++)
+        {
+            while (monoStack.Count > 0 && height[monoStack.Peek()] <= height[i])
+            {
+                var st = monoStack.Pop();
+                nextGreater[st] = i;
+            }
+
+            // add previous greater, consider 766, 576, 765
+            if (monoStack.Count > 0)
+                nextGreater[monoStack.Peek()] = i;
+
+            monoStack.Push(i);
+        }
+
+        // distance between two indexes should be at least 2
+        for (int i = 0; i < nextGreater.Length; i++)
+        {
+            if (nextGreater[i] == -1)
+                continue;
+
+            if (nextGreater[i] - i < 2)
+                continue;
+
+            // choose min height of two heights
+            var hgt = Math.Min(height[i], height[nextGreater[i]]);
+            int left = i + 1, right = nextGreater[i] - 1;
+            var sum = 0;
+
+            while (left <= right)
+            {
+                var curHeight = hgt - height[left];
+                sum += curHeight;
+                left++;
+            }
+
+            if (sum <= 0)
+                continue;
+
+            result += sum;
+            i = right; // skip already processed section
+        }
+
+        return result;
+    }
+}
