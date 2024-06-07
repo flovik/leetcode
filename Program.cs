@@ -2143,7 +2143,7 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/minimum-cost-for-tickets/description/
-    var sol = MincostTickets(new[] { 1, 2, 3, 4, 6, 8, 9, 10, 13, 14, 16, 17, 19, 21, 24, 26, 27, 28, 29 }, new[] { 3, 14, 50 });
+    //var sol = MincostTickets(new[] { 1, 2, 3, 4, 6, 8, 9, 10, 13, 14, 16, 17, 19, 21, 24, 26, 27, 28, 29 }, new[] { 3, 14, 50 });
     int MincostTickets(int[] days, int[] costs)
     {
         // coin change
@@ -2180,5 +2180,40 @@ using Sandbox.Solutions.Medium;
         }
 
         return dp[^1];
+    }
+}
+
+{
+    // https://leetcode.com/problems/longest-increasing-subsequence/description/
+    var sol = LengthOfLIS(new int[] { 1, 3, 6, 7, 9, 4, 10, 5, 6 });
+    int LengthOfLIS(int[] nums)
+    {
+        var dp = new int[nums.Length];
+        Array.Fill(dp, 1);
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                if (nums[i] <= nums[j])
+                    continue;
+
+                dp[i] = Math.Max(dp[i], dp[j] + 1);
+            }
+        }
+
+        return dp.Max();
+    }
+}
+
+{
+    // https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
+    // Number of Longest Increasing Subsequence
+    var sol = FindNumberOfLIS(new int[] { 1, 3, 5, 4, 7 });
+    int FindNumberOfLIS(int[] nums)
+    {
+        var result = 0;
+
+        return result;
     }
 }
