@@ -2084,7 +2084,7 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/trapping-rain-water/description/
-    var sol = Trap(new int[] { 766, 576, 765 });
+    //var sol = Trap(new int[] { 766, 576, 765 });
     int Trap(int[] height)
     {
         var result = 0;
@@ -2138,5 +2138,47 @@ using Sandbox.Solutions.Medium;
         }
 
         return result;
+    }
+}
+
+{
+    // https://leetcode.com/problems/minimum-cost-for-tickets/description/
+    var sol = MincostTickets(new[] { 1, 2, 3, 4, 6, 8, 9, 10, 13, 14, 16, 17, 19, 21, 24, 26, 27, 28, 29 }, new[] { 3, 14, 50 });
+    int MincostTickets(int[] days, int[] costs)
+    {
+        // coin change
+        var daysCount = days[^1];
+        var dp = new int[daysCount + 1];
+        Array.Fill(dp, int.MaxValue);
+
+        dp[0] = 0;
+
+        var currentDayIndex = 0;
+        for (var i = 1; i <= daysCount; i++)
+        {
+            // skip unneeded days
+            if (days[currentDayIndex] != i)
+            {
+                dp[i] = dp[i - 1];
+                continue;
+            }
+
+            for (var j = 0; j < costs.Length; j++)
+            {
+                var cost = j switch
+                {
+                    0 => costs[0] + dp[Math.Clamp(i - 1, 0, dp.Length)],
+                    1 => costs[1] + dp[Math.Clamp(i - 7, 0, dp.Length)],
+                    2 => costs[2] + dp[Math.Clamp(i - 30, 0, dp.Length)],
+                    _ => 0
+                };
+
+                dp[i] = Math.Min(dp[i], cost);
+            }
+
+            currentDayIndex++;
+        }
+
+        return dp[^1];
     }
 }
