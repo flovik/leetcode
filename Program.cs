@@ -2185,7 +2185,7 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/longest-increasing-subsequence/description/
-    var sol = LengthOfLIS(new int[] { 1, 3, 6, 7, 9, 4, 10, 5, 6 });
+    //var sol = LengthOfLIS(new int[] { 1, 3, 6, 7, 9, 4, 10, 5, 6 });
     int LengthOfLIS(int[] nums)
     {
         var dp = new int[nums.Length];
@@ -2209,10 +2209,46 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
     // Number of Longest Increasing Subsequence
-    var sol = FindNumberOfLIS(new int[] { 1, 3, 5, 4, 7 });
+    var sol = FindNumberOfLIS(new int[] { 6, 5, 6, 5, 5, 2, 5, 1, 9, 4 });
     int FindNumberOfLIS(int[] nums)
     {
+        var dp = new int[nums.Length];
+        Array.Fill(dp, 1);
+
+        // for each increasing sequence length (!) calculate their number of increasing sequences
+        var count = new int[nums.Length];
+        Array.Fill(count, 1);
+        var max = 0;
+
+        for (var i = 0; i < nums.Length; i++)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                if (nums[i] <= nums[j])
+                    continue;
+
+                if (dp[j] + 1 > dp[i])
+                {
+                    dp[i] = dp[j] + 1;
+
+                    // if j-th paths were 2, so out current i will also have 2 paths
+                    count[i] = count[j];
+                }
+
+                // subsequence of same len
+                else if (dp[j] + 1 == dp[i])
+                    count[i] += count[j];
+            }
+
+            max = Math.Max(max, dp[i]);
+        }
+
         var result = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (dp[i] == max)
+                result += count[i];
+        }
 
         return result;
     }
