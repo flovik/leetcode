@@ -2072,12 +2072,12 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/largest-rectangle-in-histogram/description/
-    var sol = new LargestRectangleInHistogram();
-    sol.LargestRectangleArea(new int[] { 2, 1, 5, 6, 2, 3 });
+    //var sol = new LargestRectangleInHistogram();
+    //sol.LargestRectangleArea(new int[] { 2, 1, 5, 6, 2, 3 });
 }
 
 {
     // https://leetcode.com/problems/maximum-subarray-min-product/description/
-    var sol = new MaximumSubarrayMinProduct();
-    sol.MaxSumMinProduct(new int[] { 2, 3, 3, 1, 2 });
+    //var sol = new MaximumSubarrayMinProduct();
+    //sol.MaxSumMinProduct(new int[] { 2, 3, 3, 1, 2 });
 }
