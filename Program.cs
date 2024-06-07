@@ -2028,7 +2028,7 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/car-fleet/
 
-    var sol = CarFleet(17, new[] { 8, 12, 16, 11, 7 }, new[] { 6, 9, 10, 9, 7 });
+    //var sol = CarFleet(17, new[] { 8, 12, 16, 11, 7 }, new[] { 6, 9, 10, 9, 7 });
 
     int CarFleet(int target, int[] position, int[] speed)
     {
@@ -2068,4 +2068,16 @@ using Sandbox.Solutions.Medium;
         // we need Ceiling, because we can have (10 - 6) / 3 which should be treated as 2, not 1
         double EstimatedTimeOfArrival(int currentPosition, double currentSpeed) => (target - currentPosition) / currentSpeed;
     }
+}
+
+{
+    // https://leetcode.com/problems/largest-rectangle-in-histogram/description/
+    var sol = new LargestRectangleInHistogram();
+    sol.LargestRectangleArea(new int[] { 2, 1, 5, 6, 2, 3 });
+}
+
+{
+    // https://leetcode.com/problems/maximum-subarray-min-product/description/
+    var sol = new MaximumSubarrayMinProduct();
+    sol.MaxSumMinProduct(new int[] { 2, 3, 3, 1, 2 });
 }
