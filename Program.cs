@@ -2209,7 +2209,7 @@ using Sandbox.Solutions.Medium;
 {
     // https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
     // Number of Longest Increasing Subsequence
-    var sol = FindNumberOfLIS(new int[] { 6, 5, 6, 5, 5, 2, 5, 1, 9, 4 });
+    //var sol = FindNumberOfLIS(new int[] { 6, 5, 6, 5, 5, 2, 5, 1, 9, 4 });
     int FindNumberOfLIS(int[] nums)
     {
         var dp = new int[nums.Length];
@@ -2251,5 +2251,93 @@ using Sandbox.Solutions.Medium;
         }
 
         return result;
+    }
+}
+
+{
+    // https://leetcode.com/problems/increasing-triplet-subsequence/description/
+    var sol = new IncreasingTripletSubsequence();
+    //sol.IncreasingTriplet(new int[] { 2, 1, 5, 0, 4, 6 });
+}
+
+{
+    string ClearDigits(string s)
+    {
+        // remove all digits
+        // delete first digit and closest non-digit to its left
+        var stack = new Stack<char>(s.Length);
+
+        foreach (var ch in s)
+        {
+            if (char.IsLetter(ch))
+            {
+                stack.Push(ch);
+            }
+            else
+            {
+                if (char.IsLetter(stack.Peek()))
+                    stack.Pop();
+                else
+                    stack.Push(ch);
+            }
+        }
+
+        var result = new char[stack.Count];
+
+        int index = stack.Count - 1;
+        while (stack.Count > 0)
+        {
+            result[index] = stack.Pop();
+            index--;
+        }
+
+        return result.Length == 0 ? "" : new string(result);
+    }
+}
+
+{
+    int FindWinningPlayer(int[] skills, int k)
+    {
+        var linkedList = new LinkedList<int>();
+        var dict = new Dictionary<int, int>(skills.Length);
+        var max = 0;
+
+        for (int i = 0; i < skills.Length; i++)
+        {
+            var skill = skills[i];
+            linkedList.AddLast(skill);
+            dict.Add(skill, i);
+            max = Math.Max(max, skill);
+        }
+
+        var currentWinStreak = 0;
+
+        // using deque would simplify things
+        while (currentWinStreak != k)
+        {
+            var firstPlayer = linkedList.First;
+            var secondPlayer = linkedList.First.Next;
+
+            if (firstPlayer.Value == max)
+                return dict[firstPlayer.Value];
+
+            if (firstPlayer.Value > secondPlayer.Value)
+            {
+                currentWinStreak++;
+                linkedList.RemoveFirst();
+                linkedList.RemoveFirst();
+
+                linkedList.AddFirst(firstPlayer);
+                linkedList.AddLast(secondPlayer);
+            }
+            else
+            {
+                currentWinStreak = 1;
+                linkedList.RemoveFirst();
+                linkedList.AddLast(firstPlayer);
+            }
+        }
+
+        return dict[linkedList.First.Value];
     }
 }
