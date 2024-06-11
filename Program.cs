@@ -2341,3 +2341,31 @@ using Sandbox.Solutions.Medium;
         return dict[linkedList.First.Value];
     }
 }
+
+{
+    // https://leetcode.com/problems/find-the-maximum-length-of-a-good-subsequence-i/description/
+    var sol = new FindtheMaximumLengthofaGoodSubsequenceI();
+    sol.MaximumLength(new int[] { 1, 2, 3, 2, 1 }, 2);
+}
+
+{
+    var sol = FindLongestChain(new int[][] { new int[] { 1, 2 }, new int[] { 2, 3 }, new[] { 3, 4 } });
+    // https://leetcode.com/problems/maximum-length-of-pair-chain/description/
+    int FindLongestChain(int[][] pairs)
+    {
+        Array.Sort(pairs, (a, b) => a[1].CompareTo(b[1]));
+        var previous = int.MinValue;
+        var result = 0;
+
+        foreach (var pair in pairs)
+        {
+            if (pair[0] <= previous)
+                continue;
+
+            previous = pair[1];
+            result++;
+        }
+
+        return result;
+    }
+}
