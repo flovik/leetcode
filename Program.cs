@@ -2369,3 +2369,77 @@ using Sandbox.Solutions.Medium;
         return result;
     }
 }
+
+{
+    var sol = NetworkDelayTime(new[] { new[] { 2, 1, 1 }, new[] { 2, 3, 1 }, new[] { 3, 4, 1 } }, 4, 2);
+    int NetworkDelayTime(int[][] times, int n, int k)
+    {
+        // dijkstra's algorithm
+        var adjacencyList = new Dictionary<int, List<(int, int)>>(n);
+
+        // initialize adjacency list
+        for (var i = 1; i <= n; i++)
+        {
+            adjacencyList.Add(i, new List<(int, int)>());
+        }
+
+        // populate adjacency list
+        foreach (var time in times)
+        {
+            var from = time[0];
+            var to = time[1];
+            var weight = time[2];
+
+            adjacencyList[from].Add((to, weight));
+        }
+
+        var source = k;
+        var visited = new bool[n + 1];
+        var distance = new int[n + 1];
+
+        Array.Fill(distance, int.MaxValue);
+
+        distance[0] = 0;
+        distance[source] = 0;
+
+        var queue = new Queue<int>(n);
+        var pq = new PriorityQueue<int, int>(n);
+
+        queue.Enqueue(source);
+
+        while (queue.Count > 0)
+        {
+            var from = queue.Dequeue();
+
+            // current is visited
+            visited[from] = true;
+
+            // analyze all edges of current node
+            pq.EnqueueRange(adjacencyList[from]);
+
+            while (pq.Count > 0)
+            {
+                pq.TryDequeue(out int to, out int w);
+
+                // not processed distance or better distance
+                if (distance[to] == int.MaxValue || distance[to] > distance[from] + w)
+                    distance[to] = distance[from] + w;
+
+                // new vertex found to process
+                if (!visited[to])
+                    queue.Enqueue(to);
+            }
+        }
+
+        // if any distance is MaxValue, then not every node is reachable
+        foreach (var d in distance)
+        {
+            if (d < int.MaxValue)
+                continue;
+
+            return -1;
+        }
+
+        return distance.Max();
+    }
+}
