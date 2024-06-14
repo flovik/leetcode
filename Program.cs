@@ -2443,3 +2443,9 @@ using Sandbox.Solutions.Medium;
         return distance.Max();
     }
 }
+
+{
+    // https://leetcode.com/problems/decode-string/description/
+    var sol = new DecodeStringSol();
+    sol.DecodeString("100[leetcode]");
+}
