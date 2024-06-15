@@ -2545,7 +2545,47 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/design-linked-list/
-    var sol = new MyLinkedList();
-    sol.AddAtHead(2);
-    sol.Get(1);
+    //var sol = new MyLinkedList();
+    //sol.AddAtHead(2);
+    //sol.Get(1);
+}
+
+{
+    // https://leetcode.com/problems/design-browser-history/description/
+    //var sol = new BrowserHistory("esgriv");
+    //sol.Visit("cgrt");
+    //sol.Visit("tip");
+    //sol.Back(9);
+    //sol.Visit("kttzxgh");
+    //sol.Forward(7);
+    //sol.Visit("cqge");
+    //sol.Visit("yiigh");
+    //sol.Forward(5);
+    //sol.Visit("uun");
+    //sol.Back(10);
+    //sol.Visit("hci");
+    //sol.Visit("whula");
+    //sol.Forward(10);
+}
+
+{
+    // https://leetcode.com/problems/maximum-gap/
+    //var sol = new MaximumGapSol();
+    //sol.MaximumGap(new int[] { 3, 6, 9, 1 });
+}
+
+{
+    // https://leetcode.com/problems/design-circular-deque/description/
+    var sol = new MyCircularDeque(8);
+    sol.InsertFront(5);
+    sol.GetFront();
+    sol.IsEmpty();
+    sol.DeleteFront();
+    sol.InsertLast(3);
+    sol.GetRear();
+    sol.InsertLast(7);
+    sol.InsertFront(7);
+    sol.DeleteLast();
+    sol.InsertLast(4);
+    sol.IsEmpty();
 }
