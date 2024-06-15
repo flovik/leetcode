@@ -5,6 +5,7 @@ using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
 using Sandbox.Topics.Sorting;
+using Sandbox.Topics.Trees;
 
 {
     //CopyListWithRandomPointer
@@ -2506,5 +2507,38 @@ using Sandbox.Topics.Sorting;
         }
 
         return result;
+    }
+}
+
+{
+    var one = new BinaryNode<int>(1);
+    one.Left = new BinaryNode<int>(2);
+    one.Right = new BinaryNode<int>(3);
+
+    var two = new BinaryNode<int>(1);
+    two.Left = new BinaryNode<int>(2);
+    two.Right = new BinaryNode<int>(3);
+
+    var three = new BinaryNode<int>(1);
+    three.Left = new BinaryNode<int>(2);
+    three.Left.Left = new BinaryNode<int>(3);
+
+    //var sol = Compare(one, two);
+    //var sol2 = Compare(one, three);
+    //;
+
+    // dfs preserves the shape of the tree
+    bool Compare(BinaryNode<int> node1, BinaryNode<int> node2)
+    {
+        if (node1 is null && node2 is null)
+            return true;
+
+        if (node1 is null || node2 is null)
+            return false;
+
+        if (node1.Value != node2.Value)
+            return false;
+
+        return Compare(node1.Left, node2.Left) && Compare(node1.Right, node2.Right);
     }
 }
