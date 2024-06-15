@@ -2576,16 +2576,27 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/design-circular-deque/description/
-    var sol = new MyCircularDeque(8);
-    sol.InsertFront(5);
-    sol.GetFront();
-    sol.IsEmpty();
-    sol.DeleteFront();
-    sol.InsertLast(3);
-    sol.GetRear();
-    sol.InsertLast(7);
-    sol.InsertFront(7);
-    sol.DeleteLast();
-    sol.InsertLast(4);
-    sol.IsEmpty();
+    //var sol = new MyCircularDeque(8);
+    //sol.InsertFront(5);
+    //sol.GetFront();
+    //sol.IsEmpty();
+    //sol.DeleteFront();
+    //sol.InsertLast(3);
+    //sol.GetRear();
+    //sol.InsertLast(7);
+    //sol.InsertFront(7);
+    //sol.DeleteLast();
+    //sol.InsertLast(4);
+    //sol.IsEmpty();
+}
+
+{
+    // https://leetcode.com/problems/number-of-provinces/description/
+    var sol = new NumberofProvinces();
+    sol.FindCircleNum(new int[][]
+    {
+        new int[]{1, 1, 0},
+        new int[]{1, 1, 0},
+        new int[] {0, 0, 1}
+    });
 }
