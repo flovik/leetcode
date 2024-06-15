@@ -2542,3 +2542,10 @@ using Sandbox.Topics.Trees;
         return Compare(node1.Left, node2.Left) && Compare(node1.Right, node2.Right);
     }
 }
+
+{
+    // https://leetcode.com/problems/design-linked-list/
+    var sol = new MyLinkedList();
+    sol.AddAtHead(2);
+    sol.Get(1);
+}
