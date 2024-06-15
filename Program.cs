@@ -2458,7 +2458,7 @@ using Sandbox.Topics.Sorting;
 
 {
     // invert binary tree
-    public TreeNode InvertTree(TreeNode root)
+    TreeNode InvertTree(TreeNode root)
     {
         if (root is null)
             return null;
@@ -2469,5 +2469,42 @@ using Sandbox.Topics.Sorting;
         root.left = InvertTree(right);
         root.right = InvertTree(left);
         return root;
+    }
+}
+
+{
+    // Binary Tree Level Order Traversal
+    IList<IList<int>> LevelOrder(TreeNode root)
+    {
+        var result = new List<IList<int>>();
+
+        if (root is null)
+            return result;
+
+        var q = new Queue<TreeNode>();
+        q.Enqueue(root);
+
+        while (q.Count > 0)
+        {
+            var count = q.Count;
+            var list = new List<int>(count);
+
+            for (var i = 0; i < count; i++)
+            {
+                var cur = q.Dequeue();
+
+                if (cur.left is not null)
+                    q.Enqueue(cur.left);
+
+                if (cur.right is not null)
+                    q.Enqueue(cur.right);
+
+                list.Add(cur.val);
+            }
+
+            result.Add(list);
+        }
+
+        return result;
     }
 }
