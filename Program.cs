@@ -4,6 +4,7 @@ using Sandbox.DataStructures;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
+using Sandbox.Topics.Sorting;
 
 {
     //CopyListWithRandomPointer
@@ -2446,6 +2447,27 @@ using Sandbox.Solutions.Medium;
 
 {
     // https://leetcode.com/problems/decode-string/description/
-    var sol = new DecodeStringSol();
-    sol.DecodeString("100[leetcode]");
+    //var sol = new DecodeStringSol();
+    //sol.DecodeString("100[leetcode]");
+}
+
+{
+    var quickSort = new QuickSort();
+    quickSort.Sort(new int[] { 10, 16, 8, 12, 15, 6, 3, 9, 5 }, 0, 8);
+}
+
+{
+    // invert binary tree
+    public TreeNode InvertTree(TreeNode root)
+    {
+        if (root is null)
+            return null;
+
+        var left = root.left;
+        var right = root.right;
+
+        root.left = InvertTree(right);
+        root.right = InvertTree(left);
+        return root;
+    }
 }
