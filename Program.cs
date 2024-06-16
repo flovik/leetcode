@@ -2592,11 +2592,23 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/number-of-provinces/description/
-    var sol = new NumberofProvinces();
-    sol.FindCircleNum(new int[][]
-    {
-        new int[]{1, 1, 0},
-        new int[]{1, 1, 0},
-        new int[] {0, 0, 1}
-    });
+    //var sol = new NumberofProvinces();
+    //sol.FindCircleNum(new int[][]
+    //{
+    //    new int[]{1, 1, 0},
+    //    new int[]{1, 1, 0},
+    //    new int[] {0, 0, 1}
+    //});
+}
+
+{
+    // https://leetcode.com/problems/ugly-number-ii/
+    var sol = new UglyNumber2();
+    sol.NthUglyNumber(10);
+}
+
+{
+    // https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
+    var sol = new FindKPairswithSmallestSums();
+    sol.KSmallestPairs(new int[] { 1, 1, 2 }, new[] { 1, 2, 3 }, 2);
 }
