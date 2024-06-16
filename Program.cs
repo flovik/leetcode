@@ -2603,12 +2603,12 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/ugly-number-ii/
-    var sol = new UglyNumber2();
-    sol.NthUglyNumber(10);
+    //var sol = new UglyNumber2();
+    //sol.NthUglyNumber(10);
 }
 
 {
-    // https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
-    var sol = new FindKPairswithSmallestSums();
-    sol.KSmallestPairs(new int[] { 1, 1, 2 }, new[] { 1, 2, 3 }, 2);
+    //// https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
+    //var sol = new FindKPairswithSmallestSums();
+    //sol.KSmallestPairs(new int[] { 1, 1, 2 }, new[] { 1, 2, 3 }, 2);
 }
