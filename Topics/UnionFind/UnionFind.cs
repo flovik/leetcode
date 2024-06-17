@@ -1,6 +1,7 @@
 ﻿namespace Sandbox.Topics.UnionFind;
 
 // used to detect cycles in a graph
+// ONLY WORKS FOR UNDIRECTED GRAPHS
 public class UnionFind
 {
     private int[] parent;

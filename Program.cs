@@ -2347,7 +2347,7 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-the-maximum-length-of-a-good-subsequence-i/description/
     var sol = new FindtheMaximumLengthofaGoodSubsequenceI();
-    sol.MaximumLength(new int[] { 1, 2, 3, 2, 1 }, 2);
+    sol.MaximumLength(new int[] { 28, 28, 28 }, 0);
 }
 
 {
@@ -2611,4 +2611,66 @@ using Sandbox.Topics.Trees;
     //// https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
     //var sol = new FindKPairswithSmallestSums();
     //sol.KSmallestPairs(new int[] { 1, 1, 2 }, new[] { 1, 2, 3 }, 2);
+}
+
+{
+    var sol = CanFinish(5, new[] { new[] { 1, 4 }, new[] { 2, 4 }, new[] { 3, 1 }, new[] { 3, 2 } });
+    // course schedule
+    bool CanFinish(int numCourses, int[][] prerequisites)
+    {
+        // do topological sort using Kahn's algorithm
+        // topological sort is only possible, if in the graph are no cycles, so DFS
+
+        // create adjacency list
+        var adjList = new Dictionary<int, List<int>>(numCourses);
+        var inDegree = new int[numCourses];
+
+        foreach (var prerequisite in prerequisites)
+        {
+            if (adjList.ContainsKey(prerequisite[0]))
+                adjList[prerequisite[0]].Add(prerequisite[1]);
+            else
+                adjList.Add(prerequisite[0], new List<int>(numCourses) { prerequisite[1] });
+
+            // increase in degree array
+            inDegree[prerequisite[1]]++;
+        }
+
+        // kahn's
+        var queue = new Queue<int>(numCourses);
+        var visited = new HashSet<int>(numCourses);
+
+        // add nodes with no incoming edges to the queue
+        for (int i = 0; i < inDegree.Length; i++)
+        {
+            if (inDegree[i] != 0)
+                continue;
+
+            queue.Enqueue(i);
+        }
+
+        // remove nodes from queue and subtract affected nodes
+        while (queue.Count > 0)
+        {
+            var node = queue.Dequeue();
+
+            if (visited.Contains(node))
+                return false;
+
+            if (adjList.TryGetValue(node, out var nodes))
+            {
+                foreach (var nd in nodes)
+                {
+                    inDegree[nd]--;
+
+                    if (inDegree[nd] == 0)
+                        queue.Enqueue(nd);
+                }
+            }
+
+            visited.Add(node);
+        }
+
+        return inDegree.All(a => a == 0);
+    }
 }
