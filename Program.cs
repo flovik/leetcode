@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using NUnit.Framework.Constraints;
 using Sandbox.DataStructures;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
@@ -2823,4 +2822,10 @@ using Sandbox.Topics.Trees;
 
         int GetDistance(int[] a, int[] b) => Math.Abs(a[0] - b[0]) + Math.Abs(a[1] - b[1]);
     }
+}
+
+{
+    // https://leetcode.com/problems/repeated-substring-pattern/description/
+    var sol = new RepeatedSubstringPattern();
+    sol.RepeatedSubstringPatternKMP("abacababacab");
 }
