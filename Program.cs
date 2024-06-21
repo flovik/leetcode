@@ -2826,6 +2826,36 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/repeated-substring-pattern/description/
-    var sol = new RepeatedSubstringPattern();
-    sol.RepeatedSubstringPatternKMP("abacababacab");
+    //var sol = new RepeatedSubstringPattern();
+    //sol.RepeatedSubstringPatternKMP("abacababacab");
+}
+
+{
+    // https://leetcode.com/problems/climbing-stairs/description/
+    int ClimbStairs(int n)
+    {
+        if (n == 1)
+            return 1;
+
+        if (n == 2)
+            return 2;
+
+        var previous = 1;
+        var current = 2;
+
+        var i = 2;
+        while (i < n)
+        {
+            var temp = current;
+            current += previous;
+            previous = temp;
+            i++;
+        }
+
+        return current;
+    }
+}
+
+{
+    // https://leetcode.com/problems/divisor-game/description/
 }
