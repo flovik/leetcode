@@ -2874,5 +2874,22 @@ using Sandbox.Topics.Trees;
 }
 
 {
+    // https://leetcode.com/problems/min-cost-climbing-stairs/description/
+    int MinCostClimbingStairs(int[] cost)
+    {
+        var dp = new int[cost.Length];
+        dp[0] = cost[0];
+        dp[1] = cost[1];
+
+        for (int i = 2; i < cost.Length; i++)
+        {
+            dp[i] = Math.Min(dp[i - 2] + cost[i], dp[i - 1] + cost[i]);
+        }
+
+        return Math.Min(dp[^1], dp[^2]);
+    }
+}
+
+{
     // https://leetcode.com/problems/divisor-game/description/
 }
