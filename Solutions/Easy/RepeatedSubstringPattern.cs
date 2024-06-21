@@ -35,6 +35,26 @@ public class RepeatedSubstringPattern
 
     public bool RepeatedSubstringPatternKMP(string s)
     {
-        return false;
+        var prefix = new int[s.Length];
+        int left = 0, right = 1;
+
+        while (right < s.Length)
+        {
+            if (s[right] == s[left])
+            {
+                prefix[right] = ++left;
+                right++;
+            }
+            else
+            {
+                if (left == 0)
+                    right++;
+                else
+                    left = prefix[left - 1];
+            }
+        }
+
+        // string should be divisible by the repeated substring
+        return prefix[^1] != 0 && prefix[^1] % (s.Length - prefix[^1]) == 0;
     }
 }
