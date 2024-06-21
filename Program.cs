@@ -2857,5 +2857,22 @@ using Sandbox.Topics.Trees;
 }
 
 {
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+    int MaxProfit(int[] prices)
+    {
+        var max = 0;
+        var min = int.MaxValue;
+
+        foreach (var price in prices)
+        {
+            max = Math.Max(max, price - min);
+            min = Math.Min(min, price);
+        }
+
+        return max;
+    }
+}
+
+{
     // https://leetcode.com/problems/divisor-game/description/
 }
