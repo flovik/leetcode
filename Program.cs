@@ -2918,3 +2918,28 @@ using Sandbox.Topics.Trees;
         return dp[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/unique-binary-search-trees/description/
+    var sol = NumTrees(4);
+
+    int NumTrees(int n)
+    {
+        // formula
+        // dp[3] = dp[0] * dp[2] + dp[1] * dp[1] + dp[2] * dp[0];
+
+        var dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                dp[i] += dp[j - 1] * dp[i - j];
+            }
+        }
+
+        return dp[^1];
+    }
+}
