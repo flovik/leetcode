@@ -2943,3 +2943,20 @@ using Sandbox.Topics.Trees;
         return dp[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/house-robber/description/
+    int Rob(int[] nums)
+    {
+        var n = nums.Length;
+        var dp = new int[n + 2];
+
+        for (int i = 0; i < n; i++)
+        {
+            // previous or prev-prev + current
+            dp[i + 2] = Math.Max(dp[i + 1], dp[i] + nums[i]);
+        }
+
+        return dp[^1];
+    }
+}
