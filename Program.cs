@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using NUnit.Framework.Constraints;
 using Sandbox.DataStructures;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
@@ -2958,5 +2959,39 @@ using Sandbox.Topics.Trees;
         }
 
         return dp[^1];
+    }
+}
+
+{
+    // https://leetcode.com/problems/perfect-squares/description/
+    var sol = NumSquares(25);
+    int NumSquares(int n)
+    {
+        var count = (int) Math.Sqrt(n);
+        var ps = new int[count];
+        var dp = new int[n + 1];
+
+        Array.Fill(dp, int.MaxValue);
+        dp[0] = 1;
+
+        // initialize perfect squares
+        for (int i = 1; i <= count; i++)
+        {
+            ps[i - 1] = i * i;
+            dp[i * i] = 1;
+        }
+
+        for (int i = 1; i <= n; i++)
+        {
+            foreach (var p in ps)
+            {
+                if (p > i)
+                    break;
+
+                dp[i] = Math.Min(dp[i], dp[i - p] + dp[p]);
+            }
+        }
+
+        return dp[n];
     }
 }
