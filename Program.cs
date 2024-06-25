@@ -2897,7 +2897,7 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/decode-ways/description/
-    var sol = NumDecodings("11106");
+    //var sol = NumDecodings("11106");
     int NumDecodings(string s)
     {
         if (s[0] == '0')
@@ -2922,7 +2922,7 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/unique-binary-search-trees/description/
-    var sol = NumTrees(4);
+    //var sol = NumTrees(4);
 
     int NumTrees(int n)
     {
@@ -2964,7 +2964,7 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/perfect-squares/description/
-    var sol = NumSquares(25);
+    //var sol = NumSquares(25);
     int NumSquares(int n)
     {
         var count = (int) Math.Sqrt(n);
@@ -2993,5 +2993,35 @@ using Sandbox.Topics.Trees;
         }
 
         return dp[n];
+    }
+}
+
+{
+    // https://leetcode.com/problems/integer-break/
+    var sol = new IntegerBreak();
+    sol.IntegerBreakSol(5);
+}
+
+{
+    // Best Time to Buy and Sell Stock with Cooldown
+    var sol = MaxProfit(new int[] { 6, 1, 6, 4, 3, 0, 2 });
+    int MaxProfit(int[] prices)
+    {
+        if (prices.Length == 1)
+            return 0;
+
+        var profit = new int[prices.Length];
+        profit[0] = 0;
+        profit[1] = Math.Max(0, prices[1] - prices[0]);
+        var cooldown = Math.Max(-prices[0], -prices[1]);
+
+        for (int i = 2; i < prices.Length; i++)
+        {
+            // if a sell day, consider the profit on previous day or cooldown with current day
+            profit[i] = Math.Max(profit[i - 1], cooldown + prices[i]);
+            cooldown = Math.Max(cooldown, profit[i - 2] - prices[i]);
+        }
+
+        return profit[^1];
     }
 }
