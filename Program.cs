@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using NUnit.Framework.Constraints;
 using Sandbox.DataStructures;
+using Sandbox.Enums;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
@@ -3028,4 +3029,31 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/counting-bits/description/
+}
+
+{
+    var sol = WiggleMaxLength(new int[] { 3, 3, 3, 2, 5 });
+    int WiggleMaxLength(int[] nums)
+    {
+        if (nums.Length == 1)
+            return 1;
+
+        var result = 0;
+        var prevDiff = nums[1] - nums[0];
+
+        result = prevDiff != 0 ? 2 : 1;
+
+        for (int i = 2; i < nums.Length; i++)
+        {
+            var curDiff = nums[i] - nums[i - 1];
+            if (curDiff < 0 && prevDiff >= 0 ||
+                curDiff > 0 && prevDiff <= 0)
+            {
+                result++;
+                prevDiff = curDiff;
+            }
+        }
+
+        return result;
+    }
 }
