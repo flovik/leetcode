@@ -3112,13 +3112,13 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/maximum-length-of-pair-chain/description/
-    var sol = FindLongestChain(
-        new int[][]
-        {
-            new [] {1, 2},
-            new [] {2, 3},
-            new [] {3,4 }
-        });
+    //var sol = FindLongestChain(
+    //    new int[][]
+    //    {
+    //        new [] {1, 2},
+    //        new [] {2, 3},
+    //        new [] {3,4 }
+    //    });
 
     int FindLongestChain(int[][] pairs)
     {
@@ -3141,5 +3141,40 @@ using Sandbox.Topics.Trees;
         }
 
         return result;
+    }
+}
+
+{
+    // https://leetcode.com/problems/delete-and-earn/description/
+    var sol = DeleteAndEarn(new int[] { 8, 3, 4, 7, 6, 6, 9, 2, 5, 8, 2, 4, 9, 5, 9, 1, 5, 7, 1, 4 });
+    int DeleteAndEarn(int[] nums)
+    {
+        var freq = new Dictionary<int, int>(nums.Length);
+        var max = 0;
+
+        foreach (var num in nums)
+        {
+            if (freq.ContainsKey(num))
+                freq[num] += num;
+            else
+                freq.Add(num, num);
+
+            max = Math.Max(max, num);
+        }
+
+        var dp = new int[max + 1];
+        var result = 0;
+
+        foreach (var (key, value) in freq)
+        {
+            dp[key] = value;
+        }
+
+        for (int i = 2; i <= max; i++)
+        {
+            dp[i] = Math.Max(dp[i] + dp[i - 2], dp[i - 1]);
+        }
+
+        return dp[^1];
     }
 }
