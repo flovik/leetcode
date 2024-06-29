@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using NUnit.Framework.Constraints;
+using Sandbox.Assignments;
 using Sandbox.DataStructures;
 using Sandbox.Enums;
 using Sandbox.Solutions.Easy;
@@ -3051,6 +3052,91 @@ using Sandbox.Topics.Trees;
             {
                 result++;
                 prevDiff = curDiff;
+            }
+        }
+
+        return result;
+    }
+}
+
+{
+    // https://leetcode.com/problems/partition-equal-subset-sum/description/
+    //var sol = CanPartition(new int[] { 1, 5, 11, 5 });
+
+    bool CanPartition(int[] nums)
+    {
+        Array.Sort(nums);
+
+        var sum = nums.Sum();
+
+        if (sum % 2 == 1)
+            return false;
+
+        var target = sum / 2;
+
+        var dp = new bool[sum + 1];
+        dp[0] = true;
+
+        foreach (var num in nums)
+        {
+            for (var j = target; j > 0; j--)
+            {
+                if (j < num)
+                    continue;
+
+                dp[j] = dp[j - num] || dp[j];
+            }
+        }
+
+        return dp[sum];
+        //var set = new HashSet<int>(nums.Length);
+
+        //foreach (var num in nums)
+        //{
+        //    foreach (var n in set.ToArray())
+        //    {
+        //        set.Add(n + num);
+        //    }
+
+        //    set.Add(num);
+        //}
+
+        //return set.Contains(target);
+    }
+}
+
+{
+    var ig = new IgorAssignment();
+    ig.Main();
+}
+
+{
+    // https://leetcode.com/problems/maximum-length-of-pair-chain/description/
+    var sol = FindLongestChain(
+        new int[][]
+        {
+            new [] {1, 2},
+            new [] {2, 3},
+            new [] {3,4 }
+        });
+
+    int FindLongestChain(int[][] pairs)
+    {
+        Array.Sort(pairs, (a, b) => a[1].CompareTo(b[1]));
+
+        var result = 1;
+        var dp = new int[pairs.Length];
+        Array.Fill(dp, 1);
+
+        for (int i = 1; i < pairs.Length; i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                if (pairs[i][0] <= pairs[j][1])
+                    continue;
+
+                dp[i] = dp[j] + 1;
+                result = Math.Max(dp[i], result);
             }
         }
 
