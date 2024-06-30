@@ -3184,3 +3184,9 @@ using Sandbox.Topics.Trees;
     var sol = new BestTimetoBuyandSellStockwithTransaction_Fee();
     sol.MaxProfit(new int[] { 1, 3, 2, 8, 4, 9 }, 2);
 }
+
+{
+    // https://leetcode.com/problems/subarray-product-less-than-k/description/
+    var sol = new SubarrayProductLessThanK();
+    sol.NumSubarrayProductLessThanK(new int[] { 10, 5, 2, 6 }, 100);
+}
