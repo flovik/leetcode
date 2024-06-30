@@ -3178,3 +3178,9 @@ using Sandbox.Topics.Trees;
         return dp[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
+    var sol = new BestTimetoBuyandSellStockwithTransaction_Fee();
+    sol.MaxProfit(new int[] { 1, 3, 2, 8, 4, 9 }, 2);
+}
