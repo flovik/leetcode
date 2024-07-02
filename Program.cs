@@ -3182,11 +3182,21 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
     var sol = new BestTimetoBuyandSellStockwithTransaction_Fee();
-    sol.MaxProfit(new int[] { 1, 3, 2, 8, 4, 9 }, 2);
+    //sol.MaxProfit(new int[] { 1, 3, 2, 8, 4, 9 }, 2);
 }
 
 {
     // https://leetcode.com/problems/subarray-product-less-than-k/description/
     var sol = new SubarrayProductLessThanK();
-    sol.NumSubarrayProductLessThanK(new int[] { 10, 5, 2, 6 }, 100);
+    //sol.NumSubarrayProductLessThanK(new int[] { 10, 5, 2, 6 }, 100);
+}
+
+{
+    // https://leetcode.com/problems/sliding-window-median/description/
+    var sol = new SlidingWindowMedian();
+    //sol.MedianSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3);
+}
+
+{
+    // https://leetcode.com/problems/domino-and-tromino-tiling/description/
 }
