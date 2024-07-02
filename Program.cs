@@ -3199,4 +3199,6 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/domino-and-tromino-tiling/description/
+    var sol = new KnightDialer();
+    sol.KnightDialerSol(31);
 }
