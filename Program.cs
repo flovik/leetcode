@@ -3234,3 +3234,9 @@ using Sandbox.Topics.Trees;
         return dp[lastDay];
     }
 }
+
+{
+    // https://leetcode.com/problems/partition-array-for-maximum-sum/
+    var sol = new PartitionArrayforMaximumSum();
+    sol.MaxSumAfterPartitioning(new int[] { 1, 4, 1, 5, 7, 3, 6, 1, 9, 9, 3 }, 4);
+}
