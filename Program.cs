@@ -3200,5 +3200,37 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/domino-and-tromino-tiling/description/
     var sol = new KnightDialer();
-    sol.KnightDialerSol(31);
+    //sol.KnightDialerSol(31);
+}
+
+{
+    // https://leetcode.com/problems/minimum-cost-for-tickets/
+    var sol = MincostTickets(new int[] { 1, 4, 6, 7, 8, 20 }, new[] { 7, 2, 15 });
+    int MincostTickets(int[] days, int[] costs)
+    {
+        var lastDay = days[^1];
+        var dp = new int[lastDay + 1];
+        Array.Fill(dp, int.MaxValue);
+        dp[0] = 0;
+
+        var curDay = 0;
+        for (var day = 1; day <= lastDay; day++)
+        {
+            if (day != days[curDay])
+            {
+                dp[day] = dp[day - 1];
+                continue;
+            }
+
+            var value = int.MaxValue;
+            value = Math.Min(value, costs[0] + dp[Math.Clamp(day - 1, 0, lastDay)]);
+            value = Math.Min(value, costs[1] + dp[Math.Clamp(day - 7, 0, lastDay)]);
+            value = Math.Min(value, costs[2] + dp[Math.Clamp(day - 30, 0, lastDay)]);
+
+            dp[day] = value;
+            curDay++;
+        }
+
+        return dp[lastDay];
+    }
 }
