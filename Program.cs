@@ -3240,3 +3240,30 @@ using Sandbox.Topics.Trees;
     var sol = new PartitionArrayforMaximumSum();
     sol.MaxSumAfterPartitioning(new int[] { 1, 4, 1, 5, 7, 3, 6, 1, 9, 9, 3 }, 4);
 }
+
+{
+    // https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/
+    var sol = LongestSubsequence(new int[] { 1, 5, 7, 8, 5, 3, 4, 2, 1 }, -2);
+    int LongestSubsequence(int[] arr, int difference)
+    {
+        var dict = new Dictionary<int, int>(arr.Length);
+        var max = 1;
+
+        foreach (var t in arr)
+        {
+            var key = t - difference;
+
+            if (dict.ContainsKey(key))
+            {
+                if (!dict.TryAdd(t, dict[key] + 1))
+                    dict[t] = Math.Max(dict[t], dict[key] + 1);
+
+                max = Math.Max(max, dict[t]);
+            }
+            else
+                dict.TryAdd(t, 1);
+        }
+
+        return max;
+    }
+}
