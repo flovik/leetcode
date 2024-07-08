@@ -3267,3 +3267,9 @@ using Sandbox.Topics.Trees;
         return max;
     }
 }
+
+{
+    // https://leetcode.com/problems/greatest-sum-divisible-by-three/description/
+    var sol = new GreatestSumDivisiblebyThree();
+    sol.MaxSumDivThree(new int[] { 1, 2, 3, 4, 4 });
+}
