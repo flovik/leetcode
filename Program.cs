@@ -3271,5 +3271,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/greatest-sum-divisible-by-three/description/
     var sol = new GreatestSumDivisiblebyThree();
-    sol.MaxSumDivThree(new int[] { 1, 2, 3, 4, 4 });
+    //sol.MaxSumDivThree(new int[] { 1, 2, 3, 4, 4 });
+}
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
+    var sol = new BestTimetoBuyandSellStockIII();
+    sol.MaxProfit(new int[] { 3, 3, 5, 0, 0, 3, 1, 4 });
 }
