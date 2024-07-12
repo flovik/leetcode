@@ -3279,3 +3279,15 @@ using Sandbox.Topics.Trees;
     var sol = new BestTimetoBuyandSellStockIII();
     sol.MaxProfit(new int[] { 3, 3, 5, 0, 0, 3, 1, 4 });
 }
+
+{
+    // https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/
+    var sol = new MaximumProfitinJobScheduling();
+    //sol.JobScheduling(new[] { 1, 2, 3, 4, 6 }, new[] { 3, 5, 10, 6, 9 }, new[] { 20, 20, 100, 70, 60 });
+    //sol.JobScheduling(new[] { 1, 2, 3, 3 }, new[] { 3, 4, 5, 6 }, new[] { 50, 10, 40, 70 });
+    //sol.JobScheduling(new[] { 4, 2, 4, 8, 2 }, new[] { 5, 5, 5, 10, 8 }, new[] { 1, 2, 8, 10, 4 });
+    sol.JobScheduling(
+        new[] { 33, 8, 9, 18, 16, 36, 18, 4, 42, 45, 29, 43 },
+        new[] { 40, 16, 32, 39, 46, 43, 28, 13, 44, 46, 39, 44 },
+        new[] { 2, 6, 5, 14, 5, 19, 5, 12, 19, 14, 14, 17 });
+}
