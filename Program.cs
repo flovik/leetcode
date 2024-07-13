@@ -3286,8 +3286,40 @@ using Sandbox.Topics.Trees;
     //sol.JobScheduling(new[] { 1, 2, 3, 4, 6 }, new[] { 3, 5, 10, 6, 9 }, new[] { 20, 20, 100, 70, 60 });
     //sol.JobScheduling(new[] { 1, 2, 3, 3 }, new[] { 3, 4, 5, 6 }, new[] { 50, 10, 40, 70 });
     //sol.JobScheduling(new[] { 4, 2, 4, 8, 2 }, new[] { 5, 5, 5, 10, 8 }, new[] { 1, 2, 8, 10, 4 });
-    sol.JobScheduling(
-        new[] { 33, 8, 9, 18, 16, 36, 18, 4, 42, 45, 29, 43 },
-        new[] { 40, 16, 32, 39, 46, 43, 28, 13, 44, 46, 39, 44 },
-        new[] { 2, 6, 5, 14, 5, 19, 5, 12, 19, 14, 14, 17 });
+    //sol.JobScheduling(
+    //    new[] { 33, 8, 9, 18, 16, 36, 18, 4, 42, 45, 29, 43 },
+    //    new[] { 40, 16, 32, 39, 46, 43, 28, 13, 44, 46, 39, 44 },
+    //    new[] { 2, 6, 5, 14, 5, 19, 5, 12, 19, 14, 14, 17 });
+}
+
+{
+    var sol = Rob(new[] { 1, 2, 1, 1 });
+    // https://leetcode.com/problems/house-robber-ii/
+
+    int Rob(int[] nums)
+    {
+        if (nums.Length == 1)
+            return nums[0];
+
+        // don't consider first, then don't consider last
+        // rob from [0..n-2]
+        // rob from [1..n-1]
+        var dp = new int[nums.Length + 1];
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            dp[i + 1] = Math.Max(dp[i], dp[i - 1] + nums[i]);
+        }
+
+        var first = dp[^1];
+        Array.Clear(dp);
+
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            dp[i + 2] = Math.Max(dp[i + 1], dp[i] + nums[i]);
+        }
+
+        var second = dp[^1];
+        return Math.Max(first, second);
+    }
 }
