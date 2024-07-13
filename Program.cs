@@ -3293,7 +3293,7 @@ using Sandbox.Topics.Trees;
 }
 
 {
-    var sol = Rob(new[] { 1, 2, 1, 1 });
+    //var sol = Rob(new[] { 1, 2, 1, 1 });
     // https://leetcode.com/problems/house-robber-ii/
 
     int Rob(int[] nums)
@@ -3322,4 +3322,10 @@ using Sandbox.Topics.Trees;
         var second = dp[^1];
         return Math.Max(first, second);
     }
+}
+
+{
+    // https://leetcode.com/problems/ones-and-zeroes/description/
+    var sol = new OnesAndZeroes();
+    sol.FindMaxForm(new[] { "10", "0001", "111001", "1", "0" }, 5, 3);
 }
