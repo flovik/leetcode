@@ -3355,4 +3355,14 @@ using Sandbox.Topics.Trees;
 }
 
 {
+    // https://leetcode.com/problems/shopping-offers/description/
+    var sol = new ShoppingOffers();
+    sol.ShoppingOffersSol(
+        new List<int>() { 2, 5 },
+        new List<IList<int>>()
+        {
+            new List<int>() { 3, 0, 5 },
+            new List<int>() { 1, 2, 10 }
+        },
+        new List<int>() { 3, 2 });
 }
