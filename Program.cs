@@ -3329,3 +3329,30 @@ using Sandbox.Topics.Trees;
     var sol = new OnesAndZeroes();
     sol.FindMaxForm(new[] { "10", "0001", "111001", "1", "0" }, 5, 3);
 }
+
+{
+    // https://leetcode.com/problems/target-sum/
+    var sol = FindTargetSumWays(new int[] { 1, 1, 1, 1, 1 }, 3);
+
+    int FindTargetSumWays(int[] nums, int target)
+    {
+        var set = new List<int>(nums.Length * 2) { 0 };
+
+        foreach (var num in nums)
+        {
+            var cur = set.ToArray();
+            set.Clear();
+
+            foreach (var i in cur)
+            {
+                set.Add(i + num);
+                set.Add(i - num);
+            }
+        }
+
+        return set.Count(i => i == target);
+    }
+}
+
+{
+}
