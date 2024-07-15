@@ -3366,3 +3366,9 @@ using Sandbox.Topics.Trees;
         },
         new List<int>() { 3, 2 });
 }
+
+{
+    // https://leetcode.com/problems/2-keys-keyboard/
+    var sol = new TwoKeysKeyboard();
+    sol.MinSteps(10);
+}
