@@ -3372,3 +3372,9 @@ using Sandbox.Topics.Trees;
     var sol = new TwoKeysKeyboard();
     sol.MinSteps(10);
 }
+
+{
+    // https://leetcode.com/problems/best-team-with-no-conflicts/description/
+    var sol = new BestTeamWithNoConflicts();
+    sol.BestTeamScore(new[] { 5, 4, 4, 6 }, new int[] { 1, 2, 2, 2 });
+}
