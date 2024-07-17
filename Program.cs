@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using NUnit.Framework.Constraints;
 using Sandbox.Assignments;
 using Sandbox.DataStructures;
 using Sandbox.Enums;
@@ -3377,4 +3376,42 @@ using Sandbox.Topics.Trees;
     // https://leetcode.com/problems/best-team-with-no-conflicts/description/
     var sol = new BestTeamWithNoConflicts();
     sol.BestTeamScore(new[] { 5, 4, 4, 6 }, new int[] { 1, 2, 2, 2 });
+}
+
+{
+    // https://leetcode.com/problems/tallest-billboard/description/
+    var sol = new TallestBillboard();
+    //sol.TallestBillboardSol(new int[] { 1, 2, 3, 4, 5, 6 });
+}
+
+{
+    // https://leetcode.com/problems/triangle/
+    var sol = MinimumTotal(new List<IList<int>>()
+    {
+        new List<int>() { 2 }, new List<int>() { 3, 4 }, new List<int>() { 6, 5, 7 }, new List<int>() { 4, 1, 8, 3 }
+    });
+
+    int MinimumTotal(IList<IList<int>> triangle)
+    {
+        for (int i = 1; i < triangle.Count; i++)
+        {
+            for (int j = 0; j < triangle[i].Count; j++)
+            {
+                if (j == 0)
+                {
+                    triangle[i][0] += triangle[i - 1][0];
+                }
+                else if (j == triangle[i].Count - 1)
+                {
+                    triangle[i][^1] += triangle[i - 1][^1];
+                }
+                else
+                {
+                    triangle[i][j] += Math.Min(triangle[i - 1][j], triangle[i - 1][j - 1]);
+                }
+            }
+        }
+
+        return triangle[^1].Min();
+    }
 }
