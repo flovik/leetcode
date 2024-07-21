@@ -3440,3 +3440,9 @@ using Sandbox.Topics.Trees;
         return dp[target];
     }
 }
+
+{
+    // https://leetcode.com/problems/out-of-boundary-paths/description/
+    var sol = new OutOfBoundaryPaths();
+    sol.FindPaths(2, 2, 2, 0, 0);
+}
