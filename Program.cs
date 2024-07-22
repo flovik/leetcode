@@ -3444,5 +3444,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/out-of-boundary-paths/description/
     var sol = new OutOfBoundaryPaths();
-    sol.FindPaths(2, 2, 2, 0, 0);
+    //sol.FindPaths(2, 2, 2, 0, 0);
+}
+
+{
+    // https://leetcode.com/problems/valid-parenthesis-string/description/
+    var sol = new ValidParenthesisString();
+    sol.CheckValidString("(*))");
 }
