@@ -3450,5 +3450,17 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/valid-parenthesis-string/description/
     var sol = new ValidParenthesisString();
-    sol.CheckValidString("(*))");
+    //sol.CheckValidString("(*))");
+}
+
+{
+    // https://leetcode.com/problems/reverse-nodes-in-k-group/
+    var sol = new ReverseNodesInKGroups();
+    //sol.ReverseKGroup(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 3);
+}
+
+{
+    // https://leetcode.com/problems/median-of-two-sorted-arrays/description/
+    var sol = new MedianOfTwoSortedArrays();
+    sol.FindMedianSortedArrays(new int[] { 1, 2 }, new[] { 3, 4 });
 }
