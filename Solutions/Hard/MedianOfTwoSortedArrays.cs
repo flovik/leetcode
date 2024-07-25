@@ -1,23 +1,67 @@
-﻿namespace Sandbox.Solutions.Hard;
+﻿using Sandbox.Solutions.Easy;
+
+namespace Sandbox.Solutions.Hard;
 
 public class MedianOfTwoSortedArrays
 {
-    //public double FindMedianSortedArrays(int[] nums1, int[] nums2)
-    //{
-    //    // O (log (n + m)
-    //    // find approximate location of the median and compare the elements around it
+    public double FindMedianSortedArrays(int[] nums1, int[] nums2)
+    {
+        // O (log (n + m)
+        // find approximate location of the median and compare the elements around it
 
-    //    var len1 = nums1.Length;
-    //    var len2 = nums2.Length;
+        var len1 = nums1.Length;
+        var len2 = nums2.Length;
 
-    //    if (len1 > len2)
-    //        return FindMedianSortedArrays(nums2, nums1);
+        if (len1 < len2)
+            return FindMedianSortedArrays(nums2, nums1);
 
-    //    // binary search
-    //    int left = 0, right = len1;
+        if (len2 == 0)
+            return EdgeCase(nums1);
 
-    //    // compare values around
-    //}
+        // binary search
+        int left = 0, right = len1 - 1;
+        var half = (len1 + len2) / 2;
+        int curElement1 = 0, curElement2 = 0, nextElement1 = 0, nextElement2 = 0;
+
+        while (left <= right)
+        {
+            // find middle of second array
+            var mid1 = (left + right) / 2;
+
+            // find middle of the other array by subtracting half and middle of second array
+            var mid2 = half - (mid1 + 1) - 1;
+
+            // handle out-of-bounds
+            curElement1 = mid1 < 0 ? int.MinValue : nums1[mid1];
+            curElement2 = mid2 < 0 ? int.MinValue : nums2[mid2];
+            nextElement1 = mid1 + 1 >= len1 ? int.MaxValue : nums1[mid1 + 1];
+            nextElement2 = mid2 + 1 >= len2 ? int.MaxValue : nums2[mid2 + 1];
+
+            // partition correct
+            if (curElement1 <= nextElement2 && curElement2 <= nextElement1)
+                break;
+            if (curElement1 > curElement2)
+                right = mid1 - 1;
+            else
+                left = mid1 + 1;
+        }
+
+        // compare values
+        // odd
+        if ((len1 + len2) % 2 == 1)
+            return Math.Min(nextElement1, nextElement2);
+
+        // even
+        return (Math.Max(curElement1, curElement2) + (double) Math.Min(nextElement1, nextElement2)) / 2;
+    }
+
+    private double EdgeCase(int[] nums)
+    {
+        if (nums.Length % 2 == 1)
+            return nums[nums.Length / 2];
+
+        return (nums[nums.Length / 2 - 1] + (double) nums[nums.Length / 2]) / 2;
+    }
 
     #region Merge arrays
 

@@ -3462,5 +3462,5 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/median-of-two-sorted-arrays/description/
     var sol = new MedianOfTwoSortedArrays();
-    sol.FindMedianSortedArrays(new int[] { 1, 2 }, new[] { 3, 4 });
+    sol.FindMedianSortedArrays(new int[] { 1 }, new[] { 2, 3 });
 }
