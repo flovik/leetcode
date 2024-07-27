@@ -3470,3 +3470,7 @@ using Sandbox.Topics.Trees;
     var sol = new RemoveDuplicatesfromSortedArrayII();
     sol.RemoveDuplicates(new int[] { 0, 0, 1, 1, 1, 1, 2, 3, 3 });
 }
+
+{
+    // https://leetcode.com/problems/rotate-array/description/
+}
