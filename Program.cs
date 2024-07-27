@@ -3462,5 +3462,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/median-of-two-sorted-arrays/description/
     var sol = new MedianOfTwoSortedArrays();
-    sol.FindMedianSortedArrays(new int[] { 1 }, new[] { 2, 3 });
+    //sol.FindMedianSortedArrays(new int[] { 1 }, new[] { 2, 3 });
+}
+
+{
+    // https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
+    var sol = new RemoveDuplicatesfromSortedArrayII();
+    sol.RemoveDuplicates(new int[] { 0, 0, 1, 1, 1, 1, 2, 3, 3 });
 }
