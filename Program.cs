@@ -3474,3 +3474,7 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/rotate-array/description/
 }
+
+{
+    // https://leetcode.com/problems/boats-to-save-people/description/
+}
