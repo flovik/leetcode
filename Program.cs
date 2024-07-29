@@ -3478,3 +3478,8 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/boats-to-save-people/description/
 }
+
+{
+    var sol = new MinimumTimetoMakeRopeColorful();
+    sol.MinCost("aabaa", new[] { 1, 2, 3, 4, 1 });
+}
