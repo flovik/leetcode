@@ -3481,5 +3481,11 @@ using Sandbox.Topics.Trees;
 
 {
     var sol = new MinimumTimetoMakeRopeColorful();
-    sol.MinCost("aabaa", new[] { 1, 2, 3, 4, 1 });
+    //sol.MinCost("aabaa", new[] { 1, 2, 3, 4, 1 });
+}
+
+{
+    // https://leetcode.com/problems/find-k-closest-elements/description/
+    var sol = new FindKClosestElements();
+    sol.FindClosestElements(new int[] { 0, 0, 0, 1, 3, 5, 6, 7, 8, 8 }, 2, 2);
 }
