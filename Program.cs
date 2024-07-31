@@ -3487,5 +3487,44 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-k-closest-elements/description/
     var sol = new FindKClosestElements();
-    sol.FindClosestElements(new int[] { 0, 0, 0, 1, 3, 5, 6, 7, 8, 8 }, 2, 2);
+    //sol.FindClosestElements(new int[] { 0, 0, 0, 1, 3, 5, 6, 7, 8, 8 }, 2, 2);
+}
+
+{
+    var sol = MaxSlidingWindow(new[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3);
+    public int[] MaxSlidingWindow(int[] nums, int k)
+    {
+        int left = 0, right = 0;
+        var result = new List<int>(nums.Length - k + 1);
+        var pq = new PriorityQueue<(int, int), int>(new MaxHeapComparer());
+
+        while (right != k)
+        {
+            pq.Enqueue((nums[right], right), nums[right]);
+            right++;
+        }
+
+        while (right <= nums.Length)
+        {
+            // if index is out-of-range, pop it and process next values
+            while (pq.TryPeek(out var num, out _) && !IsInRange(num.Item2))
+            {
+                pq.Dequeue();
+            }
+
+            result.Add(pq.Peek().Item1);
+
+            if (right == nums.Length)
+                break;
+
+            pq.Enqueue((nums[right], right), nums[right]);
+
+            left++;
+            right++;
+        }
+
+        return result.ToArray();
+
+        bool IsInRange(int index) => index >= left;
+    }
 }
