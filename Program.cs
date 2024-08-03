@@ -3492,7 +3492,7 @@ using Sandbox.Topics.Trees;
 
 {
     var sol = MaxSlidingWindow(new[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3);
-    public int[] MaxSlidingWindow(int[] nums, int k)
+    int[] MaxSlidingWindow(int[] nums, int k)
     {
         int left = 0, right = 0;
         var result = new List<int>(nums.Length - k + 1);
@@ -3526,5 +3526,65 @@ using Sandbox.Topics.Trees;
         return result.ToArray();
 
         bool IsInRange(int index) => index >= left;
+    }
+}
+
+{
+    // https://leetcode.com/problems/minimum-window-substring/
+    var sol = MinWindow("ADOBECODEBANC", "ABC");
+
+    string MinWindow(string s, string t)
+    {
+        var dict = new Dictionary<char, int>(s.Length);
+        var charsCount = t.Length;
+
+        foreach (var character in t)
+        {
+            if (dict.ContainsKey(character))
+                dict[character]++;
+            else
+                dict.Add(character, 1);
+        }
+
+        int left = 0, right = 0;
+        var currentCount = 0;
+        int minLength = s.Length + 1, minLeft = 0;
+
+        while (right < s.Length)
+        {
+            if (dict.ContainsKey(s[right]))
+            {
+                dict[s[right]]--;
+
+                if (dict[s[right]] >= 0)
+                    currentCount++;
+
+                while (currentCount == charsCount)
+                {
+                    // if a new minimum substring was found
+                    if (right - left + 1 < minLength)
+                    {
+                        minLeft = left;
+                        minLength = right - left + 1;
+                    }
+
+                    // start is slid to the next needed character encountered on the way
+                    if (dict.ContainsKey(s[left]))
+                    {
+                        dict[s[left]]++;
+
+                        // but if the removed needed character is a mandatory one, the while loop will stop
+                        if (dict[s[left]] > 0)
+                            currentCount--;
+                    }
+
+                    left++;
+                }
+            }
+
+            right++;
+        }
+
+        return minLength > s.Length ? "" : s.Substring(minLeft, minLength);
     }
 }
