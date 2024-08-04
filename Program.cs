@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.InteropServices;
+using System.Text;
 using Sandbox.Assignments;
 using Sandbox.DataStructures;
 using Sandbox.Enums;
@@ -3531,7 +3532,7 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/minimum-window-substring/
-    var sol = MinWindow("ADOBECODEBANC", "ABC");
+    //var sol = MinWindow("ADOBECODEBANC", "ABC");
 
     string MinWindow(string s, string t)
     {
@@ -3586,5 +3587,52 @@ using Sandbox.Topics.Trees;
         }
 
         return minLength > s.Length ? "" : s.Substring(minLeft, minLength);
+    }
+}
+
+{
+    // https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/
+    var sol = new MinimumOperationstoReduceXtoZero();
+    //sol.MinOperations(new int[] { 1, 1, 4, 2, 3 }, 5);
+}
+
+{
+    // https://leetcode.com/problems/reconstruct-itinerary/description/
+    var sol = FindItinerary(new List<IList<string>>()
+    {
+        new List<string>() { "JFK", "SFO" }, new List<string>() { "JFK", "ATL" },
+        new List<string>() { "SFO", "ATL" }, new List<string>() { "ATL", "JFK" },
+        new List<string>() { "ATL", "SFO" }
+        //new List<string>() { "JFK", "KUL" }, new List<string>() { "JFK", "NRT" },
+        //new List<string>() { "NRT", "JFK"}
+    });
+    IList<string> FindItinerary(IList<IList<string>> tickets)
+    {
+        // map will know the out degrees count, PQ the lexicographical order
+        var map = new Dictionary<string, PriorityQueue<string, string>>(tickets.Count);
+
+        foreach (var ticket in tickets)
+        {
+            if (!map.ContainsKey(ticket[0]))
+                map.Add(ticket[0], new PriorityQueue<string, string>());
+
+            map[ticket[0]].Enqueue(ticket[1], ticket[1]);
+        }
+
+        var result = new List<string>(map.Count);
+
+        DFS("JFK");
+        result.Reverse();
+        return result;
+
+        void DFS(string current)
+        {
+            while (map.ContainsKey(current) && map[current].Count > 0)
+            {
+                DFS(map[current].Dequeue());
+            }
+
+            result.Add(current);
+        }
     }
 }
