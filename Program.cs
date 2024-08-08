@@ -3636,3 +3636,9 @@ using Sandbox.Topics.Trees;
         }
     }
 }
+
+{
+    // https://leetcode.com/problems/subarray-sum-equals-k/description/
+    var sol = new SubarraySumEqualsK();
+    sol.SubarraySum(new int[] { -1, -1, 1 }, 0);
+}
