@@ -3651,5 +3651,11 @@ using Sandbox.Topics.Trees;
 
 {
     var sol = new ContinuousSubArraySum();
-    sol.CheckSubarraySum(new int[] { 23, 2, 6, 4, 7 }, 2);
+    //sol.CheckSubarraySum(new int[] { 23, 2, 6, 4, 7 }, 2);
+}
+
+{
+    // https://leetcode.com/problems/non-decreasing-array/description/
+    var sol = new NonDecreasingArray();
+    sol.CheckPossibility(new int[] { 4, 2, 3 });
 }
