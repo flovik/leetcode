@@ -3659,3 +3659,16 @@ using Sandbox.Topics.Trees;
     var sol = new NonDecreasingArray();
     sol.CheckPossibility(new int[] { 4, 2, 3 });
 }
+
+{
+    // https://leetcode.com/problems/first-missing-positive/description/
+    var sol = new FirstMissingPositive();
+    sol.FirstMissingPositiveSol(new int[] { 3, 4, -1, 1 });
+    //sol.FirstMissingPositiveSol(new int[] { 2, 2, 2 });
+    //sol.FirstMissingPositiveSol(new int[]
+    //    { -3, 9, 16, 4, 5, 16, -4, 9, 26, 2, 1, 19, -1, 25, 7, 22, 2, -7, 14, 2, 5, -6, 1, 17, 3, 24, -4, 17, 15 });
+}
+
+{
+    // https://leetcode.com/problems/sort-characters-by-frequency/description/
+}
