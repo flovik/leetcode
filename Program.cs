@@ -3672,3 +3672,9 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/sort-characters-by-frequency/description/
 }
+
+{
+    // https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/description/
+    var sol = new MinimumRemoveToMakeValidParentheses();
+    sol.MinRemoveToMakeValid("lee(t(c)o)de)");
+}
