@@ -3676,5 +3676,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/description/
     var sol = new MinimumRemoveToMakeValidParentheses();
-    sol.MinRemoveToMakeValid("lee(t(c)o)de)");
+    //sol.MinRemoveToMakeValid("lee(t(c)o)de)");
+}
+
+{
+    // https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
+    var sol = new FindAllDuplicatesinanArray();
+    sol.FindDuplicates(new int[] { 10, 2, 5, 10, 9, 1, 1, 4, 3, 7 });
 }
