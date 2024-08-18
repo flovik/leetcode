@@ -3682,5 +3682,10 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
     var sol = new FindAllDuplicatesinanArray();
-    sol.FindDuplicates(new int[] { 10, 2, 5, 10, 9, 1, 1, 4, 3, 7 });
+    //sol.FindDuplicates(new int[] { 10, 2, 5, 10, 9, 1, 1, 4, 3, 7 });
+}
+
+{
+    var sol = new TextJustification();
+    sol.FullJustify(new string[] { "Listen", "to", "many,", "speak", "to", "a", "few." }, 6);
 }
