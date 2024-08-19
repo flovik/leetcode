@@ -3687,5 +3687,11 @@ using Sandbox.Topics.Trees;
 
 {
     var sol = new TextJustification();
-    sol.FullJustify(new string[] { "Listen", "to", "many,", "speak", "to", "a", "few." }, 6);
+    //sol.FullJustify(new string[] { "Listen", "to", "many,", "speak", "to", "a", "few." }, 6);
+}
+
+{
+    // https://leetcode.com/problems/maximum-sum-circular-subarray/
+    var sol = new MaximumSumCircularSubarray();
+    sol.MaxSubarraySumCircular(new int[] { 1, -1, 5, -2, 3, 2 });
 }
