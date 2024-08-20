@@ -3693,5 +3693,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/maximum-sum-circular-subarray/
     var sol = new MaximumSumCircularSubarray();
-    sol.MaxSubarraySumCircular(new int[] { 1, -1, 5, -2, 3, 2 });
+    //sol.MaxSubarraySumCircular(new int[] { 1, -1, 5, -2, 3, 2 });
+}
+
+{
+    // https://leetcode.com/problems/longest-turbulent-subarray/description/
+    var sol = new LongestTurbulentSubarray();
+    sol.MaxTurbulenceSize(new int[] { 2, 0, 2, 4, 2, 5, 0, 1, 2, 3 });
 }
