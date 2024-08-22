@@ -3699,5 +3699,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/longest-turbulent-subarray/description/
     var sol = new LongestTurbulentSubarray();
-    sol.MaxTurbulenceSize(new int[] { 2, 0, 2, 4, 2, 5, 0, 1, 2, 3 });
+    //sol.MaxTurbulenceSize(new int[] { 2, 0, 2, 4, 2, 5, 0, 1, 2, 3 });
+}
+
+{
+    // https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description/
+    var sol = new MaximumPointsYouCanObtainfromCards();
+    sol.MaxScore(new int[] { 1, 1000, 1 }, 1);
 }
