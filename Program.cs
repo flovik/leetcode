@@ -3705,5 +3705,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description/
     var sol = new MaximumPointsYouCanObtainfromCards();
-    sol.MaxScore(new int[] { 1, 1000, 1 }, 1);
+    //sol.MaxScore(new int[] { 1, 1000, 1 }, 1);
+}
+
+{
+    // https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/description/
+    var sol = new MinimumDeletionstoMakeCharacterFrequenciesUnique();
+    sol.MinDeletions("abcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwz");
 }
