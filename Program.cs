@@ -3716,5 +3716,15 @@ using Sandbox.Topics.Trees;
 
 {
     var sol = new MinimizeMaximumofArray();
-    sol.MinimizeArrayValue(new int[] { 4, 7, 2, 2, 9, 19, 16, 0, 3, 15 });
+    //sol.MinimizeArrayValue(new int[] { 4, 7, 2, 2, 9, 19, 16, 0, 3, 15 });
+}
+
+{
+    // https://leetcode.com/problems/two-city-scheduling/description/
+    var sol = new TwoCityScheduling();
+    sol.TwoCitySchedCost(new int[][]
+    {
+        new int[] { 259, 770 }, new[] { 448, 54 }, new[] { 926, 667 }, new[] { 184, 139 }, new[] { 840, 118 },
+        new[] { 577, 469 }
+    });
 }
