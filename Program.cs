@@ -3722,9 +3722,15 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/two-city-scheduling/description/
     var sol = new TwoCityScheduling();
-    sol.TwoCitySchedCost(new int[][]
-    {
-        new int[] { 259, 770 }, new[] { 448, 54 }, new[] { 926, 667 }, new[] { 184, 139 }, new[] { 840, 118 },
-        new[] { 577, 469 }
-    });
+    //sol.TwoCitySchedCost(new int[][]
+    //{
+    //    new int[] { 259, 770 }, new[] { 448, 54 }, new[] { 926, 667 }, new[] { 184, 139 }, new[] { 840, 118 },
+    //    new[] { 577, 469 }
+    //});
+}
+
+{
+    // https://leetcode.com/problems/furthest-building-you-can-reach/description/
+    var sol = new FurthestBuildingYouCanReach();
+    sol.FurthestBuilding(new int[] { 4, 2, 7, 6, 9, 14, 12 }, 5, 1);
 }
