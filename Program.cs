@@ -3732,5 +3732,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/furthest-building-you-can-reach/description/
     var sol = new FurthestBuildingYouCanReach();
-    sol.FurthestBuilding(new int[] { 4, 2, 7, 6, 9, 14, 12 }, 5, 1);
+    //sol.FurthestBuilding(new int[] { 4, 2, 7, 6, 9, 14, 12 }, 5, 1);
+}
+
+{
+    // https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/description/
+    var sol = new LeastNumberofUniqueIntegersafterKRemovals();
+    sol.FindLeastNumOfUniqueInts(new int[] { 4, 3, 1, 1, 3, 3, 2 }, 3);
 }
