@@ -3738,5 +3738,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/description/
     var sol = new LeastNumberofUniqueIntegersafterKRemovals();
-    sol.FindLeastNumOfUniqueInts(new int[] { 4, 3, 1, 1, 3, 3, 2 }, 3);
+    //sol.FindLeastNumOfUniqueInts(new int[] { 4, 3, 1, 1, 3, 3, 2 }, 3);
+}
+
+{
+    // https://leetcode.com/problems/car-pooling/description/
+    var sol = new CarPooling();
+    sol.CarPoolingSol(new int[][] { new int[] { 2, 1, 5 }, new[] { 3, 3, 7 } }, 4);
 }
