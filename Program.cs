@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 using System.Text;
 using Sandbox.Assignments;
 using Sandbox.DataStructures;
@@ -3744,5 +3745,100 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/car-pooling/description/
     var sol = new CarPooling();
-    sol.CarPoolingSol(new int[][] { new int[] { 2, 1, 5 }, new[] { 3, 3, 7 } }, 4);
+    //sol.CarPoolingSol(new int[][] { new int[] { 2, 1, 5 }, new[] { 3, 3, 7 } }, 4);
+}
+
+{
+    //var sol = getMaxInformationGain(new List<string>() { "aaaaaaaaaaaaa", "bbbbbbaabbbb" }, 2);
+    static int getMaxInformationGain(List<string> dataSet, int max_common_features)
+    {
+        var result = 0; // max of Math.Abs(a - b) if not exceeding MCF
+
+        var commonCharacters = new int[26];
+        for (int i = 0; i < dataSet.Count; i++)
+        {
+            var cur = dataSet[i];
+
+            foreach (var ch in cur)
+            {
+                commonCharacters[ch - 97]++;
+            }
+
+            var commonCharacters2 = new int[26];
+            for (int j = i + 1; j < dataSet.Count; j++)
+            {
+                var cur2 = dataSet[j];
+                var curFreq = 0;
+
+                var len = Math.Abs(cur.Length - cur2.Length);
+
+                if (len < result)
+                    continue;
+
+                foreach (var ch in cur2)
+                {
+                    // a match!
+                    var freq = commonCharacters[ch - 97];
+
+                    if (freq > 0)
+                    {
+                        commonCharacters2[ch - 97]++;
+
+                        if (freq < commonCharacters2[ch - 97])
+                            continue;
+
+                        curFreq++;
+                    }
+                }
+
+                Array.Clear(commonCharacters2);
+
+                if (curFreq > max_common_features)
+                    continue;
+
+                result = Math.Max(result, len);
+            }
+
+            Array.Clear(commonCharacters);
+        }
+
+        return result;
+    }
+
+    static int getMinSize(List<int> gameSize, int k)
+    {
+        var minHeap = new PriorityQueue<int, (int, int)>(gameSize.Count);
+
+        for (int i = 0; i < k; i++)
+        {
+            minHeap.Enqueue(gameSize[i], (gameSize[i], 1));
+        }
+
+        // if game size list is bigger, process remaining games greedily by assigning to smaller children
+        for (int i = k; i < gameSize.Count; i++)
+        {
+            while (minHeap.TryPeek(out var _, out var priority) && priority.Item2 == 2)
+            {
+                minHeap.Dequeue();
+            }
+
+            var smallestGame = gameSize[i] + minHeap.Dequeue();
+            minHeap.Enqueue(smallestGame, (smallestGame, 2));
+        }
+
+        var result = 0;
+
+        while (minHeap.Count > 0)
+        {
+            result = Math.Max(result, minHeap.Dequeue());
+        }
+
+        return result;
+    }
+}
+
+{
+    // https://leetcode.com/problems/longest-happy-string/description/
+    var sol = new LongestHappyString();
+    sol.LongestDiverseString(7, 1, 0);
 }
