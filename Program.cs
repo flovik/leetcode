@@ -3840,5 +3840,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/longest-happy-string/description/
     var sol = new LongestHappyString();
-    sol.LongestDiverseString(7, 1, 0);
+    //sol.LongestDiverseString(7, 1, 0);
+}
+
+{
+    // https://leetcode.com/problems/maximum-subsequence-score/
+    var sol = new MaximumSubsequenceScore();
+    sol.MaxScore(new int[] { 4, 15, 3, 1, 1 }, new[] { 7, 5, 10, 9, 6 }, 3);
 }
