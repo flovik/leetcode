@@ -3845,6 +3845,12 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/maximum-subsequence-score/
-    var sol = new MaximumSubsequenceScore();
-    sol.MaxScore(new int[] { 4, 15, 3, 1, 1 }, new[] { 7, 5, 10, 9, 6 }, 3);
+    //var sol = new MaximumSubsequenceScore();
+    //sol.MaxScore(new int[] { 4, 15, 3, 1, 1 }, new[] { 7, 5, 10, 9, 6 }, 3);
+}
+
+{
+    // https://leetcode.com/problems/single-threaded-cpu/description/
+    var sol = new SingleThreadedCPU();
+    sol.GetOrder(new int[][] { new[] { 8, 4 }, new[] { 5, 6 }, new[] { 2, 2 }, new[] { 7, 2 }, new[] { 10, 8 }, new[] { 2, 1 }, new[] { 5, 7 }, new[] { 8, 9 }, new[] { 2, 7 }, new[] { 3, 7 } });
 }
