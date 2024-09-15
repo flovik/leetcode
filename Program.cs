@@ -3852,5 +3852,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/single-threaded-cpu/description/
     var sol = new SingleThreadedCPU();
-    sol.GetOrder(new int[][] { new[] { 8, 4 }, new[] { 5, 6 }, new[] { 2, 2 }, new[] { 7, 2 }, new[] { 10, 8 }, new[] { 2, 1 }, new[] { 5, 7 }, new[] { 8, 9 }, new[] { 2, 7 }, new[] { 3, 7 } });
+    //sol.GetOrder(new int[][] { new[] { 8, 4 }, new[] { 5, 6 }, new[] { 2, 2 }, new[] { 7, 2 }, new[] { 10, 8 }, new[] { 2, 1 }, new[] { 5, 7 }, new[] { 8, 9 }, new[] { 2, 7 }, new[] { 3, 7 } });
+}
+
+{
+    // https://leetcode.com/problems/maximum-performance-of-a-team/description/
+    var sol = new MaximumPerformanceofaTeam();
+    sol.MaxPerformance(3, new[] { 2, 8, 2 }, new[] { 2, 7, 1 }, 2);
 }
