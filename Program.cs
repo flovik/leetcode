@@ -3858,5 +3858,12 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/maximum-performance-of-a-team/description/
     var sol = new MaximumPerformanceofaTeam();
-    sol.MaxPerformance(3, new[] { 2, 8, 2 }, new[] { 2, 7, 1 }, 2);
+    //sol.MaxPerformance(3, new[] { 2, 8, 2 }, new[] { 2, 7, 1 }, 2);
+}
+
+{
+    // https://leetcode.com/problems/ipo/description/
+    var sol = new IPO();
+    //sol.FindMaximizedCapital(2, 0, new[] { 1, 2, 3 }, new[] { 0, 1, 1 });
+    sol.FindMaximizedCapital(2, 0, new[] { 10, 20, 3 }, new[] { 0, 0, 1 });
 }
