@@ -3867,3 +3867,9 @@ using Sandbox.Topics.Trees;
     //sol.FindMaximizedCapital(2, 0, new[] { 1, 2, 3 }, new[] { 0, 1, 1 });
     sol.FindMaximizedCapital(2, 0, new[] { 10, 20, 3 }, new[] { 0, 0, 1 });
 }
+
+{
+    // https://leetcode.com/problems/minimum-cost-to-hire-k-workers/description/
+    var sol = new MinimumCosttoHireKWorkers();
+    sol.MincostToHireWorkers(new int[] { 10, 2, 5 }, new[] { 70, 50, 30 }, 2);
+}
