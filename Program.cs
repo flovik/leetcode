@@ -3871,5 +3871,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimum-cost-to-hire-k-workers/description/
     var sol = new MinimumCosttoHireKWorkers();
-    sol.MincostToHireWorkers(new int[] { 10, 2, 5 }, new[] { 70, 50, 30 }, 2);
+    //sol.MincostToHireWorkers(new int[] { 10, 2, 5 }, new[] { 70, 50, 30 }, 2);
+}
+
+{
+    // https://leetcode.com/problems/find-peak-element/description/
+    var sol = new FindPeakElement();
+    sol.FindPeakElementSol(new int[] { 3, 4, 3, 2, 1 });
 }
