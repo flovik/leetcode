@@ -3883,7 +3883,13 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/successful-pairs-of-spells-and-potions/description/
     var sol = new SuccessfulPairsOfSpellAandPotions();
-    sol.SuccessfulPairs(new int[] { 15, 39, 38, 35, 33, 25, 31, 12, 40, 27, 29, 16, 22, 24, 7, 36, 29, 34, 24, 9, 11, 35, 21, 3, 33, 10, 9, 27, 35, 17, 14, 3, 35, 35, 39, 23, 35, 14, 31, 7 },
-        new[] { 25, 19, 30, 37, 14, 30, 38, 22, 38, 38, 26, 33, 34, 23, 40, 28, 15, 29, 36, 39, 39, 37, 32, 38, 8, 17, 39, 20, 4, 39, 39, 7, 30, 35, 29, 23 },
-        317);
+    //sol.SuccessfulPairs(new int[] { 15, 39, 38, 35, 33, 25, 31, 12, 40, 27, 29, 16, 22, 24, 7, 36, 29, 34, 24, 9, 11, 35, 21, 3, 33, 10, 9, 27, 35, 17, 14, 3, 35, 35, 39, 23, 35, 14, 31, 7 },
+    //    new[] { 25, 19, 30, 37, 14, 30, 38, 22, 38, 38, 26, 33, 34, 23, 40, 28, 15, 29, 36, 39, 39, 37, 32, 38, 8, 17, 39, 20, 4, 39, 39, 7, 30, 35, 29, 23 },
+    //    317);
+}
+
+{
+    // https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+    var sol = new FindFirstAndLastPositionOfElementInSortedArray();
+    sol.SearchRange(new int[] { 5, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 10 }, 8);
 }
