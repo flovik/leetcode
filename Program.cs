@@ -3891,5 +3891,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
     var sol = new FindFirstAndLastPositionOfElementInSortedArray();
-    sol.SearchRange(new int[] { 5, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 10 }, 8);
+    //sol.SearchRange(new int[] { 5, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 10 }, 8);
+}
+
+{
+    // https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/
+    var sol = new MinimizeTheMaximumDifferenceOfPairs();
+    sol.MinimizeMax(new int[] { 10, 1, 2, 7, 1, 3 }, 3);
 }
