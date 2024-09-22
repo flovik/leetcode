@@ -3899,3 +3899,40 @@ using Sandbox.Topics.Trees;
     var sol = new MinimizeTheMaximumDifferenceOfPairs();
     sol.MinimizeMax(new int[] { 10, 1, 2, 7, 1, 3 }, 3);
 }
+
+{
+    int MinEatingSpeed(int[] piles, int h)
+    {
+        // binary search, search a range that can be completed
+        int left = 1, right = piles[0];
+        for (var i = 0; i < piles.Length; i++)
+        {
+            left = Math.Min(left, piles[i]);
+            right = Math.Max(right, piles[i]);
+        }
+
+        while (left < right)
+        {
+            var mid = left + (right - left) / 2;
+
+            if (CanEatBananas(mid, piles, h))
+                right = mid;
+            else
+                left = mid + 1;
+        }
+
+        return left;
+    }
+
+    bool CanEatBananas(int amountOfBananas, int[] piles, int hours)
+    {
+        var count = 0;
+
+        for (var i = 0; i < piles.Length; i++)
+        {
+            count += (int) Math.Ceiling((double) piles[i] / amountOfBananas);
+        }
+
+        return count <= hours;
+    }
+}
