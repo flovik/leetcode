@@ -3897,7 +3897,7 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/
     var sol = new MinimizeTheMaximumDifferenceOfPairs();
-    sol.MinimizeMax(new int[] { 10, 1, 2, 7, 1, 3 }, 3);
+    //sol.MinimizeMax(new int[] { 10, 1, 2, 7, 1, 3 }, 3);
 }
 
 {
@@ -3934,5 +3934,46 @@ using Sandbox.Topics.Trees;
         }
 
         return count <= hours;
+    }
+}
+
+{
+    // https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+    var sol = ShipWithinDays(new int[] { 1, 2, 3, 1, 1 }, 4);
+
+    int ShipWithinDays(int[] weights, int days)
+    {
+        int left = weights.Max(), right = weights.Sum();
+
+        while (left < right)
+        {
+            var mid = left + (right - left) / 2;
+
+            if (CanShip(mid, weights, days))
+                right = mid;
+            else
+                left = mid + 1;
+        }
+
+        return left;
+    }
+
+    bool CanShip(int packages, int[] weights, int days)
+    {
+        var count = 1; // start from 1, because count the last package that will not be considered in the loop
+        var currentPackages = 0;
+
+        foreach (var weight in weights)
+        {
+            if (currentPackages + weight > packages)
+            {
+                count++;
+                currentPackages = 0;
+            }
+
+            currentPackages += weight;
+        }
+
+        return count <= days;
     }
 }
