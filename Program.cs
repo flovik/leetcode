@@ -3987,3 +3987,9 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-in-mountain-array/description/
 }
+
+{
+    // https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/description/
+    var sol = new NumberOfSubsequencesThatSatisfyTheGivenSumCondition();
+    sol.NumSubseq(new int[] { 3, 3, 6, 8 }, 12);
+}
