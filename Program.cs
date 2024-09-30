@@ -3991,5 +3991,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/description/
     var sol = new NumberOfSubsequencesThatSatisfyTheGivenSumCondition();
-    sol.NumSubseq(new int[] { 3, 3, 6, 8 }, 12);
+    //sol.NumSubseq(new int[] { 3, 3, 6, 8 }, 12);
+}
+
+{
+    // https://leetcode.com/problems/k-th-symbol-in-grammar/description/
+    var sol = new KthSymbolInGrammar();
+    sol.KthGrammar(4, 6);
 }
