@@ -3997,5 +3997,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/k-th-symbol-in-grammar/description/
     var sol = new KthSymbolInGrammar();
-    sol.KthGrammar(4, 6);
+    //sol.KthGrammar(4, 6);
+}
+
+{
+    // https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
+    var sol = new RearrangeArrayElementsBySign();
+    sol.RearrangeArray(new int[] { 3, 1, -2, -5, 2, -4 });
 }
