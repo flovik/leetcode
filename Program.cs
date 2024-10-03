@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using Sandbox.Assignments;
@@ -4003,9 +4004,46 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
     var sol = new RearrangeArrayElementsBySign();
-    sol.RearrangeArray(new int[] { 3, 1, -2, -5, 2, -4 });
+    //sol.RearrangeArray(new int[] { 3, 1, -2, -5, 2, -4 });
 }
 
 {
     // https://leetcode.com/problems/bag-of-tokens/description/
+}
+
+{
+    // https://leetcode.com/problems/trapping-rain-water/
+    var sol = Trap(new int[] { 4, 2, 0, 3, 2, 5 });
+
+    int Trap(int[] height)
+    {
+        // find next greater element in the array
+        // monotonic stack
+        var st = new Stack<int>(height.Length);
+        var result = 0;
+
+        for (int right = 0; right < height.Length; right++)
+        {
+            // while we iterate thru array, in stack we keep heights that might be smaller
+            // than the current right height, so for every one we calculate the height and width for each
+            // particular height
+            while (st.Count > 0 && height[st.Peek()] < height[right])
+            {
+                var pop = st.Pop();
+
+                if (st.Count == 0)
+                    break;
+
+                var left = st.Peek();
+                var curHeight = Math.Min(height[right] - height[pop], height[left] - height[pop]);
+                var width = right - left - 1;
+
+                result += width * curHeight;
+            }
+
+            st.Push(right);
+        }
+
+        return result;
+    }
 }
