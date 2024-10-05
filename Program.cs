@@ -4051,5 +4051,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/sum-of-subarray-minimums/description/
     var sol = new SumOfSubarrayMinimums();
-    sol.SumSubarrayMins(new int[] { 3, 1, 2, 4 });
+    //sol.SumSubarrayMins(new int[] { 3, 1, 2, 4 });
+}
+
+{
+    // https://leetcode.com/problems/132-pattern/description/
+    var sol = new _132Pattern();
+    sol.Find132pattern(new int[] { 3, 1, 4, 2 });
 }
