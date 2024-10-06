@@ -4057,5 +4057,9 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/132-pattern/description/
     var sol = new _132Pattern();
-    sol.Find132pattern(new int[] { 3, 1, 4, 2 });
+    //sol.Find132pattern(new int[] { 3, 1, 4, 2 });
+}
+
+{
+    // https://leetcode.com/problems/maximum-frequency-stack/description/
 }
