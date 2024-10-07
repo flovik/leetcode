@@ -4063,3 +4063,29 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/maximum-frequency-stack/description/
 }
+
+{
+    // https://leetcode.com/problems/longest-substring-without-repeating-characters/
+    var sol = LengthOfLongestSubstring("dvdf");
+
+    int LengthOfLongestSubstring(string s)
+    {
+        var set = new HashSet<char>(s.Length);
+        var result = 0;
+        int left = 0, right = 0;
+
+        while (right < s.Length)
+        {
+            while (set.Contains(s[right]))
+            {
+                set.Remove(s[left++]);
+            }
+
+            set.Add(s[right]);
+            result = Math.Max(result, set.Count);
+            right++;
+        }
+
+        return result;
+    }
+}
