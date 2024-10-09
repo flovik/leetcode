@@ -4089,3 +4089,46 @@ using Sandbox.Topics.Trees;
         return result;
     }
 }
+
+{
+    // https://leetcode.com/problems/longest-repeating-character-replacement/description/
+    var sol = CharacterReplacement("ABAB", 2);
+
+    int CharacterReplacement(string s, int k)
+    {
+        var set = new int[26];
+        int result = 0, left = 0, right = -1;
+
+        while (right < s.Length)
+        {
+            var maxCount = 0;
+            var sum = 0;
+
+            // iterate letters set, find maxCount and sum of everything
+            for (int i = 0; i < 26; i++)
+            {
+                maxCount = Math.Max(maxCount, set[i]);
+                sum += set[i];
+            }
+
+            // expand window
+            if (sum - maxCount <= k)
+            {
+                right++;
+
+                if (right != s.Length)
+                    set[s[right] - 'A']++;
+
+                result = Math.Max(result, right - left);
+            }
+            // doesn't satisfy, shrink window
+            else
+            {
+                set[s[left] - 'A']--;
+                left++;
+            }
+        }
+
+        return result;
+    }
+}
