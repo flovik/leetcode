@@ -4132,3 +4132,54 @@ using Sandbox.Topics.Trees;
         return result;
     }
 }
+
+{
+    // https://leetcode.com/problems/permutation-in-string/
+
+    bool CheckInclusion(string s1, string s2)
+    {
+        var dict = new int[26];
+
+        // calculate
+        foreach (var ch in s1)
+        {
+            dict[ch - 'a']++;
+        }
+
+        int left = 0, right = s1.Length - 1;
+        var curDict = new int[26];
+
+        while (right < s2.Length)
+        {
+            // skip if not in dict
+            if (dict[s2[left] - 'a'] == 0)
+            {
+                left++;
+                right++;
+                continue;
+            }
+
+            Array.Fill(curDict, 0);
+
+            for (var i = left; i <= right; i++)
+            {
+                curDict[s2[i] - 'a']++;
+            }
+
+            var isPerm = true;
+            for (var i = 0; i < 26; i++)
+            {
+                if (dict[i] != curDict[i])
+                    isPerm = false;
+            }
+
+            if (isPerm)
+                return true;
+
+            left++;
+            right++;
+        }
+
+        return false;
+    }
+}
