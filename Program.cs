@@ -4193,5 +4193,50 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
     var sol = new MaximumNumberOfVowelsInASubstringOfGivenLength();
-    sol.MaxVowels("abciiidef", 3);
+    //sol.MaxVowels("abciiidef", 3);
+}
+
+{
+    // https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/
+    var sol = MinOperations(new int[] { 1, 1 }, 3);
+
+    int MinOperations(int[] nums, int x)
+    {
+        int result = int.MaxValue, len = nums.Length, suffix = 0;
+        var prefixSum = new int[len];
+
+        // calculate prefix sum of array from left to right
+        for (int i = 0; i < len; i++)
+        {
+            var prefix = i > 0 ? prefixSum[i - 1] : 0;
+            prefixSum[i] += prefix + nums[i];
+
+            if (prefixSum[i] == x)
+                result = Math.Min(result, i + 1);
+        }
+
+        // suffix array from right to left
+        for (int i = nums.Length - 1; i >= 1; i--)
+        {
+            suffix += nums[i];
+
+            if (suffix > x)
+                break;
+
+            if (suffix == x)
+                result = Math.Min(result, nums.Length - i);
+            else
+            {
+                // binary search in prefix the value for current suffix
+                var index = Array.BinarySearch(prefixSum, 0, i - 1, x - suffix);
+
+                if (index < 0)
+                    continue;
+
+                result = Math.Min(result, nums.Length - i + index + 1);
+            }
+        }
+
+        return result == int.MaxValue ? -1 : result;
+    }
 }
