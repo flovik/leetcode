@@ -4240,3 +4240,9 @@ using Sandbox.Topics.Trees;
         return result == int.MaxValue ? -1 : result;
     }
 }
+
+{
+    // https://leetcode.com/problems/constrained-subsequence-sum/description/
+    var sol = new ConstrainedSubsequenceSum();
+    sol.ConstrainedSubsetSumBetter(new[] { 10, -2, -10, -5, 20 }, 1);
+}
