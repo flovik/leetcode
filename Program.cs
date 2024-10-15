@@ -4244,5 +4244,29 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/constrained-subsequence-sum/description/
     var sol = new ConstrainedSubsequenceSum();
-    sol.ConstrainedSubsetSumBetter(new[] { 10, -2, -10, -5, 20 }, 1);
+    //sol.ConstrainedSubsetSumBetter(new[] { 10, -2, -10, -5, 20 }, 1);
+}
+
+{
+    // https://leetcode.com/problems/count-sub-islands/
+    var sol = new CountSubIslands();
+    int[][] array1 = new int[][]
+    {
+        new int[] {1, 1, 1, 0, 0},
+        new int[] {0, 1, 1, 1, 1},
+        new int[] {0, 0, 0, 0, 0},
+        new int[] {1, 0, 0, 0, 0},
+        new int[] {1, 1, 0, 1, 1}
+    };
+
+    int[][] array2 = new int[][]
+    {
+        new int[] {1, 1, 1, 0, 0},
+        new int[] {0, 0, 1, 1, 1},
+        new int[] {0, 1, 0, 0, 0},
+        new int[] {1, 0, 1, 1, 0},
+        new int[] {0, 1, 0, 1, 0}
+    };
+
+    sol.CountSubIslandsSol(array1, array2);
 }
