@@ -4268,5 +4268,11 @@ using Sandbox.Topics.Trees;
         new int[] {0, 1, 0, 1, 0}
     };
 
-    sol.CountSubIslandsSol(array1, array2);
+    //sol.CountSubIslandsSol(array1, array2);
+}
+
+{
+    // https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/description/
+    var sol = new ReorderRoutesToMakeAllPathsLeadToTheCityZero();
+    sol.MinReorder(6, new[] { new int[] { 1, 0 }, new int[] { 1, 2 }, new[] { 3, 2 }, new[] { 3, 4 } });
 }
