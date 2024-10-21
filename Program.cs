@@ -4274,5 +4274,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/description/
     var sol = new ReorderRoutesToMakeAllPathsLeadToTheCityZero();
-    sol.MinReorder(6, new[] { new int[] { 1, 0 }, new int[] { 1, 2 }, new[] { 3, 2 }, new[] { 3, 4 } });
+    //sol.MinReorder(6, new[] { new int[] { 1, 0 }, new int[] { 1, 2 }, new[] { 3, 2 }, new[] { 3, 4 } });
+}
+
+{
+    // https://leetcode.com/problems/open-the-lock/description/
+    var sol = new OpenTheLock();
+    sol.OpenLock(new[] { "0201", "0101", "0102", "1212", "2002" }, "0000");
 }
