@@ -4280,5 +4280,20 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/open-the-lock/description/
     var sol = new OpenTheLock();
-    sol.OpenLock(new[] { "0201", "0101", "0102", "1212", "2002" }, "0000");
+    //sol.OpenLock(new[] { "0201", "0101", "0102", "1212", "2002" }, "0000");
+}
+
+{
+    // https://leetcode.com/problems/find-eventual-safe-states/description/
+    var sol = new FindEventualSafeStates();
+    sol.EventualSafeNodes(new int[][]
+    {
+        new int[] { 1, 2 },
+        new int[] { 2, 3 },
+        new int[] { 5 },
+        new int[] { 0 },
+        new int[] { 5 },
+        new int[] { },
+        new int[] { },
+    });
 }
