@@ -4286,14 +4286,59 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-eventual-safe-states/description/
     var sol = new FindEventualSafeStates();
-    sol.EventualSafeNodes(new int[][]
+    //sol.EventualSafeNodes(new int[][]
+    //{
+    //    new int[] { 1, 2 },
+    //    new int[] { 2, 3 },
+    //    new int[] { 5 },
+    //    new int[] { 0 },
+    //    new int[] { 5 },
+    //    new int[] { },
+    //    new int[] { },
+    //});
+}
+
+{
+    // https://leetcode.com/problems/course-schedule/
+    var sol = CanFinish(5, new int[][] { new int[] { 1, 4 }, new int[] { 2, 4 }, new[] { 3, 1 }, new int[] { 3, 2 } });
+
+    bool CanFinish(int numCourses, int[][] prerequisites)
     {
-        new int[] { 1, 2 },
-        new int[] { 2, 3 },
-        new int[] { 5 },
-        new int[] { 0 },
-        new int[] { 5 },
-        new int[] { },
-        new int[] { },
-    });
+        var outDegree = new int[numCourses];
+        var pq = new PriorityQueue<int, int>(numCourses);
+        var dict = new Dictionary<int, List<int>>(numCourses);
+
+        for (var i = 0; i < numCourses; i++)
+        {
+            dict.TryAdd(i, []);
+        }
+
+        for (var i = 0; i < prerequisites.Length; i++)
+        {
+            outDegree[prerequisites[i][0]]++;
+            dict[prerequisites[i][1]].Add(prerequisites[i][0]);
+        }
+
+        for (var i = 0; i < outDegree.Length; i++)
+        {
+            if (outDegree[i] == 0)
+                pq.Enqueue(i, 1);
+        }
+
+        while (pq.Count > 0)
+        {
+            var deq = pq.Dequeue();
+            var list = dict[deq];
+
+            foreach (var node in list)
+            {
+                outDegree[node]--;
+
+                if (outDegree[node] == 0)
+                    pq.Enqueue(node, 1);
+            }
+        }
+
+        return outDegree.All(e => e == 0);
+    }
 }
