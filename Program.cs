@@ -2,6 +2,7 @@
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
+using Sandbox;
 using Sandbox.Assignments;
 using Sandbox.DataStructures;
 using Sandbox.Enums;
@@ -4340,5 +4341,51 @@ using Sandbox.Topics.Trees;
         }
 
         return outDegree.All(e => e == 0);
+    }
+}
+
+{
+    // https://leetcode.com/problems/course-schedule-ii/description/
+    int[] FindOrder(int numCourses, int[][] prerequisites)
+    {
+        var n = numCourses;
+        var outDegree = new int[n];
+        var list = new List<int>(n);
+        var dict = new Dictionary<int, List<int>>(n);
+        var pq = new PriorityQueue<int, int>(n);
+
+        for (var i = 0; i < n; i++)
+        {
+            dict.Add(i, []);
+        }
+
+        foreach (var pre in prerequisites)
+        {
+            outDegree[pre[0]]++;
+            dict[pre[1]].Add(pre[0]);
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            if (outDegree[i] == 0)
+                pq.Enqueue(i, 1);
+        }
+
+        while (pq.Count > 0)
+        {
+            var deq = pq.Dequeue();
+            var l = dict[deq];
+            list.Add(deq);
+
+            foreach (var node in l)
+            {
+                outDegree[node]--;
+
+                if (outDegree[node] == 0)
+                    pq.Enqueue(node, 1);
+            }
+        }
+
+        return list.Count == n ? list.ToArray() : [];
     }
 }

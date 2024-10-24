@@ -10,6 +10,8 @@
 
 // topological sort finds the topological ordering in O(V+E)
 // graph with cycles cannot have a valid ordering
+
+// so you can find cycles using that algo
 public class TopologicalSort
 {
     // pick unvisited node
@@ -42,16 +44,13 @@ public class TopologicalSort
         // remove the node from the graph and subtract the degree of all affected nodes
         // add any new nodes in the queue
         // create adjacency list
-        var prerequisites = new[] { new[] { 1, 4 }, new[] { 2, 4 }, new[] { 3, 1 }, new[] { 3, 2 } }
+        var prerequisites = new[] { new[] { 1, 4 }, new[] { 2, 4 }, new[] { 3, 1 }, new[] { 3, 2 } };
         var numCourses = 5;
         var adjList = new Dictionary<int, List<int>>(numCourses);
         var inDegree = new int[numCourses];
 
         foreach (var prerequisite in prerequisites)
         {
-            //if (!Union(prerequisite[0], prerequisite[1]))
-            //    return false;
-
             if (adjList.ContainsKey(prerequisite[0]))
                 adjList[prerequisite[0]].Add(prerequisite[1]);
             else
