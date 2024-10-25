@@ -4389,3 +4389,10 @@ using Sandbox.Topics.Trees;
         return list.Count == n ? list.ToArray() : [];
     }
 }
+
+{
+    // https://leetcode.com/problems/course-schedule-iv/description/
+    var sol = new CourseScheduleIV();
+    sol.CheckIfPrerequisite(3, new[] { new int[] { 1, 2 }, new int[] { 2, 0 } },
+        new[] { new int[] { 1, 0 }, new int[] { 1, 2 } });
+}
