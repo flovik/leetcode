@@ -4439,15 +4439,15 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/redundant-connection/description/
-    var sol = new Test();
-    sol.FindRedundantConnection(new int[][]
-    {
-        new int[] { 1, 2 },
-        new int[] { 2, 3 },
-        new int[] { 3, 4 },
-        new int[] { 1, 4 },
-        new int[] { 1, 5 },
-    });
+    //var sol = new Test();
+    //sol.FindRedundantConnection(new int[][]
+    //{
+    //    new int[] { 1, 2 },
+    //    new int[] { 2, 3 },
+    //    new int[] { 3, 4 },
+    //    new int[] { 1, 4 },
+    //    new int[] { 1, 5 },
+    //});
 
     int[] FindRedundantConnection(int[][] edges)
     {
@@ -4505,4 +4505,14 @@ using Sandbox.Topics.Trees;
             return true;
         }
     }
+}
+
+{
+    // https://leetcode.com/problems/shortest-path-in-binary-matrix/
+    var sol = new ShortestPathInBinaryMatrix();
+    sol.ShortestPathBinaryMatrix(new int[][]
+    {
+        new int[] { 0, 1 },
+        new int[] { 1, 0 },
+    });
 }
