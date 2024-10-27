@@ -4396,3 +4396,43 @@ using Sandbox.Topics.Trees;
     sol.CheckIfPrerequisite(3, new[] { new int[] { 1, 2 }, new int[] { 2, 0 } },
         new[] { new int[] { 1, 0 }, new int[] { 1, 2 } });
 }
+
+{
+    // https://leetcode.com/problems/shortest-bridge/description/
+}
+
+{
+    // https://leetcode.com/problems/maximum-points-tourist-can-earn/
+    var sol = new MaximumPointsTouristCanEarn();
+    //sol.MaxScore(3, 2, new[] { new int[] { 3, 4, 2 }, new int[] { 2, 1, 2 } },
+    //    new[] { new int[] { 0, 2, 1 }, new[] { 2, 0, 4 }, new int[] { 3, 2, 0 } });
+
+    //sol.MaxScore(1, 1, new[] { new int[] { 1 } },
+    //    new[] { new int[] { 0 }, });
+}
+
+{
+    // https://leetcode.com/problems/shortest-bridge/
+    var sol = new ShortestBridge();
+    sol.ShortestBridgeSol(new int[][]
+    {
+        new int[] { 0, 1 },
+        new int[] { 1, 0 },
+    });
+
+    sol.ShortestBridgeSol(new int[][]
+    {
+        new int[] { 0, 1, 0 },
+        new int[] { 0, 0, 0 },
+        new int[] { 0, 0, 1 },
+    });
+
+    sol.ShortestBridgeSol(new int[][]
+    {
+        new int[] { 1,1,1,1,1 },
+        new int[] { 1,0,0,0,1 },
+        new int[] { 1,0,1,0,1},
+        new int[] { 1,0,0,0,1},
+        new int[] { 1,1,1,1,1},
+    });
+}
