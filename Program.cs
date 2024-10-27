@@ -4436,3 +4436,73 @@ using Sandbox.Topics.Trees;
         new int[] { 1,1,1,1,1},
     });
 }
+
+{
+    // https://leetcode.com/problems/redundant-connection/description/
+    var sol = new Test();
+    sol.FindRedundantConnection(new int[][]
+    {
+        new int[] { 1, 2 },
+        new int[] { 2, 3 },
+        new int[] { 3, 4 },
+        new int[] { 1, 4 },
+        new int[] { 1, 5 },
+    });
+
+    int[] FindRedundantConnection(int[][] edges)
+    {
+        // use union find to find cycles
+        var n = edges.Length;
+        var parent = new int[n + 1];
+        var rank = new int[n + 1]; // depth of the tree
+
+        for (int i = 1; i <= n; i++)
+        {
+            parent[i] = i;
+        }
+
+        // take each edge and add one by one
+        foreach (var edge in edges)
+        {
+            // first one is the redundant one
+            if (!Union(edge))
+                return edge;
+        }
+
+        return [-1, -1];
+
+        int Find(int node)
+        {
+            if (parent[node] == node)
+                return node;
+
+            return parent[node] = Find(parent[node]);
+        }
+
+        bool Union(int[] edge)
+        {
+            var leftParent = Find(edge[0]);
+            var rightParent = Find(edge[1]);
+
+            // cycle detected
+            if (leftParent == rightParent)
+                return false;
+
+            if (rank[leftParent] > rank[rightParent])
+            {
+                parent[rightParent] = parent[leftParent];
+            }
+            else if (rank[rightParent] > rank[leftParent])
+            {
+                parent[leftParent] = parent[rightParent];
+            }
+            else
+            {
+                parent[rightParent] = leftParent;
+                rank[leftParent]++;
+            }
+
+            return true;
+        }
+    }
+}
