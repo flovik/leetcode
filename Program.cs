@@ -4527,3 +4527,9 @@ using Sandbox.Topics.Trees;
 
     //sol.AccountsMergeSol([["David", "David0@m.co", "David1@m.co"], ["David", "David3@m.co", "David4@m.co"], ["David", "David4@m.co", "David5@m.co"], ["David", "David2@m.co", "David3@m.co"], ["David", "David1@m.co", "David2@m.co"]]);
 }
+
+{
+    // https://leetcode.com/problems/find-closest-node-to-given-two-nodes/description/
+    var sol = new FindClosestNodeToGivenTwoNodes();
+    sol.ClosestMeetingNode([4, 4, 8, -1, 9, 8, 4, 4, 1, 1], 5, 6);
+}
