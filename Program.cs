@@ -4531,5 +4531,12 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-closest-node-to-given-two-nodes/description/
     var sol = new FindClosestNodeToGivenTwoNodes();
-    sol.ClosestMeetingNode([4, 4, 8, -1, 9, 8, 4, 4, 1, 1], 5, 6);
+    //sol.ClosestMeetingNode([4, 4, 8, -1, 9, 8, 4, 4, 1, 1], 5, 6);
+}
+
+{
+    // https://leetcode.com/problems/as-far-from-land-as-possible/
+    var sol = new AsFarFromLandAsPossible();
+    //sol.MaxDistance([[1, 0, 0], [0, 0, 0], [0, 0, 0]]);
+    sol.MaxDistance([[1, 0, 0, 0], [1, 1, 0, 0], [0, 0, 0, 0], [1, 1, 0, 0]]);
 }
