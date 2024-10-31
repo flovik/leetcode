@@ -6,6 +6,7 @@ using Sandbox;
 using Sandbox.Assignments;
 using Sandbox.DataStructures;
 using Sandbox.Enums;
+using Sandbox.Solutions;
 using Sandbox.Solutions.Easy;
 using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
@@ -4539,4 +4540,9 @@ using Sandbox.Topics.Trees;
     var sol = new AsFarFromLandAsPossible();
     //sol.MaxDistance([[1, 0, 0], [0, 0, 0], [0, 0, 0]]);
     sol.MaxDistance([[1, 0, 0, 0], [1, 1, 0, 0], [0, 0, 0, 0], [1, 1, 0, 0]]);
+}
+
+{
+    // https://leetcode.com/problems/shortest-path-with-alternating-colors/description/
+    var sol = new ShortestPathWithAlternatingColors();
 }
