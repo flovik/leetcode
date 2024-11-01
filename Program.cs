@@ -4546,3 +4546,9 @@ using Sandbox.Topics.Trees;
     // https://leetcode.com/problems/shortest-path-with-alternating-colors/description/
     var sol = new ShortestPathWithAlternatingColors();
 }
+
+{
+    // https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/description/
+    var sol = new MinimumFuelCostToReportToTheCapital();
+    sol.MinimumFuelCost([[0, 1], [1, 2], [2, 3], [3, 4], [3, 6], [4, 5]], 2);
+}
