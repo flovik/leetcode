@@ -4539,7 +4539,7 @@ using Sandbox.Topics.Trees;
     // https://leetcode.com/problems/as-far-from-land-as-possible/
     var sol = new AsFarFromLandAsPossible();
     //sol.MaxDistance([[1, 0, 0], [0, 0, 0], [0, 0, 0]]);
-    sol.MaxDistance([[1, 0, 0, 0], [1, 1, 0, 0], [0, 0, 0, 0], [1, 1, 0, 0]]);
+    //sol.MaxDistance([[1, 0, 0, 0], [1, 1, 0, 0], [0, 0, 0, 0], [1, 1, 0, 0]]);
 }
 
 {
@@ -4550,5 +4550,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/description/
     var sol = new MinimumFuelCostToReportToTheCapital();
-    sol.MinimumFuelCost([[0, 1], [1, 2], [2, 3], [3, 4], [3, 6], [4, 5]], 2);
+    //sol.MinimumFuelCost([[0, 1], [1, 2], [2, 3], [3, 4], [3, 6], [4, 5]], 2);
+}
+
+{
+    // https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/description/
+    var sol = new MinimumScoreOfAPathBetweenTwoCities();
+    sol.MinScore(4, [[1, 2, 9], [2, 3, 6], [2, 4, 5], [1, 4, 7]]);
 }
