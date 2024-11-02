@@ -4574,3 +4574,9 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/description/
 }
+
+{
+    // https://leetcode.com/problems/is-graph-bipartite/description/
+    var sol = new IsGraphBipartite();
+    sol.IsBipartite([[1, 2], [0, 2], [0, 1]]);
+}
