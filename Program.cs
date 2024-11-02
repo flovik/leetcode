@@ -4556,5 +4556,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/description/
     var sol = new MinimumScoreOfAPathBetweenTwoCities();
-    sol.MinScore(4, [[1, 2, 9], [2, 3, 6], [2, 4, 5], [1, 4, 7]]);
+    //sol.MinScore(4, [[1, 2, 9], [2, 3, 6], [2, 4, 5], [1, 4, 7]]);
+}
+
+{
+    // https://leetcode.com/problems/number-of-closed-islands/description/
+    var sol = new NumberOfClosedIslands();
+    sol.ClosedIsland([[0, 0, 1, 1, 0, 1, 0, 0, 1, 0], [1, 1, 0, 1, 1, 0, 1, 1, 1, 0], [1, 0, 1, 1, 1, 0, 0, 1, 1, 0], [0, 1, 1, 0, 0, 0, 0, 1, 0, 1], [0, 0, 0, 0, 0, 0, 1, 1, 1, 0], [0, 1, 0, 1, 0, 1, 0, 1, 1, 1], [1, 0, 1, 0, 1, 1, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 0, 0, 1, 0, 1, 0, 1], [1, 1, 1, 0, 1, 1, 0, 1, 1, 0]]);
 }
