@@ -4570,3 +4570,7 @@ using Sandbox.Topics.Trees;
     var sol = new NumberOfEnclaves();
     sol.NumEnclaves([[0, 0, 0, 0], [1, 0, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]]);
 }
+
+{
+    // https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/description/
+}
