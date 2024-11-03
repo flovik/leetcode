@@ -4568,7 +4568,7 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/number-of-enclaves/description/
     var sol = new NumberOfEnclaves();
-    sol.NumEnclaves([[0, 0, 0, 0], [1, 0, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]]);
+    //sol.NumEnclaves([[0, 0, 0, 0], [1, 0, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]]);
 }
 
 {
@@ -4578,5 +4578,5 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/is-graph-bipartite/description/
     var sol = new IsGraphBipartite();
-    sol.IsBipartite([[1, 2], [0, 2], [0, 1]]);
+    //sol.IsBipartite([[1, 2], [0, 2], [0, 1]]);
 }
