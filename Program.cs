@@ -4580,3 +4580,14 @@ using Sandbox.Topics.Trees;
     var sol = new IsGraphBipartite();
     //sol.IsBipartite([[1, 2], [0, 2], [0, 1]]);
 }
+
+{
+    // https://leetcode.com/problems/evaluate-division/description/
+}
+
+{
+    // https://leetcode.com/problems/detonate-the-maximum-bombs/
+    var sol = new DetonateTheMaximumBombs();
+    sol.MaximumDetonation([[634, 440, 278], [748, 509, 396], [995, 881, 251], [704, 214, 341], [832, 972, 238], [987, 384, 156], [378, 988, 402], [743, 557, 252], [814, 868, 196], [131, 922, 199], [13, 398, 444], [464, 607, 241], [426, 128, 81]]);
+    //sol.MaximumDetonation([[1, 1, 5], [10, 10, 5]]);
+}
