@@ -4588,6 +4588,12 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/detonate-the-maximum-bombs/
     var sol = new DetonateTheMaximumBombs();
-    sol.MaximumDetonation([[634, 440, 278], [748, 509, 396], [995, 881, 251], [704, 214, 341], [832, 972, 238], [987, 384, 156], [378, 988, 402], [743, 557, 252], [814, 868, 196], [131, 922, 199], [13, 398, 444], [464, 607, 241], [426, 128, 81]]);
+    //sol.MaximumDetonation([[634, 440, 278], [748, 509, 396], [995, 881, 251], [704, 214, 341], [832, 972, 238], [987, 384, 156], [378, 988, 402], [743, 557, 252], [814, 868, 196], [131, 922, 199], [13, 398, 444], [464, 607, 241], [426, 128, 81]]);
     //sol.MaximumDetonation([[1, 1, 5], [10, 10, 5]]);
+}
+
+{
+    // https://leetcode.com/problems/minimum-height-trees/
+    var sol = new MinimumHeightTrees();
+    sol.FindMinHeightTrees(6, [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]);
 }
