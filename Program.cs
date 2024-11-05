@@ -4595,5 +4595,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimum-height-trees/
     var sol = new MinimumHeightTrees();
-    sol.FindMinHeightTrees(6, [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]);
+    //sol.FindMinHeightTrees(6, [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]);
+}
+
+{
+    // https://leetcode.com/problems/path-with-maximum-gold/
+    var sol = new PathWithMaximumGold();
+    sol.GetMaximumGold([[0, 0, 0, 22, 0, 24], [34, 23, 18, 0, 23, 2], [11, 39, 20, 12, 0, 0], [39, 8, 0, 2, 0, 1], [19, 32, 26, 20, 20, 30], [0, 38, 26, 0, 29, 31]]);
 }
