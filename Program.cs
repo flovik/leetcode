@@ -4607,5 +4607,11 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/largest-color-value-in-a-directed-graph/description/
     var sol = new LargestColorValueInADirectedGraph();
-    sol.LargestPathValue("a", [[0, 0]]);
+    //sol.LargestPathValue("a", [[0, 0]]);
+}
+
+{
+    // https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/description/
+    var sol = new MinimumNumberOfDaysToEatNOranges();
+    sol.MinDays(10);
 }
