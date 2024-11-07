@@ -4613,5 +4613,12 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/description/
     var sol = new MinimumNumberOfDaysToEatNOranges();
-    sol.MinDays(10);
+    //sol.MinDays(10);
+}
+
+{
+    // https://leetcode.com/problems/parallel-courses-iii/
+    var sol = new ParallelCoursesIII();
+    //sol.MinimumTime(3, [[1, 3], [2, 3]], [3, 2, 5]);
+    sol.MinimumTime(5, [[1, 5], [2, 5], [3, 4], [4, 5]], [1, 2, 1, 1, 5]);
 }
