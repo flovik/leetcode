@@ -4626,5 +4626,63 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-all-people-with-secret/
     var sol = new FindAllPeopleWithSecret();
-    sol.FindAllPeople(4, [[3, 1, 3], [1, 2, 2], [0, 3, 3]], 3);
+    //sol.FindAllPeople(4, [[3, 1, 3], [1, 2, 2], [0, 3, 3]], 3);
+}
+
+{
+    // https://leetcode.com/problems/word-ladder/description/
+
+    public int LadderLength(string beginWord, string endWord, IList<string> wordList)
+    {
+        var set = new HashSet<string>(wordList);
+        if (!set.Contains(endWord))
+            return 0;
+
+        var visited = new HashSet<string>(wordList.Count) { beginWord };
+        var n = beginWord.Length;
+        var queue = new Queue<string>(wordList.Count);
+
+        queue.Enqueue(beginWord);
+        var count = 1;
+        var sb = new StringBuilder(n);
+
+        while (queue.Count > 0)
+        {
+            var qCount = queue.Count;
+
+            for (var i = 0; i < qCount; i++)
+            {
+                var deq = queue.Dequeue();
+
+                if (deq == endWord)
+                    return count;
+
+                visited.Add(deq);
+                sb.Clear();
+                sb.Append(deq);
+
+                // change every letter of the current word and see if exists in set of words
+                for (var j = 0; j < n; j++)
+                {
+                    var prevLetter = deq[j];
+
+                    for (var k = 0; k < 26; k++)
+                    {
+                        var letter = (char) ('a' + k);
+                        sb[j] = letter;
+
+                        var str = sb.ToString();
+                        if (set.Contains(str) && !visited.Contains(str))
+                            queue.Enqueue(str);
+                    }
+
+                    sb[j] = prevLetter;
+                }
+            }
+
+            count++;
+        }
+
+        return 0;
+    }
 }
