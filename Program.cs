@@ -4718,3 +4718,20 @@ using Sandbox.Topics.Trees;
         return Math.Min(cost[^1], cost[^2]);
     }
 }
+
+{
+    // https://leetcode.com/problems/house-robber/description/
+    public int Rob(int[] nums)
+    {
+        if (nums.Length == 1)
+            return nums[0];
+
+        nums[1] = Math.Max(nums[1], nums[0]);
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = Math.Max(nums[i - 1], nums[i] + nums[i - 2]);
+        }
+
+        return nums[^1];
+    }
+}
