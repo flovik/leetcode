@@ -4632,7 +4632,7 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/word-ladder/description/
 
-    public int LadderLength(string beginWord, string endWord, IList<string> wordList)
+    int LadderLength(string beginWord, string endWord, IList<string> wordList)
     {
         var set = new HashSet<string>(wordList);
         if (!set.Contains(endWord))
@@ -4684,5 +4684,23 @@ using Sandbox.Topics.Trees;
         }
 
         return 0;
+    }
+}
+
+{
+    // https://leetcode.com/problems/min-cost-climbing-stairs/description/
+
+    int ClimbStairs(int n)
+    {
+        var dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        return dp[n];
     }
 }
