@@ -4721,7 +4721,7 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/house-robber/description/
-    public int Rob(int[] nums)
+    int Rob(int[] nums)
     {
         if (nums.Length == 1)
             return nums[0];
@@ -4733,5 +4733,84 @@ using Sandbox.Topics.Trees;
         }
 
         return nums[^1];
+    }
+}
+
+{
+    // https://leetcode.com/problems/min-cost-to-connect-all-points/
+    int MinCostConnectPoints(int[][] points)
+    {
+        // kruskal with union find
+        // if creates a cycle, skip that edge
+        var n = points.Length;
+        var parent = new int[n];
+        var rank = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            parent[i] = i;
+        }
+
+        var pq = new PriorityQueue<(int, int), int>(n);
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (i == j)
+                    continue;
+
+                var point1 = points[i];
+                var point2 = points[j];
+                var distance = GetDistance(point1[0], point1[1], point2[0], point2[1]);
+
+                pq.Enqueue((i, j), distance);
+            }
+        }
+
+        var result = 0;
+        while (pq.Count > 0)
+        {
+            pq.TryDequeue(out var el, out var distance);
+            var (i, j) = el;
+
+            if (!Union(i, j))
+                continue;
+
+            result += distance;
+        }
+
+        return result;
+
+        int Find(int x)
+        {
+            if (parent[x] == x)
+                return x;
+
+            return parent[x] = Find(parent[x]);
+        }
+
+        bool Union(int x, int y)
+        {
+            var parentX = Find(x);
+            var parentY = Find(y);
+
+            if (parentX == parentY)
+                return false;
+
+            if (rank[parentY] > rank[parentX])
+                parent[parentX] = parentY;
+            else if (rank[parentX] > rank[parentY])
+                parent[parentY] = parentX;
+            else
+            {
+                parent[parentX] = parentY;
+                rank[parentX]++;
+            }
+
+            return true;
+        }
+
+        int GetDistance(int x1, int y1, int x2, int y2) => Math.Abs(x2 - x1) + Math.Abs(y2 - y1);
     }
 }
