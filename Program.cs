@@ -4850,3 +4850,51 @@ using Sandbox.Topics.Trees;
         return Math.Max(max1, max2);
     }
 }
+
+{
+    // https://leetcode.com/problems/longest-palindromic-substring/
+
+    string LongestPalindrome(string s)
+    {
+        int start = 0, end = 0;
+
+        SlidePalindromes(1); // 2 len sub-strings
+        SlidePalindromes(2); // 3 len sub-strings
+
+        return s[start..(end + 1)];
+
+        void SlidePalindromes(int index)
+        {
+            for (var i = index; i < s.Length; i++)
+            {
+                int left = i - index, right = i;
+
+                while (left >= 0 && right < s.Length && IsPalindrome(s, left, right))
+                {
+                    if (right - left + 1 > end - start + 1)
+                    {
+                        start = left;
+                        end = right;
+                    }
+
+                    left--;
+                    right++;
+                }
+            }
+        }
+    }
+
+    private static bool IsPalindrome(string s, int start, int end)
+    {
+        while (start >= 0 && end < s.Length && start < end)
+        {
+            if (s[start] != s[end])
+                return false;
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+}
