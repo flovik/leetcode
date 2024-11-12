@@ -4884,7 +4884,7 @@ using Sandbox.Topics.Trees;
         }
     }
 
-    private static bool IsPalindrome(string s, int start, int end)
+    static bool IsPalindrome(string s, int start, int end)
     {
         while (start >= 0 && end < s.Length && start < end)
         {
@@ -4896,5 +4896,32 @@ using Sandbox.Topics.Trees;
         }
 
         return true;
+    }
+}
+
+{
+    // https://leetcode.com/problems/palindromic-substrings/description/
+    int CountSubstrings(string s)
+    {
+        var count = s.Length;
+        SlidePalindrome(1);
+        SlidePalindrome(2);
+        return count;
+
+        void SlidePalindrome(int index)
+        {
+            for (var i = index; i < s.Length; i++)
+            {
+                var left = i - index;
+                var right = i;
+
+                while (left >= 0 && right < s.Length && s[left] == s[right])
+                {
+                    count++;
+                    left--;
+                    right++;
+                }
+            }
+        }
     }
 }
