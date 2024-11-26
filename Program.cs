@@ -2973,7 +2973,7 @@ using Sandbox.Topics.Trees;
     //var sol = NumSquares(25);
     int NumSquares(int n)
     {
-        var count = (int) Math.Sqrt(n);
+        var count = (int)Math.Sqrt(n);
         var ps = new int[count];
         var dp = new int[n + 1];
 
@@ -3933,7 +3933,7 @@ using Sandbox.Topics.Trees;
 
         for (var i = 0; i < piles.Length; i++)
         {
-            count += (int) Math.Ceiling((double) piles[i] / amountOfBananas);
+            count += (int)Math.Ceiling((double)piles[i] / amountOfBananas);
         }
 
         return count <= hours;
@@ -4668,7 +4668,7 @@ using Sandbox.Topics.Trees;
 
                     for (var k = 0; k < 26; k++)
                     {
-                        var letter = (char) ('a' + k);
+                        var letter = (char)('a' + k);
                         sb[j] = letter;
 
                         var str = sb.ToString();
@@ -4923,5 +4923,31 @@ using Sandbox.Topics.Trees;
                 }
             }
         }
+    }
+}
+
+{
+    // https://leetcode.com/problems/decode-ways/
+
+    public int NumDecodings(string s)
+    {
+        if (s[0] == '0')
+            return 0;
+
+        var n = s.Length;
+        var dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            if (s[i - 1] != '0')
+                dp[i] += dp[i - 1];
+
+            if (s[i - 2] == '1' || (s[i - 2] == '2' && s[i - 1] <= '6'))
+                dp[i] += dp[i - 2];
+        }
+
+        return dp[^1];
     }
 }
