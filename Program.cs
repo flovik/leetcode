@@ -4929,7 +4929,7 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/decode-ways/
 
-    public int NumDecodings(string s)
+    int NumDecodings(string s)
     {
         if (s[0] == '0')
             return 0;
@@ -4949,5 +4949,35 @@ using Sandbox.Topics.Trees;
         }
 
         return dp[^1];
+    }
+}
+
+{
+    // https://leetcode.com/problems/coin-change/description/
+
+    int CoinChange(int[] coins, int amount)
+    {
+        Array.Sort(coins);
+
+        var dp = new int[amount + 1];
+        Array.Fill(dp, int.MaxValue);
+        dp[0] = 0;
+
+        for (var i = 1; i <= amount; i++)
+        {
+            foreach (var coin in coins)
+            {
+                if (coin > i)
+                    break;
+
+                if (coin == i)
+                    dp[i] = 1;
+
+                if (dp[i - coin] != int.MaxValue)
+                    dp[i] = Math.Min(dp[i], dp[i - coin] + 1);
+            }
+        }
+
+        return dp[amount] == int.MaxValue ? -1 : dp[amount];
     }
 }
