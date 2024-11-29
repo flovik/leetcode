@@ -4981,3 +4981,63 @@ using Sandbox.Topics.Trees;
         return dp[amount] == int.MaxValue ? -1 : dp[amount];
     }
 }
+
+{
+    // https://leetcode.com/problems/maximum-product-subarray/
+
+    int MaxProduct(int[] nums)
+    {
+        // kadane
+        int n = nums.Length, max = nums[0], localPosMax = nums[0], localNegMax = nums[0];
+
+        for (int i = 1; i < n; i++)
+        {
+            if (nums[i] >= 0)
+            {
+                localPosMax = Math.Max(localPosMax * nums[i], nums[i]);
+                localNegMax = Math.Min(localNegMax * nums[i], nums[i]);
+            }
+            else
+            {
+                var pos = localPosMax;
+                localPosMax = Math.Max(localNegMax * nums[i], nums[i]);
+                localNegMax = Math.Min(pos * nums[i], nums[i]);
+            }
+
+            max = Math.Max(max, localPosMax);
+        }
+
+        return max;
+    }
+
+    int MaxProductDP(int[] nums)
+    {
+        // DP
+        var n = nums.Length;
+        var set = new HashSet<int>(n);
+        var max = int.MinValue;
+
+        // set will contain all maximum sub array until i
+        // 2 3 -2 4, i = 0, set = {2}, i = 1, set = {(2 * 3), (3)}, i = 2, set = {(2 * 3 * -2), (3 * -2), {-2}}
+        // take the max on each iteration
+
+        for (int i = 0; i < n; i++)
+        {
+            var prevNums = set.ToArray();
+            set.Clear();
+
+            foreach (var num in prevNums)
+            {
+                var newNum = num * nums[i];
+                set.Add(newNum);
+
+                max = Math.Max(max, newNum);
+            }
+
+            max = Math.Max(max, nums[i]);
+            set.Add(nums[i]);
+        }
+
+        return max;
+    }
+}
