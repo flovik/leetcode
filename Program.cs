@@ -5041,3 +5041,68 @@ using Sandbox.Topics.Trees;
         return max;
     }
 }
+
+{
+    // https://leetcode.com/problems/longest-increasing-subsequence/description/
+    int LengthOfLIS(int[] nums)
+    {
+        var end = 0;
+
+        for (var i = 1; i < nums.Length; i++)
+        {
+            if (nums[i] > nums[end])
+            {
+                end++;
+                nums[end] = nums[i];
+            }
+            else
+            {
+                var index = BinarySearch(nums[i], nums[..(end + 1)]);
+                nums[index] = nums[i];
+            }
+        }
+
+        return end + 1;
+    }
+
+    int BinarySearch(int target, int[] nums)
+    {
+        var left = 0;
+        var right = nums.Length - 1;
+
+        while (left < right)
+        {
+            var mid = left + (right - left) / 2;
+
+            if (nums[mid] == target)
+                return mid;
+
+            if (nums[mid] < target)
+                left = mid + 1;
+            else
+                right = mid;
+        }
+
+        return left;
+    }
+
+    int LengthOfLISDp(int[] nums)
+    {
+        var dp = new int[nums.Length];
+        var max = 1;
+        Array.Fill(dp, 1);
+
+        for (var i = 1; i < nums.Length; i++)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                if (nums[i] > nums[j])
+                    dp[i] = Math.Max(dp[i], dp[j] + 1);
+            }
+
+            max = Math.Max(max, dp[i]);
+        }
+
+        return max;
+    }
+}
