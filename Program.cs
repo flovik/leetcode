@@ -5106,3 +5106,9 @@ using Sandbox.Topics.Trees;
         return max;
     }
 }
+
+{
+    // https://leetcode.com/problems/word-break/
+    var sol = new Test();
+    sol.WordBreak("leetcode", ["leet", "code"]);
+}
