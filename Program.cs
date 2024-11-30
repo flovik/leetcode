@@ -5109,6 +5109,58 @@ using Sandbox.Topics.Trees;
 
 {
     // https://leetcode.com/problems/word-break/
+    bool WordBreak(string s, IList<string> wordDict)
+    {
+        var set = new HashSet<string>(wordDict);
+        var dp = new bool[s.Length + 1];
+        dp[0] = true;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            foreach (var word in wordDict)
+            {
+                if (word.Length - 1 > i)
+                    continue;
+
+                var from = i - word.Length + 1;
+                if (set.Contains(s[from..(i + 1)]) && dp[from])
+                    dp[i + 1] = true;
+            }
+        }
+
+        return dp[s.Length];
+    }
+}
+
+{
+    // https://leetcode.com/problems/partition-equal-subset-sum/description/
     var sol = new Test();
-    sol.WordBreak("leetcode", ["leet", "code"]);
+    bool CanPartition(int[] nums)
+    {
+        var sum = nums.Sum();
+        if (sum % 2 == 1)
+            return false;
+
+        var target = sum / 2;
+        var set = new HashSet<int>(target + 1);
+
+        foreach (var t in nums)
+        {
+            foreach (var num in set.ToArray())
+            {
+                var cur = num + t;
+                if (cur > target)
+                    continue;
+
+                if (cur == target)
+                    return true;
+
+                set.Add(cur);
+            }
+
+            set.Add(t);
+        }
+
+        return set.Contains(target);
+    }
 }
