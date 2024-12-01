@@ -5164,3 +5164,25 @@ using Sandbox.Topics.Trees;
         return set.Contains(target);
     }
 }
+
+{
+    // https://leetcode.com/problems/delete-and-earn/description/
+
+    int DeleteAndEarn(int[] nums)
+    {
+        var max = nums.Max();
+        var dp = new int[max + 1];
+
+        foreach (var num in nums)
+        {
+            dp[num] += num;
+        }
+
+        for (var i = 2; i <= max; i++)
+        {
+            dp[i] = Math.Max(dp[i] + dp[i - 2], dp[i - 1]);
+        }
+
+        return dp[max];
+    }
+}
