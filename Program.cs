@@ -5186,3 +5186,31 @@ using Sandbox.Topics.Trees;
         return dp[max];
     }
 }
+
+{
+    // https://leetcode.com/problems/perfect-squares/
+    int NumSquares(int n)
+    {
+        var dp = new int[n + 1];
+        Array.Fill(dp, int.MaxValue);
+        dp[0] = 0;
+
+        for (var i = 1; i <= n; i++)
+        {
+            for (var j = 1; j <= n; j++)
+            {
+                var square = j * j;
+
+                if (square > i)
+                    continue;
+
+                if (square == i)
+                    dp[i] = 1;
+
+                dp[i] = Math.Min(dp[i], dp[i - square] + 1);
+            }
+        }
+
+        return dp[n];
+    }
+}
