@@ -5238,3 +5238,25 @@ using Sandbox.Topics.Trees;
         return dp[target];
     }
 }
+
+{
+    // https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/description/
+    bool ValidPartition(int[] nums)
+    {
+        var n = nums.Length;
+        var dp = new bool[n];
+        dp[1] = nums[0] == nums[1];
+
+        if (nums.Length > 2)
+            dp[2] = (nums[2] == nums[1] && nums[2] == nums[0]) || (nums[2] - 1 == nums[1] && nums[1] - 1 == nums[0]);
+
+        for (var i = 3; i < n; i++)
+        {
+            dp[i] |= nums[i] == nums[i - 1] && dp[i - 2];
+            dp[i] |= nums[i] == nums[i - 1] && nums[i] == nums[i - 2] && dp[i - 3];
+            dp[i] |= nums[i] - 1 == nums[i - 1] && nums[i - 1] - 1 == nums[i - 2] && dp[i - 3];
+        }
+
+        return dp[^1];
+    }
+}
