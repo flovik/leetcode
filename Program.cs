@@ -5260,3 +5260,54 @@ using Sandbox.Topics.Trees;
         return dp[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/maximum-subarray-min-product/description/
+    int MaxSumMinProduct(int[] nums)
+    {
+        var n = nums.Length;
+        long result = 0;
+        var prefix = new long[n];
+        prefix[0] = nums[0];
+
+        for (var i = 1; i < n; i++)
+        {
+            prefix[i] += prefix[i - 1] + nums[i];
+        }
+
+        var st = new Stack<int>(n);
+        var nextSmaller = new int[n];
+        var prevSmaller = new int[n];
+
+        Array.Fill(nextSmaller, -1);
+        Array.Fill(prevSmaller, -1);
+
+        for (var i = 0; i < n; i++)
+        {
+            while (st.Count > 0 && nums[st.Peek()] > nums[i])
+            {
+                var pop = st.Pop();
+                nextSmaller[pop] = i;
+            }
+
+            if (st.Count > 0)
+                prevSmaller[i] = st.Peek();
+
+            st.Push(i);
+        }
+
+        for (var i = 0; i < n; i++)
+        {
+            var left = prevSmaller[i] == -1 ? 0 : prevSmaller[i] + 1;
+            var right = nextSmaller[i] == -1 ? n - 1 : nextSmaller[i] - 1;
+
+            var min = Math.Min(nums[i], Math.Min(nums[left], nums[right]));
+            var leftSum = left != 0 ? prefix[left - 1] : 0;
+            var sum = prefix[right] - leftSum;
+
+            result = Math.Max(result, min * sum);
+        }
+
+        return (int)(result % 1_000_000_007);
+    }
+}
