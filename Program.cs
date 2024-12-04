@@ -5311,3 +5311,35 @@ using Sandbox.Topics.Trees;
         return (int)(result % 1_000_000_007);
     }
 }
+
+{
+    // https://leetcode.com/problems/minimum-cost-for-tickets/description/
+    int MincostTickets(int[] days, int[] costs)
+    {
+        var lastDay = days[^1];
+        var dp = new int[lastDay + 1];
+        var ways = new[] { 1, 7, 30 };
+        Array.Fill(dp, int.MaxValue);
+        dp[0] = 0;
+
+        var index = 0;
+        for (var day = 1; day <= lastDay; day++)
+        {
+            if (days[index] == day)
+            {
+                for (var j = 0; j < costs.Length; j++)
+                {
+                    var prevDay = Math.Clamp(day - ways[j], 0, day);
+                    dp[day] = Math.Min(dp[day], costs[j] + dp[prevDay]);
+                }
+
+                index++;
+                continue;
+            }
+
+            dp[day] = dp[day - 1];
+        }
+
+        return dp[lastDay];
+    }
+}
