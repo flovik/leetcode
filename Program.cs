@@ -5343,3 +5343,28 @@ using Sandbox.Topics.Trees;
         return dp[lastDay];
     }
 }
+
+{
+    // https://leetcode.com/problems/integer-break/
+    int IntegerBreak(int n)
+    {
+        if (n is 1 or 2)
+            return 1;
+
+        if (n is 3)
+            return 2;
+
+        var dp = new int[59];
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 3;
+
+        for (var i = 4; i <= n; i++)
+        {
+            dp[i] = Math.Max(dp[i], dp[i - 2] * 2);
+            dp[i] = Math.Max(dp[i], dp[i - 3] * 3);
+        }
+
+        return dp[n];
+    }
+}
