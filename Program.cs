@@ -5368,3 +5368,40 @@ using Sandbox.Topics.Trees;
         return dp[n];
     }
 }
+
+{
+    // https://leetcode.com/problems/number-of-longest-increasing-subsequence/
+    int FindNumberOfLISDp(int[] nums)
+    {
+        int n = nums.Length, max = 0;
+        int[] dp = new int[n], maxCount = new int[n];
+        Array.Fill(dp, 1); Array.Fill(maxCount, 1);
+
+        for (var i = 0; i < n; i++)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                if (nums[i] <= nums[j]) continue;
+
+                if (dp[i] < dp[j] + 1)
+                {
+                    dp[i] = Math.Max(dp[i], dp[j] + 1);
+                    maxCount[i] = maxCount[j];
+                }
+                else if (dp[i] == dp[j] + 1)
+                    maxCount[i] += maxCount[j];
+            }
+
+            max = Math.Max(max, dp[i]);
+        }
+
+        var ways = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (dp[i] == max)
+                ways += maxCount[i];
+        }
+
+        return ways;
+    }
+}
