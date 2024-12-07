@@ -5405,3 +5405,9 @@ using Sandbox.Topics.Trees;
         return ways;
     }
 }
+
+{
+    // https://leetcode.com/problems/uncrossed-lines/
+    var sol = new UncrossedLines();
+    sol.MaxUncrossedLines([2, 3, 1], [3, 1, 3, 3, 3, 3]);
+}
