@@ -5413,4 +5413,7 @@ using Sandbox.Topics.Trees;
 }
 
 {
+    // https://leetcode.com/problems/stickers-to-spell-word/
+    var sol = new StickersToSpellWord();
+    sol.MinStickers(["notice", "possible"], "thehat");
 }
