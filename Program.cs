@@ -5417,3 +5417,9 @@ using Sandbox.Topics.Trees;
     var sol = new StickersToSpellWord();
     sol.MinStickers(["notice", "possible"], "thehat");
 }
+
+{
+    // https://leetcode.com/problems/count-ways-to-build-good-strings/
+    var sol = new CountWaysToBuildGoodStrings();
+    sol.CountGoodStrings(200, 200, 10, 1);
+}
