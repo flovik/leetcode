@@ -5488,3 +5488,36 @@ using Sandbox.Topics.Trees;
         return (int)sum;
     }
 }
+
+{
+    // https://leetcode.com/problems/best-team-with-no-conflicts/
+    int BestTeamScore(int[] scores, int[] ages)
+    {
+        var n = scores.Length;
+        var scoresAges = new int[n][];
+        var dp = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            scoresAges[i] = [scores[i], ages[i]];
+        }
+
+        Array.Sort(scoresAges, (a, b) => a[1] == b[1] ? a[0].CompareTo(b[0]) : a[1].CompareTo(b[1]));
+
+        for (int i = 0; i < n; i++)
+        {
+            dp[i] = scoresAges[i][0];
+        }
+
+        for (var i = 1; i < n; i++)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                if (scoresAges[i][0] >= scoresAges[j][0])
+                    dp[i] = Math.Max(dp[i], dp[j] + scoresAges[i][0]);
+            }
+        }
+
+        return dp.Max();
+    }
+}
