@@ -5423,3 +5423,68 @@ using Sandbox.Topics.Trees;
     var sol = new CountWaysToBuildGoodStrings();
     sol.CountGoodStrings(200, 200, 10, 1);
 }
+
+{
+    // https://leetcode.com/problems/knight-dialer/description/
+
+    int KnightDialer(int n)
+    {
+        if (n == 1)
+            return 10;
+
+        var knightMovements = new Dictionary<int, int[]>()
+        {
+            {0, [4, 6]},
+            {1, [6, 8]},
+            {2, [7, 9]},
+            {3, [4, 8]},
+            {4, [0, 3, 9]},
+            {5, []},
+            {6, [0, 1, 7]},
+            {7, [2, 6]},
+            {8, [1, 3]},
+            {9, [2, 4]}
+        };
+
+        const int mod = 1_000_000_007;
+
+        // count for each digit how many number should we have on next iteration
+        var digits = new long[10];
+        var tempDigits = new long[10];
+
+        for (var i = 0; i <= 9; i++)
+        {
+            digits[i] = 1;
+        }
+
+        for (var i = 1; i < n; i++)
+        {
+            Array.Clear(tempDigits);
+
+            // for each digit count how many digits it will become, e.g. 0 -> [4, 6], meaning we increment 4 by one and 6 by one
+            for (var j = 0; j <= 9; j++)
+            {
+                var knightMoves = knightMovements[j];
+
+                foreach (var digit in knightMoves)
+                {
+                    var count = digits[j] % mod;
+                    tempDigits[digit] += count;
+                }
+            }
+
+            Array.Copy(tempDigits, digits, 10);
+        }
+
+        long sum = 0;
+
+        for (int i = 0; i < 10; i++)
+        {
+            var count = digits[i] % mod;
+            sum += count;
+        }
+
+        sum %= mod;
+        return (int)sum;
+    }
+}
