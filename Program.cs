@@ -5521,3 +5521,9 @@ using Sandbox.Topics.Trees;
         return dp.Max();
     }
 }
+
+{
+    // https://leetcode.com/problems/new-21-game/
+    var sol = new New21Game();
+    sol.New21GameSol(185, 183, 2);
+}
