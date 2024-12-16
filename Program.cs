@@ -5527,3 +5527,72 @@ using Sandbox.Topics.Trees;
     var sol = new New21Game();
     sol.New21GameSol(185, 183, 2);
 }
+
+{
+    // https://leetcode.com/problems/longest-string-chain/description/
+    int LongestStrChain(string[] words)
+    {
+        var dict = new Dictionary<int, List<string>>(words.Length);
+        var cache = new Dictionary<string, int>(words.Length);
+
+        foreach (var word in words)
+        {
+            dict.TryAdd(word.Length, []);
+            dict[word.Length].Add(word);
+        }
+
+        // backtracking - group words in length groups (len 1 group, len 2 group) and iterate each word and see if we can build the next word
+        // cache words that are matching
+
+        foreach (var word in words)
+        {
+            Backtrack(word);
+        }
+
+        return cache.Values.Max();
+
+        void Backtrack(string word)
+        {
+            if (cache.ContainsKey(word))
+                return;
+
+            cache.TryAdd(word, 1);
+            var searchingWords = dict.GetValueOrDefault(word.Length + 1, []);
+
+            foreach (var searchingWord in searchingWords.Where(searchingWord => CanChain(word, searchingWord)))
+            {
+                if (!cache.ContainsKey(searchingWord))
+                    Backtrack(searchingWord);
+
+                cache[word] = Math.Max(cache[word], cache[searchingWord] + 1);
+            }
+        }
+
+        bool CanChain(string a, string b)
+        {
+            string first = a, second = b;
+            if (a.Length < b.Length)
+            {
+                first = b;
+                second = a;
+            }
+
+            var canChain = true;
+            for (int i = 0, j = 0; i < first.Length && j < second.Length; i++)
+            {
+                if (first[i] != second[j] && !canChain)
+                    return false;
+
+                if (first[i] != second[j])
+                {
+                    canChain = !canChain;
+                    continue;
+                }
+
+                j++;
+            }
+
+            return true;
+        }
+    }
+}
