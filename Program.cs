@@ -5596,3 +5596,30 @@ using Sandbox.Topics.Trees;
         }
     }
 }
+
+{
+    // https://leetcode.com/problems/partition-array-for-maximum-sum/description/
+
+    int MaxSumAfterPartitioning(int[] arr, int k)
+    {
+        var n = arr.Length;
+        var dp = new int[n];
+
+        for (var i = 0; i < n; i++)
+        {
+            var maxInWindow = arr[i];
+            for (int j = i, count = 1; j > i - k; j--, count++)
+            {
+                if (j < 0) // out-of-bounds window
+                    continue;
+
+                var prev = j == 0 ? 0 : dp[j - 1]; // corner of the array
+                maxInWindow = Math.Max(maxInWindow, arr[j]); // take the max number in the window
+                var sum = maxInWindow * count + prev; // curSum + prev
+                dp[i] = Math.Max(dp[i], sum);
+            }
+        }
+
+        return dp[^1];
+    }
+}
