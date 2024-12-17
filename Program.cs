@@ -5623,3 +5623,51 @@ using Sandbox.Topics.Trees;
         return dp[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/largest-divisible-subset/description/
+    IList<int> LargestDivisibleSubset(int[] nums)
+    {
+        Array.Sort(nums);
+        var n = nums.Length;
+        var dp = new int[n];
+        dp[0] = 1;
+
+        var to = new int[n];
+        Array.Fill(to, int.MinValue);
+
+        var max = int.MinValue;
+        var maxIndex = 0;
+
+        for (var i = 0; i < n; i++)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                if (nums[i] % nums[j] != 0)
+                    continue;
+
+                if (dp[j] + 1 <= dp[i])
+                    continue;
+
+                dp[i] = dp[j] + 1;
+                to[i] = j;
+            }
+
+            if (dp[i] <= max)
+                continue;
+
+            max = dp[i];
+            maxIndex = i;
+        }
+
+        var list = new List<int>(max);
+
+        while (maxIndex != int.MinValue)
+        {
+            list.Add(nums[maxIndex]);
+            maxIndex = to[maxIndex];
+        }
+
+        return list;
+    }
+}
