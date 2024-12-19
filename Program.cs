@@ -5685,3 +5685,9 @@ using Sandbox.Topics.Trees;
         "cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"
     ]);
 }
+
+{
+    // https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position/
+    var sol = new FindTheLongestValidObstacleCourseAtEachPosition();
+    sol.LongestObstacleCourseAtEachPosition([5, 2, 5, 4, 1, 1, 1, 5, 3, 1]);
+}
