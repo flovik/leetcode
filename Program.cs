@@ -5671,3 +5671,17 @@ using Sandbox.Topics.Trees;
         return list;
     }
 }
+
+{
+    // https://leetcode.com/problems/stone-game-iii/
+    var sol = new StoneGame3();
+    //sol.StoneGameIII([9, -4, 0, 12, -5, -13, 15, 6, -16, 8, 2, 16, 12, -6, 13, 0, -16, -11, 9, -14, 7, -1, 14]);
+}
+
+{
+    // https://leetcode.com/problems/concatenated-words/
+    var sol = new ConcatenatedWords();
+    sol.FindAllConcatenatedWordsInADict([
+        "cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"
+    ]);
+}
