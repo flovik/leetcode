@@ -5689,5 +5689,31 @@ using Sandbox.Topics.Trees;
 {
     // https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position/
     var sol = new FindTheLongestValidObstacleCourseAtEachPosition();
-    sol.LongestObstacleCourseAtEachPosition([5, 2, 5, 4, 1, 1, 1, 5, 3, 1]);
+    //sol.LongestObstacleCourseAtEachPosition([5, 2, 5, 4, 1, 1, 1, 5, 3, 1]);
+}
+
+{
+    // https://leetcode.com/problems/unique-paths/
+    int UniquePaths(int m, int n)
+    {
+        var dp = new int[m][];
+
+        for (int i = 0; i < m; i++)
+        {
+            dp[i] = new int[n];
+            dp[i][0] = 1;
+        }
+
+        Array.Fill(dp[0], 1);
+
+        for (int i = 1; i < m; i++)
+        {
+            for (int j = 1; j < n; j++)
+            {
+                dp[i][j] += dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+
+        return dp[m - 1][n - 1];
+    }
 }
