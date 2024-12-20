@@ -5717,3 +5717,9 @@ using Sandbox.Topics.Trees;
         return dp[m - 1][n - 1];
     }
 }
+
+{
+    // https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
+    var sol = new CountAllValidPickupAndDeliveryOptions();
+    sol.CountOrders(5);
+}
