@@ -5796,3 +5796,21 @@ using Sandbox.Topics.Trees;
         return dp[0][0];
     }
 }
+
+{
+    // https://leetcode.com/problems/last-stone-weight-ii/
+    int LastStoneWeightII(int[] stones)
+    {
+        var sum = stones.Sum();
+        var dp = new int[sum / 2 + 1];
+        foreach (var stone in stones)
+        {
+            for (var j = sum / 2; j >= stone; j--)
+            {
+                dp[j] = Math.Max(dp[j], dp[j - stone] + stone);
+            }
+        }
+
+        return sum - 2 * dp[^1];
+    }
+}
