@@ -5831,3 +5831,49 @@ using Sandbox.Topics.Trees;
         return profit;
     }
 }
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+    int MaxProfit(int[] prices)
+    {
+        var n = prices.Length;
+        var profit = new int[n];
+
+        for (var i = 1; i < prices.Length; i++)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                var curProfit = prices[i] - prices[j];
+
+                // we'll take just the prevProfit if curProfit is negative
+                if (curProfit < 0)
+                    curProfit = 0;
+
+                var prevProfit = profit[j];
+                profit[i] = Math.Max(profit[i], prevProfit + curProfit);
+            }
+        }
+
+        return profit[^1];
+    }
+
+    int MaxProfitOptimised(int[] prices)
+    {
+        var n = prices.Length;
+        var profit = new int[n];
+
+        for (var i = 1; i < prices.Length; i++)
+        {
+            var curProfit = prices[i] - prices[i - 1];
+
+            // we'll take just the prevProfit if curProfit is negative
+            if (curProfit < 0)
+                curProfit = 0;
+
+            var prevProfit = profit[i - 1];
+            profit[i] = Math.Max(profit[i], prevProfit + curProfit);
+        }
+
+        return profit[^1];
+    }
+}
