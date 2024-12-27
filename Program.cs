@@ -5814,3 +5814,20 @@ using Sandbox.Topics.Trees;
         return sum - 2 * dp[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+    int MaxProfit(int[] prices)
+    {
+        var profit = 0;
+        var min = int.MaxValue;
+
+        foreach (var price in prices)
+        {
+            min = Math.Min(min, price);
+            profit = Math.Max(profit, price - min);
+        }
+
+        return profit;
+    }
+}
