@@ -5964,3 +5964,9 @@ using static System.Net.WebRequestMethods;
         return sell[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/brick-wall/
+    var sol = new BrickWall();
+    sol.LeastBricks([[1], [1], [1]]);
+}
