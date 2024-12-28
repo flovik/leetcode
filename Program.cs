@@ -5877,3 +5877,40 @@ using Sandbox.Topics.Trees;
         return profit[^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+    int MaxProfit(int[] prices)
+    {
+        // save in firstTransaction how the array would look like if you only did 1 transaction
+        // secondTransaction will execute when the firstTransaction was calculated and based on that we will create another transaction of
+        // previously firstTransaction
+        var firstTransaction = new int[prices.Length];
+        var secondTransaction = new int[prices.Length];
+
+        // first transaction
+        var min = prices[0];
+        for (var i = 1; i < prices.Length; i++)
+        {
+            min = Math.Min(min, prices[i - 1]);
+            var profit = prices[i] - min;
+            var prevProfit = firstTransaction[i - 1];
+
+            firstTransaction[i] = Math.Max(firstTransaction[i], Math.Max(prevProfit, profit));
+        }
+
+        // second transaction
+        min = prices[0];
+        for (var i = 1; i < prices.Length; i++)
+        {
+            // take the best transaction from yesterday
+            min = Math.Min(min, prices[i] - firstTransaction[i - 1]);
+            var profit = prices[i] - min;
+            var prevProfit = secondTransaction[i - 1];
+
+            secondTransaction[i] = Math.Max(secondTransaction[i], Math.Max(prevProfit, profit));
+        }
+
+        return secondTransaction[^1];
+    }
+}
