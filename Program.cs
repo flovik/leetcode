@@ -5970,3 +5970,9 @@ using static System.Net.WebRequestMethods;
     var sol = new BrickWall();
     sol.LeastBricks([[1], [1], [1]]);
 }
+
+{
+    // https://leetcode.com/problems/best-sightseeing-pair/?envType=daily-question&envId=2024-12-27
+    var sol = new BestSightseeingPair();
+    sol.MaxScoreSightseeingPair([8, 1, 5, 2, 6]);
+}
