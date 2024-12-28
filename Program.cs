@@ -12,6 +12,7 @@ using Sandbox.Solutions.Hard;
 using Sandbox.Solutions.Medium;
 using Sandbox.Topics.Sorting;
 using Sandbox.Topics.Trees;
+using static System.Net.WebRequestMethods;
 
 {
     //CopyListWithRandomPointer
@@ -5913,4 +5914,10 @@ using Sandbox.Topics.Trees;
 
         return secondTransaction[^1];
     }
+}
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+    var sol = new BestTimeToBuyAndSellStockIV();
+    sol.MaxProfit(2, [3, 2, 6, 5, 0, 3]);
 }
