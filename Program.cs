@@ -5921,3 +5921,28 @@ using static System.Net.WebRequestMethods;
     var sol = new BestTimeToBuyAndSellStockIV();
     sol.MaxProfit(2, [3, 2, 6, 5, 0, 3]);
 }
+
+{
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
+    int MaxProfit(int[] prices)
+    {
+        // cooldown, cannot buy on next day
+        var transactions = new int[prices.Length + 2];
+
+        for (var i = 1; i < prices.Length; i++)
+        {
+            transactions[i + 2] = transactions[i + 1];
+            for (var j = 0; j < i; j++)
+            {
+                var profit = prices[i] - prices[j];
+                var prevProfit = transactions[j + 1];
+                var coolDownProfit = transactions[j];
+
+                var newProfit = Math.Max(prevProfit, profit + coolDownProfit);
+                transactions[i + 2] = Math.Max(transactions[i + 2], newProfit);
+            }
+        }
+
+        return transactions[^1];
+    }
+}
