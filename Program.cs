@@ -5976,3 +5976,35 @@ using static System.Net.WebRequestMethods;
     var sol = new BestSightseeingPair();
     sol.MaxScoreSightseeingPair([8, 1, 5, 2, 6]);
 }
+
+{
+    // https://leetcode.com/problems/coin-change-ii/
+    int Change(int amount, int[] coins)
+    {
+        Array.Sort(coins);
+
+        var dp = new int[coins.Length + 1][];
+
+        for (var i = 0; i < coins.Length + 1; i++)
+        {
+            dp[i] = new int[amount + 1];
+        }
+
+        for (var i = 0; i < coins.Length; i++)
+        {
+            var coin = coins[i];
+            var row = i + 1;
+            dp[row][0] = 1;
+
+            for (var j = 1; j <= amount; j++)
+            {
+                dp[row][j] = dp[row - 1][j];
+
+                if (j - coin >= 0)
+                    dp[row][j] += dp[row][j - coin];
+            }
+        }
+
+        return dp[^1][^1];
+    }
+}
