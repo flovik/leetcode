@@ -6008,3 +6008,29 @@ using static System.Net.WebRequestMethods;
         return dp[^1][^1];
     }
 }
+
+{
+    // https://leetcode.com/problems/subarray-sum-equals-k/description/
+    int SubarraySum(int[] nums, int k)
+    {
+        // if a sum == k, we have the base case
+        var dictSums = new Dictionary<int, int>(nums.Length) { { 0, 1 } };
+        var prefix = 0;
+        var count = 0;
+
+        foreach (var num in nums)
+        {
+            prefix += num;
+            dictSums.TryAdd(prefix, 0);
+            dictSums[prefix]++;
+
+            if (dictSums.ContainsKey(prefix - k))
+                count += dictSums[prefix - k];
+        }
+
+        if (k == 0)
+            count -= nums.Length;
+
+        return count;
+    }
+}
