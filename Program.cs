@@ -6034,3 +6034,9 @@ using static System.Net.WebRequestMethods;
         return count;
     }
 }
+
+{
+    //https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
+    var sol = new UniqueLength3PalindromicSubsequences();
+    sol.CountPalindromicSubsequence("bbcbaba");
+}
