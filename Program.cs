@@ -6096,3 +6096,9 @@ using static System.Net.WebRequestMethods;
         return dp.ContainsKey(target) ? dp[target] : 0;
     }
 }
+
+{
+    // https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/?envType=daily-question&envId=2024-12-30
+    var sol = new DeleteNodesFromLinkedListPresentinArray();
+    sol.ModifiedList([1], new ListNode(1, new ListNode(2, new ListNode(1, new ListNode(2, new ListNode(1, new ListNode(2)))))));
+}
