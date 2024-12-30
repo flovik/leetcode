@@ -6046,3 +6046,53 @@ using static System.Net.WebRequestMethods;
     var sol = new MinimumNumberOfSwapsToMakeTheStringBalanced();
     sol.MinSwaps("]]][[[");
 }
+
+{
+    // https://leetcode.com/problems/target-sum/
+    int FindTargetSumWaysBruteForce(int[] nums, int target)
+    {
+        var queue = new Queue<int>();
+        queue.Enqueue(0);
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            var count = queue.Count;
+
+            for (var j = 0; j < count; j++)
+            {
+                var num = queue.Dequeue();
+                queue.Enqueue(num + nums[i]);
+                queue.Enqueue(num - nums[i]);
+            }
+        }
+
+        return queue.Count(e => e == target);
+    }
+
+    int FindTargetSumWays(int[] nums, int target)
+    {
+        var sum = nums.Sum();
+        var dp = new Dictionary<int, int>(sum) { { 0, 1 } };
+
+        foreach (var num in nums)
+        {
+            var tempDictionary = new Dictionary<int, int>(dp.Count * 2);
+
+            foreach (var (key, value) in dp.ToArray())
+            {
+                if (!tempDictionary.ContainsKey(key + num))
+                    tempDictionary.Add(key + num, 0);
+
+                if (!tempDictionary.ContainsKey(key - num))
+                    tempDictionary.Add(key - num, 0);
+
+                tempDictionary[key + num] += value;
+                tempDictionary[key - num] += value;
+            }
+
+            dp = tempDictionary;
+        }
+
+        return dp.ContainsKey(target) ? dp[target] : 0;
+    }
+}
