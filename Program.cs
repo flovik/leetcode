@@ -6038,5 +6038,11 @@ using static System.Net.WebRequestMethods;
 {
     //https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
     var sol = new UniqueLength3PalindromicSubsequences();
-    sol.CountPalindromicSubsequence("bbcbaba");
+    //sol.CountPalindromicSubsequence("bbcbaba");
+}
+
+{
+    // https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/
+    var sol = new MinimumNumberOfSwapsToMakeTheStringBalanced();
+    sol.MinSwaps("]]][[[");
 }
