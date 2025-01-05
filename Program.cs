@@ -6110,12 +6110,6 @@ using static System.Net.WebRequestMethods;
 }
 
 {
-    // https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/description/
-    var sol = new MaximumProductOfTheLengthOfTwoPalindromicSubsequences();
-    //sol.MaxProduct("accbcaxxcxx");
-}
-
-{
     //var sol = new TaskManager([[1, 101, 10], [2, 102, 20], [3, 103, 15]]);
     //sol.Add(4, 104, 5);
     //sol.Edit(102, 8);
@@ -6138,4 +6132,10 @@ using static System.Net.WebRequestMethods;
     // https://leetcode.com/problems/shifting-letters-ii
     var sol = new ShiftingLetters2();
     sol.ShiftingLettersLineSweep("abc", [[0, 1, 0], [1, 2, 1], [0, 2, 1]]);
+}
+
+{
+    // https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/description/
+    var sol = new MaximumProductOfTheLengthOfTwoPalindromicSubsequences();
+    sol.MaxProduct("accbcaxxcxx");
 }
