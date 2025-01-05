@@ -26,7 +26,6 @@ public class TaskManager
 
         foreach (var item in tasks)
         {
-            Console.WriteLine($"{item[0]}, {item[1]}, {item[2]}");
             Add(item[0], item[1], item[2]);
         }
     }
