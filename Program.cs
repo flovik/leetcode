@@ -6139,3 +6139,13 @@ using static System.Net.WebRequestMethods;
     var sol = new MaximumProductOfTheLengthOfTwoPalindromicSubsequences();
     sol.MaxProduct("accbcaxxcxx");
 }
+
+{
+    // https://leetcode.com/problems/longest-subsequence-with-decreasing-adjacent-difference/description/
+    var sol = new LongestSubsequenceWithDecreasingAdjacentDifference();
+    sol.LongestSubsequence([16, 6, 3]);
+}
+
+{
+    // https://leetcode.com/problems/string-matching-in-an-array
+}
