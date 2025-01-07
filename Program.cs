@@ -6149,3 +6149,36 @@ using static System.Net.WebRequestMethods;
 {
     // https://leetcode.com/problems/string-matching-in-an-array
 }
+
+{
+    // https://leetcode.com/problems/interleaving-string/description/
+    bool IsInterleave(string s1, string s2, string s3)
+    {
+        if (s1.Length + s2.Length != s3.Length)
+            return false;
+
+        var dp = new int[s1.Length + 1][];
+
+        for (int i = 0; i < s1.Length + 1; i++)
+        {
+            dp[i] = new int[s2.Length + 1];
+            Array.Fill(dp[i], -1);
+        }
+
+        for (var i = 0; i <= s1.Length; i++)
+        {
+            for (var j = 0; j <= s2.Length; j++)
+            {
+                var index = dp[i][j] + 1;
+
+                if (i != s1.Length && s1[i] == s3[index])
+                    dp[i + 1][j] = Math.Max(dp[i + 1][j], index);
+
+                if (j != s2.Length && s2[j] == s3[index])
+                    dp[i][j + 1] = Math.Max(dp[i][j + 1], index);
+            }
+        }
+
+        return dp[^1][^1] == s3.Length - 1;
+    }
+}
