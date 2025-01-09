@@ -6182,3 +6182,45 @@ using static System.Net.WebRequestMethods;
         return dp[^1][^1] == s3.Length - 1;
     }
 }
+
+{
+    // https://leetcode.com/problems/find-all-anagrams-in-a-string/
+    IList<int> FindAnagrams(string s, string p)
+    {
+        if (p.Length > s.Length)
+            return [];
+
+        var list = new List<int>();
+        var dict = new int[26];
+
+        foreach (var ch in p)
+        {
+            dict[ch - 'a']++;
+        }
+
+        int left = 0, right = 0;
+
+        while (right < p.Length)
+        {
+            dict[s[right] - 'a']--;
+            right++;
+        }
+
+        while (right < s.Length)
+        {
+            if (dict.All(e => e == 0))
+                list.Add(left);
+
+            dict[s[left] - 'a']++;
+            dict[s[right] - 'a']--;
+
+            left++;
+            right++;
+        }
+
+        if (dict.All(e => e == 0))
+            list.Add(left);
+
+        return list;
+    }
+}
