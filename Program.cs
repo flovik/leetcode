@@ -6224,3 +6224,9 @@ using static System.Net.WebRequestMethods;
         return list;
     }
 }
+
+{
+    // https://leetcode.com/problems/stone-game-ii/
+    var sol = new StoneGame2();
+    sol.StoneGameII([2, 7, 9, 4, 4]);
+}
