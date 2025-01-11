@@ -6230,3 +6230,9 @@ using static System.Net.WebRequestMethods;
     var sol = new StoneGame2();
     sol.StoneGameII([2, 7, 9, 4, 4]);
 }
+
+{
+    // https://leetcode.com/problems/grid-game/description/
+    var sol = new GridGame();
+    sol.GridGameSol([[3, 3, 1], [8, 5, 2]]);
+}
