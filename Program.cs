@@ -6236,3 +6236,9 @@ using static System.Net.WebRequestMethods;
     var sol = new GridGame();
     sol.GridGameSol([[3, 3, 1], [8, 5, 2]]);
 }
+
+{
+    // https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid
+    var sol = new CheckIfParenthesesStringCanBeValid();
+    sol.CanBeValid("())()))()(()(((())(()()))))((((()())(())", "1011101100010001001011000000110010100101");
+}
