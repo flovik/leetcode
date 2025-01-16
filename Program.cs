@@ -6242,3 +6242,37 @@ using static System.Net.WebRequestMethods;
     var sol = new CheckIfParenthesesStringCanBeValid();
     sol.CanBeValid("())()))()(()(((())(()()))))((((()())(())", "1011101100010001001011000000110010100101");
 }
+
+{
+    // https://leetcode.com/problems/push-dominoes/
+    var sol = new PushDominoes();
+    sol.PushDominoesSol(".L.R...LR..L..");
+}
+
+{
+    // https://leetcode.com/problems/continuous-subarray-sum/
+    bool CheckSubarraySum(int[] nums, int k)
+    {
+        // len at least 2
+        // sum of elements %= k == 0 (multiple of k)
+
+        var n = nums.Length;
+        var prefix = 0;
+        var prefixMod = new Dictionary<int, int>(n) { { 0, -1 } };
+
+        for (int i = 0; i < n; i++)
+        {
+            prefix = (prefix + nums[i]) % k;
+
+            if (prefixMod.TryGetValue(prefix, out var size))
+            {
+                if (i - size >= 2)
+                    return true;
+            }
+            else
+                prefixMod.Add(prefix, i);
+        }
+
+        return false;
+    }
+}
