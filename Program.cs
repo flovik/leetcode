@@ -6276,3 +6276,42 @@ using static System.Net.WebRequestMethods;
         return false;
     }
 }
+
+{
+    // https://leetcode.com/problems/maximal-square/
+    int MaximalSquare(char[][] matrix)
+    {
+        var max = matrix.SelectMany(e => e).Contains('1') ? 1 : 0;
+        var arr = new int[matrix.Length][];
+
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            arr[i] = new int[matrix[0].Length];
+            Array.Fill(arr[i], 1);
+        }
+
+        // I take the left cell, upper cell, and left-upper, to pick up
+        // if there is a square already (imagine all cells are 2 2 2, it means previously computed there
+        // are 3 squares of area 2 that overlap and now form a new square of size 3
+        for (var i = 1; i < matrix.Length; i++)
+        {
+            for (var j = 1; j < matrix[i].Length; j++)
+            {
+                if (matrix[i][j] == '0' || matrix[i][j - 1] == '0' ||
+                    matrix[i - 1][j] == '0' || matrix[i - 1][j - 1] == '0')
+                    continue;
+
+                var left = arr[i][j - 1];
+                var up = arr[i - 1][j];
+                var upLeft = arr[i - 1][j - 1];
+
+                var newSquareMax = Math.Min(left, Math.Min(up, upLeft)) + 1;
+                arr[i][j] = newSquareMax;
+
+                max = Math.Max(max, newSquareMax * newSquareMax);
+            }
+        }
+
+        return max;
+    }
+}
