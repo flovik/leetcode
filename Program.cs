@@ -6315,3 +6315,33 @@ using static System.Net.WebRequestMethods;
         return max;
     }
 }
+
+{
+    // https://leetcode.com/problems/first-completely-painted-row-or-column
+    //var sol = new FirstCompletelyPaintedRowOrColumn();
+    //sol.FirstCompleteIndex([6, 2, 3, 1, 4, 5], [[5, 1], [2, 4], [6, 3]]);
+}
+
+{
+    // https://leetcode.com/problems/non-decreasing-array/description/
+    bool CheckPossibility(int[] nums)
+    {
+        var skips = 1;
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            if (nums[i - 1] <= nums[i])
+                continue;
+
+            if (skips == 0)
+                return false;
+
+            if (i > 1 && nums[i - 2] > nums[i])
+                nums[i] = nums[i - 1];
+
+            skips--;
+        }
+
+        return true;
+    }
+}
