@@ -6345,3 +6345,34 @@ using static System.Net.WebRequestMethods;
         return true;
     }
 }
+
+{
+    // https://leetcode.com/problems/ones-and-zeroes/description/
+    int FindMaxForm(string[] strs, int m, int n)
+    {
+        var dp = new int[m + 1][];
+
+        for (int i = 0; i < m + 1; i++)
+        {
+            dp[i] = new int[n + 1];
+        }
+
+        Array.Sort(strs, (a, b) => a.Length.CompareTo(b.Length));
+
+        for (var i = 0; i < strs.Length; i++)
+        {
+            var ones = strs[i].Count(e => e == '1');
+            var zeroes = strs[i].Length - ones;
+
+            for (var j = m; j >= zeroes; j--)
+            {
+                for (var k = n; k >= ones; k--)
+                {
+                    dp[j][k] = Math.Max(dp[j][k], dp[j - zeroes][k - ones] + 1);
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+}
