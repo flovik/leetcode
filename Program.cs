@@ -6376,3 +6376,57 @@ using static System.Net.WebRequestMethods;
         return dp[m][n];
     }
 }
+
+{
+    // https://leetcode.com/problems/map-of-highest-peak
+    var sol = new MapOfHighestPeak();
+    //sol.HighestPeak([[0, 0, 1], [1, 0, 0], [0, 0, 0]]);
+}
+
+{
+    // https://leetcode.com/problems/count-servers-that-communicate
+    var sol = new CountServersthatCommunicate();
+    sol.CountServers([[1, 1, 1]]);
+}
+
+{
+    // https://leetcode.com/problems/maximum-alternating-subsequence-sum/
+    var sol = new MaximumAlternatingSubsequenceSum();
+    sol.MaxAlternatingSum([6, 2, 1, 2, 4, 5]);
+}
+
+{
+    // https://leetcode.com/problems/minimum-penalty-for-a-shop/
+    var sol = new MinimumPenaltyForShop();
+    sol.BestClosingTime("YYNY");
+}
+
+{
+    // https://leetcode.com/problems/distinct-subsequences/
+    int NumDistinct(string s, string t)
+    {
+        var dp = new int[t.Length + 1][];
+
+        for (int i = 0; i < t.Length + 1; i++)
+        {
+            dp[i] = new int[s.Length + 1];
+        }
+
+        Array.Fill(dp[^1], 1);
+
+        for (var i = t.Length - 1; i >= 0; i--)
+        {
+            for (var j = s.Length - 1; j >= 0; j--)
+            {
+                dp[i][j] = Math.Max(dp[i][j], dp[i][j + 1]);
+
+                if (t[i] == s[j])
+                {
+                    dp[i][j] += dp[i + 1][j + 1];
+                }
+            }
+        }
+
+        return dp[0][0];
+    }
+}
