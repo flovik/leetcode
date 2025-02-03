@@ -6430,3 +6430,49 @@ using static System.Net.WebRequestMethods;
         return dp[0][0];
     }
 }
+
+{
+    // https://leetcode.com/problems/champagne-tower/description/
+    var sol = new ChampagneTower();
+    sol.ChampagneTowerSol(6, 2, 2);
+}
+
+{
+    // https://leetcode.com/problems/edit-distance/
+    int MinDistance(string word1, string word2)
+    {
+        // convert word1 to word2
+        // insert, delete, replace
+        // longest subsequence
+
+        var dp = new int[word1.Length + 1][];
+
+        for (var i = 0; i < word1.Length + 1; i++)
+        {
+            dp[i] = new int[word2.Length + 1];
+        }
+
+        for (int i = 0; i <= word1.Length; i++)
+        {
+            dp[word1.Length - i][word2.Length] = i;
+        }
+
+        for (int i = 0; i <= word2.Length; i++)
+        {
+            dp[word1.Length][word2.Length - i] = i;
+        }
+
+        for (var i = word1.Length - 1; i >= 0; i--)
+        {
+            for (var j = word2.Length - 1; j >= 0; j--)
+            {
+                if (word1[i] == word2[j])
+                    dp[i][j] = dp[i + 1][j + 1];
+                else
+                    dp[i][j] = 1 + Math.Min(Math.Min(dp[i + 1][j], dp[i][j + 1]), dp[i + 1][j + 1]);
+            }
+        }
+
+        return dp[0][0];
+    }
+}
