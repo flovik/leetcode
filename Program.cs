@@ -6476,3 +6476,67 @@ using static System.Net.WebRequestMethods;
         return dp[0][0];
     }
 }
+
+{
+    // https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/
+    var sol = new NumberOfDiceRollsWithTargetSum();
+    sol.NumRollsToTarget(3, 6, 7);
+}
+
+{
+    // https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/
+    var sol = new SumOfAbsoluteDifferencesInASortedArray();
+    sol.GetSumAbsoluteDifferences([2, 3, 5]);
+}
+
+{
+    // https://leetcode.com/problems/design-a-food-rating-system/
+    var sol = new FoodRatings(["awtgkgldwb", "drhhl", "pigz", "iwc", "rerwn", "qaa", "qwofv", "xhdss", "oqijtmovkg", "rn"],
+        ["rqftrmdmsj", "rqftrmdmsj", "etvuklkxtn", "rqftrmdmsj", "rqftrmdmsj", "etvuklkxtn", "npowt", "npowt", "etvuklkxtn", "rqftrmdmsj"],
+        [84905, 59483, 12366, 15058, 28136, 73588, 89343, 33205, 61755, 32021]);
+
+    sol.ChangeRating("iwc", 30574);
+    sol.ChangeRating("iwc", 65729);
+    sol.ChangeRating("oqijtmovkg", 8305);
+    sol.HighestRated("rqftrmdmsj");
+    sol.HighestRated("rqftrmdmsj");
+}
+
+{
+    // https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/
+    var sol = new MinimumNumberOfOperationsToMakeArrayEmpty();
+    sol.MinOperations([30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 52, 52, 52, 52, 52, 52, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 93, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 32, 32, 32, 32, 32, 32, 32, 32, 61, 61, 16, 16, 16]);
+}
+
+{
+    // https://leetcode.com/problems/get-equal-substrings-within-budget/description/
+    int MinFallingPathSum(int[][] matrix)
+    {
+        var n = matrix.Length;
+        var dp = new int[n][];
+
+        for (int i = 0; i < n; i++)
+        {
+            dp[i] = new int[n];
+            Array.Copy(matrix[i], dp[i], n);
+        }
+
+        for (var i = 1; i < n; i++)
+        {
+            for (var j = 0; j < n; j++)
+            {
+                int value = dp[i - 1][j];
+                if (j == 0)
+                    value = Math.Min(value, dp[i - 1][j + 1]);
+                else if (j == n - 1)
+                    value = Math.Min(value, dp[i - 1][j - 1]);
+                else
+                    value = Math.Min(value, Math.Min(dp[i - 1][j + 1], dp[i - 1][j - 1]));
+
+                dp[i][j] += value;
+            }
+        }
+
+        return dp[^1].Min();
+    }
+}
