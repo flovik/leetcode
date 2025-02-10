@@ -6540,3 +6540,15 @@ using static System.Net.WebRequestMethods;
         return dp[^1].Min();
     }
 }
+
+{
+    // https://leetcode.com/problems/binary-subarrays-with-sum/description/
+    var sol = new BinarySubarraysWithSum();
+    sol.NumSubarraysWithSum([1, 0, 1, 0, 0, 1], 2);
+}
+
+{
+    // https://leetcode.com/problems/sequential-digits/description/
+    var sol = new SequentialDigits();
+    sol.SequentialDigitsSol(1000, 13000);
+};
