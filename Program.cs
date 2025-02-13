@@ -6552,3 +6552,9 @@ using static System.Net.WebRequestMethods;
     var sol = new SequentialDigits();
     sol.SequentialDigitsSol(1000, 13000);
 };
+
+{
+    // https://leetcode.com/problems/contiguous-array/
+    var sol = new ContiguousArray();
+    sol.FindMaxLength([0, 0, 1, 0, 0, 1, 1, 1, 0, 1]);
+}
