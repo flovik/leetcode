@@ -6558,3 +6558,85 @@ using static System.Net.WebRequestMethods;
     var sol = new ContiguousArray();
     sol.FindMaxLength([0, 0, 1, 0, 0, 1, 1, 1, 0, 1]);
 }
+
+{
+    // https://leetcode.com/problems/minimum-increment-to-make-array-unique/
+    var sol = new MinimumIncrementToMakeArrayUnique();
+    sol.MinIncrementForUnique([3, 2, 1, 2, 1, 7]);
+}
+
+{
+    // https://leetcode.com/problems/minimum-cost-to-make-array-equal
+    var sol = new MinimumCostToMakeArrayEqual();
+    sol.MinCostBinarySearch([1, 3, 5, 2], [2, 3, 1, 14]);
+}
+
+{
+    // https://leetcode.com/problems/text-justification/description/
+    IList<string> FullJustify(string[] words, int maxWidth)
+    {
+        var list = new List<string>();
+        var sb = new StringBuilder();
+
+        int count = 0, spaceCount = 0;
+        var startIndex = 0;
+
+        for (int index = 0; index < words.Length; index++)
+        {
+            var word = words[index];
+            if (word.Length + count + spaceCount + 1 <= maxWidth)
+            {
+                // sb has already words and we need to insert spaces
+                if (count > 0)
+                    spaceCount++;
+
+                count += word.Length;
+            }
+            else if (count == 0 && word.Length == maxWidth)
+            {
+                count += word.Length;
+            }
+            else
+            {
+                var wordCount = index - startIndex;
+
+                var spaces = wordCount - 1;
+                var spacesCount = maxWidth - count;
+
+                while (startIndex < index)
+                {
+                    sb.Append(words[startIndex]);
+
+                    // append spaces
+                    if (spaces > 0)
+                    {
+                        var appendSpaces = (int)Math.Ceiling((double)spacesCount / spaces);
+                        spacesCount -= appendSpaces;
+                        spaces--;
+
+                        sb.Append(new string(' ', appendSpaces));
+                    }
+
+                    startIndex++;
+                }
+
+                if (wordCount == 1)
+                    sb.Append(new string(' ', spacesCount));
+
+                list.Add(sb.ToString());
+                sb.Clear();
+
+                index--;
+                spaceCount = 0;
+                count = 0;
+            }
+        }
+
+        // last line insert with left justification
+        sb.AppendJoin(' ', words[startIndex..]);
+        sb.Append(new string(' ', maxWidth - sb.Length));
+        list.Add(sb.ToString());
+
+        return list;
+    }
+}
