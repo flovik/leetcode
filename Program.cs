@@ -6640,3 +6640,9 @@ using static System.Net.WebRequestMethods;
         return list;
     }
 }
+
+{
+    // https://leetcode.com/problems/naming-a-company/
+    var sol = new NamingCompany();
+    sol.DistinctNames(["r", "lycdkjdnoy", "wzlu", "wxkyjgwc", "qtaqnbi", "m", "x", "jhvdzr", "rquzz"]);
+}
