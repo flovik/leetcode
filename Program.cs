@@ -6646,3 +6646,59 @@ using static System.Net.WebRequestMethods;
     var sol = new NamingCompany();
     sol.DistinctNames(["r", "lycdkjdnoy", "wzlu", "wxkyjgwc", "qtaqnbi", "m", "x", "jhvdzr", "rquzz"]);
 }
+
+{
+    // https://leetcode.com/problems/minimum-window-substring/
+    var sol = new Test();
+    string MinWindow(string s, string t)
+    {
+        var dict = new Dictionary<char, int>(52);
+
+        foreach (var ch in t)
+        {
+            dict.TryAdd(ch, 0);
+            dict[ch]++;
+        }
+
+        int left = 0, right = 0, charsToFind = t.Length, start = int.MaxValue, end = s.Length + 1;
+
+        while (right < s.Length)
+        {
+            // extend window
+            if (dict.TryGetValue(s[right], out var value))
+            {
+                dict[s[right]]--;
+
+                if (value > 0)
+                    charsToFind--;
+
+                if (start == int.MaxValue)
+                    start = right;
+            }
+
+            // shrink window, move left to next char from t
+            while (charsToFind == 0)
+            {
+                if (right - left + 1 < end - start + 1)
+                {
+                    start = left;
+                    end = right;
+                }
+
+                if (dict.TryGetValue(s[left], out var val))
+                {
+                    dict[s[left]]++;
+
+                    if (val >= 0)
+                        charsToFind++;
+                }
+
+                while (left < right && !dict.ContainsKey(s[++left])) { };
+            }
+
+            right++;
+        }
+
+        return end == s.Length + 1 ? string.Empty : s[start..(end + 1)];
+    }
+}
