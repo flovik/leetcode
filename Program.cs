@@ -6702,3 +6702,44 @@ using static System.Net.WebRequestMethods;
         return end == s.Length + 1 ? string.Empty : s[start..(end + 1)];
     }
 }
+
+{
+    // https://leetcode.com/problems/minimum-cost-to-hire-k-workers/description/
+    double MincostToHireWorkers(int[] quality, int[] wage, int k)
+    {
+        // hire exactly K workers
+        // every worker is paid their min wage, pay is directly proportional to quality
+        // if worker's quality is double of someone else's, he must be paid twice as much
+
+        // min money needed to form a paid group
+        // even out wages if qualities are disproportional
+        // save in max heap the lowest ratios of quality / wage
+        var maxHeap = new PriorityQueue<int, int>(k, Comparer<int>.Create((a, b) => b.CompareTo(a)));
+
+        var qualityWage = new (int, int)[quality.Length];
+
+        for (int i = 0; i < quality.Length; i++)
+        {
+            qualityWage[i] = (quality[i], wage[i]);
+        }
+
+        Array.Sort(qualityWage, (a, b) => ((double)b.Item1 / b.Item2).CompareTo((double)a.Item1 / a.Item2));
+        double result = double.MaxValue, totalQuality = 0;
+
+        for (int i = 0; i < quality.Length; i++)
+        {
+            var (curQuality, curWage) = qualityWage[i];
+            var curRatio = (double)curWage / curQuality;
+            maxHeap.Enqueue(curQuality, curQuality);
+            totalQuality += curQuality;
+
+            if (maxHeap.Count > k)
+                totalQuality -= maxHeap.Dequeue();
+
+            if (maxHeap.Count == k)
+                result = Math.Min(result, totalQuality * curRatio);
+        }
+
+        return result;
+    }
+}
