@@ -6743,3 +6743,47 @@ using static System.Net.WebRequestMethods;
         return result;
     }
 }
+
+{
+    // https://leetcode.com/problems/maximum-frequency-stack/
+    //public class FreqStack
+    //{
+    //    // stack-like to push elements to the stack and pop the most frequent element from stack
+    //    // value -> (count, added count)
+    //    private readonly PriorityQueue<int, (int, int)> _freqStack;
+
+    //    private readonly Dictionary<int, int> _dict;
+
+    //    private static int _count = 1;
+
+    //    public FreqStack()
+    //    {
+    //        _dict = [];
+
+    //        _freqStack = new(Comparer<(int, int)>.Create((a, b) =>
+    //        {
+    //            if (a.Item1 == b.Item1)
+    //                return b.Item2.CompareTo(a.Item2);
+
+    //            return b.Item1.CompareTo(a.Item1);
+    //        }));
+    //    }
+
+    //    public void Push(int val)
+    //    {
+    //        _dict.TryAdd(val, 0);
+    //        _dict[val]++;
+
+    //        _freqStack.Enqueue(val, (_dict[val], _count));
+    //        _count++;
+    //    }
+
+    //    // removes most frequent element in the stack. if a tie, return the one closest to the stack's top
+    //    public int Pop()
+    //    {
+    //        var val = _freqStack.Dequeue();
+    //        _dict[val]--;
+    //        return val;
+    //    }
+    //}
+}
