@@ -6787,3 +6787,40 @@ using static System.Net.WebRequestMethods;
     //    }
     //}
 }
+
+{
+    // https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/
+    int[] MaxSlidingWindow(int[] nums, int k)
+    {
+        var list = new List<int>(nums.Length - k + 1);
+        var maxHeap = new PriorityQueue<(int, int), int>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+
+        int left = 0, right = 0;
+
+        while (right < k)
+        {
+            maxHeap.Enqueue((nums[right], right), nums[right]);
+            right++;
+        }
+
+        list.Add(maxHeap.Peek().Item1);
+
+        while (right < nums.Length)
+        {
+            // slide window
+            maxHeap.Enqueue((nums[right], right), nums[right]);
+            left++;
+            right++;
+
+            // get max from current window
+            while (maxHeap.TryPeek(out var element, out var _) && element.Item2 < left)
+            {
+                maxHeap.Dequeue();
+            }
+
+            list.Add(maxHeap.Peek().Item1);
+        }
+
+        return [.. list];
+    }
+}
