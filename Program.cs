@@ -6824,3 +6824,9 @@ using static System.Net.WebRequestMethods;
         return [.. list];
     }
 }
+
+{
+    // https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/
+    var sol = new LengthOfLongestSubarrayWithAtMostKFrequency();
+    sol.MaxSubarrayLength([1, 2, 3, 1, 2, 3, 1, 2], 2);
+}
