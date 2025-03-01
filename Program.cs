@@ -6830,3 +6830,21 @@ using static System.Net.WebRequestMethods;
     var sol = new LengthOfLongestSubarrayWithAtMostKFrequency();
     sol.MaxSubarrayLength([1, 2, 3, 1, 2, 3, 1, 2], 2);
 }
+
+{
+    // https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times/
+    var sol = new CountSubarraysWhereMaxElementAppearsAtLeastKTimes();
+    sol.CountSubarrays([2, 1, 2, 2, 1, 2, 2, 2, 1, 2], 10);
+}
+
+{
+    // https://leetcode.com/problems/subarrays-with-k-different-integers/
+    var sol = new SubarrayswithKDifferentIntegers();
+    sol.SubarraysWithKDistinct([1, 2, 1, 2, 3], 2);
+}
+
+{
+    // https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/
+    var sol = new NumberOfSubArraysOfSizeKAndAverageGreaterThanOrEqualToThreshold();
+    sol.NumOfSubarrays([7, 7, 7, 7, 7, 7, 7], 7, 7);
+}
