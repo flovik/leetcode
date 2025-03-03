@@ -6848,3 +6848,32 @@ using static System.Net.WebRequestMethods;
     var sol = new NumberOfSubArraysOfSizeKAndAverageGreaterThanOrEqualToThreshold();
     sol.NumOfSubarrays([7, 7, 7, 7, 7, 7, 7], 7, 7);
 }
+
+{
+    // https://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/description/
+    var sol = new MinimumNumberOfFlipsToMakeTheBinaryStringAlternating();
+    //sol.MinFlips("111000");
+}
+
+{
+    var sol = new Test();
+    //sol.CountArrays([1, 2, 1, 2], [[1, 1], [2, 3], [3, 3], [2, 3]]);
+    //sol.MinCost([6, 2, 8, 4]);
+}
+
+{
+    // https://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/description/
+    var sol = new MinimumNumberOfFlipsToMakeTheBinaryStringAlternating();
+    //sol.MinFlips("01001001101");
+}
+
+{
+    var sol = new FindMinimumCostToRemoveArrayElements();
+    //sol.MinCost([6, 2, 8, 4, 6, 2, 8, 4, 6, 2, 8, 4, 6, 2, 8, 4, 6, 2, 8, 4, 6, 2, 8, 4, 6]);
+}
+
+{
+    // https://leetcode.com/problems/longest-ideal-subsequence/description/
+    var sol = new LongestIdealSubsequence();
+    sol.LongestIdealString("abcdgbzklmnop", 2);
+}
