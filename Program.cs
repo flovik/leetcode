@@ -6875,5 +6875,11 @@ using static System.Net.WebRequestMethods;
 {
     // https://leetcode.com/problems/longest-ideal-subsequence/description/
     var sol = new LongestIdealSubsequence();
-    sol.LongestIdealString("abcdgbzklmnop", 2);
+    //sol.LongestIdealString("abcdgbzklmnop", 2);
+}
+
+{
+    // https://leetcode.com/problems/flip-string-to-monotone-increasing/description/
+    var sol = new FlipStringToMonotoneIncreasing();
+    sol.MinFlipsMonoIncr("00011000");
 }
