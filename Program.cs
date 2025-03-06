@@ -6881,5 +6881,9 @@ using static System.Net.WebRequestMethods;
 {
     // https://leetcode.com/problems/flip-string-to-monotone-increasing/description/
     var sol = new FlipStringToMonotoneIncreasing();
-    sol.MinFlipsMonoIncr("00011000");
+    //sol.MinFlipsMonoIncr("00011000");
+}
+
+{
+    // https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor/description/
 }
