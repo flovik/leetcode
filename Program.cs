@@ -6887,3 +6887,70 @@ using static System.Net.WebRequestMethods;
 {
     // https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor/description/
 }
+
+{
+    // https://leetcode.com/problems/maximum-profit-in-job-scheduling/
+    int JobScheduling(int[] startTime, int[] endTime, int[] profit)
+    {
+        // max profit with no overlapping jobs
+        var n = startTime.Length;
+        var arr = new (int, int, int)[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = (startTime[i], endTime[i], profit[i]);
+        }
+
+        // sort by end time
+        Array.Sort(arr, (a, b) => a.Item2.CompareTo(b.Item2));
+
+        // store end times with best profits so far
+        var dp = new Dictionary<int, int>() { { arr[0].Item2, arr[0].Item3 } };
+        var max = arr[0].Item3;
+
+        for (var i = 1; i < n; i++)
+        {
+            var (start, end, curProf) = arr[i];
+
+            // binary search in arr, starting from start of current num find end
+            var index = BinarySearch(arr, start);
+
+            if (index < 0)
+                index = 0;
+
+            var (prevJobStart, prevJobEnd, prevProfit) = arr[index];
+
+            var prevJobProfit = dp.GetValueOrDefault(prevJobEnd, prevProfit);
+            var newProfit = start >= prevJobEnd ? prevJobProfit + curProf : curProf;
+
+            arr[i].Item3 = Math.Max(newProfit, max);
+            max = Math.Max(max, arr[i].Item3);
+
+            // update dict with same ends with biggest profit
+            if (!dp.TryAdd(end, arr[i].Item3))
+                dp[end] = Math.Max(dp[end], arr[i].Item3);
+        }
+
+        return max;
+    }
+
+    int BinarySearch((int, int, int)[] arr, int value)
+    {
+        int left = 0, right = arr.Length - 1;
+
+        while (left <= right)
+        {
+            var middle = left + (right - left) / 2;
+
+            if (arr[middle].Item2 == value)
+                return middle;
+
+            if (arr[middle].Item2 > value)
+                right = middle - 1;
+            else
+                left = middle + 1;
+        }
+
+        return right;
+    }
+}
