@@ -6954,3 +6954,21 @@ using static System.Net.WebRequestMethods;
         return right;
     }
 }
+
+{
+    // https://leetcode.com/problems/student-attendance-record-ii/
+    var sol = new StudentAttendanceRecordII();
+    sol.CheckRecord(76);
+}
+
+{
+    // https://leetcode.com/problems/rotate-function/description/
+    var sol = new RotateFunction();
+    sol.MaxRotateFunction([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+}
+
+{
+    // https://leetcode.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/description/
+    var sol = new NumberOfWaysToRearrangeSticksWithKSticksVisible();
+    sol.RearrangeSticks(5, 3);
+}
