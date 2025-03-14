@@ -6972,3 +6972,15 @@ using static System.Net.WebRequestMethods;
     var sol = new NumberOfWaysToRearrangeSticksWithKSticksVisible();
     sol.RearrangeSticks(5, 3);
 }
+
+{
+    // https://leetcode.com/problems/maximum-value-of-k-coins-from-piles/
+    var sol = new MaximumValueOfKCoinsFromPiles();
+    sol.MaxValueOfCoinsRecursive([[1, 100, 3], [7, 8, 9]], 2);
+}
+
+{
+    // https://leetcode.com/problems/number-of-music-playlists/description/
+    var sol = new NumberOfMusicPlaylists();
+    sol.NumMusicPlaylists(2, 3, 1);
+}
