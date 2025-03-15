@@ -1,35 +1,10 @@
-﻿namespace Sandbox;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Test
-{
-    public int TotalNumbers(int[] digits)
-    {
-        var set = new HashSet<int>();
-
-        for (var i = 0; i < digits.Length; i++)
-        {
-            if (digits[i] == 0)
-                continue;
-
-            for (var j = 0; j < digits.Length; j++)
-            {
-                for (var k = 0; k < digits.Length; k++)
-                {
-                    if (i == j || j == k || i == k)
-                        continue;
-
-                    if (digits[k] % 2 == 0)
-                    {
-                        var num = digits[i] * 100 + digits[j] * 10 + digits[k];
-                        set.Add(num);
-                    }
-                }
-            }
-        }
-
-        return set.Count;
-    }
-}
+namespace Sandbox.Solutions.Medium;
 
 public class Spreadsheet
 {
@@ -49,7 +24,6 @@ public class Spreadsheet
 
     public void ResetCell(string cell)
     {
-        _map.TryAdd(cell, 0);
         _map[cell] = 0;
     }
 
