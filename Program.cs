@@ -6984,3 +6984,41 @@ using static System.Net.WebRequestMethods;
     var sol = new NumberOfMusicPlaylists();
     sol.NumMusicPlaylists(2, 3, 1);
 }
+
+{
+    var sol = new Test();
+    sol.TotalNumbers([0, 2, 2]);
+}
+
+{
+    //var spreadsheet = new Spreadsheet(1000);
+    //spreadsheet.GetValue("=5+7"); // returns 12 (5+7)
+    //spreadsheet.SetCell("A1", 10); // sets A1 to 10
+    //spreadsheet.GetValue("=A1+6"); // returns 16 (10+6)
+    //Console.WriteLine(spreadsheet.GetValue("=A1+6"));
+
+    //spreadsheet.SetCell("B2", 15); // sets B2 to 15
+    //spreadsheet.GetValue("=A1+B2"); // returns 25 (10+15)
+
+    //Console.WriteLine(spreadsheet.GetValue("=A1+B2"));
+    //spreadsheet.ResetCell("A1"); // resets A1 to 0
+    //spreadsheet.GetValue("=A1+B2"); // returns 15 (0+15)©leetcode
+
+    //Console.WriteLine(spreadsheet.GetValue("=A1+B2"));
+
+    var spreadsheet = new Spreadsheet(10);
+    spreadsheet.SetCell("Z2", 10); // sets A1 to 10
+    spreadsheet.GetValue("=Z2+Z2");
+    spreadsheet.SetCell("Z2", 20); // sets A1 to 10
+    spreadsheet.GetValue("=Z2+Z2"); // returns 16 (10+6)
+
+    spreadsheet.SetCell("Z2", 0); // sets A1 to 10
+    spreadsheet.GetValue("=Z2+Z5"); // returns 16 (10+6)
+    spreadsheet.SetCell("Z10", 20); // sets A1 to 10
+    spreadsheet.GetValue("=Z2+Z10"); // returns 16 (10+6)
+}
+
+{
+    var sol = new NumberOfWaysToFormATargetStringGivenADictionary();
+    sol.NumWays(["abba", "baab"], "ba");
+}
