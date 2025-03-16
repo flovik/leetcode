@@ -7022,3 +7022,9 @@ using static System.Net.WebRequestMethods;
     var sol = new NumberOfWaysToFormATargetStringGivenADictionary();
     sol.NumWays(["abba", "baab"], "ba");
 }
+
+{
+    // https://leetcode.com/problems/profitable-schemes/description/
+    var sol = new ProfitableSchemes();
+    sol.ProfitableSchemesSol(10, 5, [2, 3, 5], [6, 7, 8]);
+}
