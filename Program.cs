@@ -6986,11 +6986,6 @@ using static System.Net.WebRequestMethods;
 }
 
 {
-    var sol = new Test();
-    sol.TotalNumbers([0, 2, 2]);
-}
-
-{
     //var spreadsheet = new Spreadsheet(1000);
     //spreadsheet.GetValue("=5+7"); // returns 12 (5+7)
     //spreadsheet.SetCell("A1", 10); // sets A1 to 10
@@ -7027,4 +7022,15 @@ using static System.Net.WebRequestMethods;
     // https://leetcode.com/problems/profitable-schemes/description/
     var sol = new ProfitableSchemes();
     sol.ProfitableSchemesSol(10, 5, [2, 3, 5], [6, 7, 8]);
+}
+
+{
+    var sol = new Test();
+    //sol.getMinimumOperations([900000000, 900000000, 1000000000, 1000000000, 1000000000], 2, 1);
+}
+
+{
+    // https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/
+    var sol = new MinimumCostToCutAStick();
+    sol.MinCost(7, [1, 3, 4]);
 }
