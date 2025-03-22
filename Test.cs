@@ -47,37 +47,49 @@ public class Spreadsheet
         _map[cell] = value;
     }
 
-    public void ResetCell(string cell)
+    public int FurthestBuilding(int[] heights, int bricks, int ladders)
     {
-        _map.TryAdd(cell, 0);
-        _map[cell] = 0;
-    }
+        // you can use one ladder to pass the building
+        // or height[i] - height[i - 1] bricks to pass it
 
-    public int GetValue(string formula)
-    {
-        var split = formula[1..].Split('+');
+        var bricksMaxHeap = new PriorityQueue<int, int>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
 
-        var val = 0;
-        if (split[0][0] >= A)
+        var i = 0;
+        while (i < heights.Length - 1)
         {
-            val += _map.GetValueOrDefault(split[0], 0);
-        }
-        else
-        {
-            int.TryParse(split[0], out int res);
-            val += res;
+            if (heights[i + 1] < heights[i])
+            {
+                i++;
+                continue;
+            }
+
+            var diff = heights[i + 1] - heights[i];
+
+            // if current number of bricks is still available for using, use them
+            if (diff < bricks)
+            {
+                bricksMaxHeap.Enqueue(diff, diff);
+                bricks -= diff;
+            }
+            else if (ladders > 0) // need to use ladder, decide which to use for: for previous building or current building?
+            {
+                // previous building is bigger, we can use bricks for current building
+                if (bricksMaxHeap.TryPeek(out var brick, out var _) && diff < brick)
+                {
+                    bricks += brick;
+                    bricksMaxHeap.Dequeue();
+
+                    bricksMaxHeap.Enqueue(diff, diff);
+                    bricks -= diff;
+                }
+
+                ladders--;
+            }
+            else break; // no ladders and bricks avaialable
+
+            i++;
         }
 
-        if (split[1][0] >= A)
-        {
-            val += _map.GetValueOrDefault(split[1], 0); ;
-        }
-        else
-        {
-            int.TryParse(split[1], out int res);
-            val += res;
-        }
-
-        return val;
+        return i;
     }
 }
