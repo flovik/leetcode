@@ -7034,3 +7034,9 @@ using static System.Net.WebRequestMethods;
     var sol = new MinimumCostToCutAStick();
     sol.MinCost(7, [1, 3, 4]);
 }
+
+{
+    // https://leetcode.com/problems/count-days-without-meetings/
+    var sol = new CountDaysWithoutMeetings();
+    sol.CountDays(48, [[26, 39], [46, 47], [9, 33], [6, 33], [28, 40], [37, 39], [14, 45], [13, 40], [14, 17], [12, 39]]);
+}
