@@ -3,7 +3,6 @@ using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using Sandbox;
-using Sandbox.Assignments;
 using Sandbox.DataStructures;
 using Sandbox.Enums;
 using Sandbox.Solutions;
@@ -2974,7 +2973,7 @@ using static System.Net.WebRequestMethods;
     //var sol = NumSquares(25);
     int NumSquares(int n)
     {
-        var count = (int)Math.Sqrt(n);
+        var count = (int) Math.Sqrt(n);
         var ps = new int[count];
         var dp = new int[n + 1];
 
@@ -3111,8 +3110,8 @@ using static System.Net.WebRequestMethods;
 }
 
 {
-    var ig = new IgorAssignment();
-    ig.Main();
+    //var ig = new IgorAssignment();
+    //ig.Main();
 }
 
 {
@@ -3934,7 +3933,7 @@ using static System.Net.WebRequestMethods;
 
         for (var i = 0; i < piles.Length; i++)
         {
-            count += (int)Math.Ceiling((double)piles[i] / amountOfBananas);
+            count += (int) Math.Ceiling((double) piles[i] / amountOfBananas);
         }
 
         return count <= hours;
@@ -4523,8 +4522,10 @@ using static System.Net.WebRequestMethods;
     // https://leetcode.com/problems/accounts-merge/description/
     var sol = new AccountsMerge();
     sol.AccountsMergeSol([
-        ["John", "johnsmith@mail.com", "john_newyork@mail.com"], ["John", "johnsmith@mail.com", "john00@mail.com"],
-        ["Mary", "mary@mail.com"], ["John", "johnnybravo@mail.com"]
+        ["John", "johnsmith@mail.com", "john_newyork@mail.com"],
+        ["John", "johnsmith@mail.com", "john00@mail.com"],
+        ["Mary", "mary@mail.com"],
+        ["John", "johnnybravo@mail.com"]
     ]);
 
     //sol.AccountsMergeSol([["David", "David0@m.co", "David1@m.co"], ["David", "David3@m.co", "David4@m.co"], ["David", "David4@m.co", "David5@m.co"], ["David", "David2@m.co", "David3@m.co"], ["David", "David1@m.co", "David2@m.co"]]);
@@ -4669,7 +4670,7 @@ using static System.Net.WebRequestMethods;
 
                     for (var k = 0; k < 26; k++)
                     {
-                        var letter = (char)('a' + k);
+                        var letter = (char) ('a' + k);
                         sb[j] = letter;
 
                         var str = sb.ToString();
@@ -5309,7 +5310,7 @@ using static System.Net.WebRequestMethods;
             result = Math.Max(result, min * sum);
         }
 
-        return (int)(result % 1_000_000_007);
+        return (int) (result % 1_000_000_007);
     }
 }
 
@@ -5486,7 +5487,7 @@ using static System.Net.WebRequestMethods;
         }
 
         sum %= mod;
-        return (int)sum;
+        return (int) sum;
     }
 }
 
@@ -5683,7 +5684,14 @@ using static System.Net.WebRequestMethods;
     // https://leetcode.com/problems/concatenated-words/
     var sol = new ConcatenatedWords();
     sol.FindAllConcatenatedWordsInADict([
-        "cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"
+        "cat",
+        "cats",
+        "catsdogcats",
+        "dog",
+        "dogcatsdog",
+        "hippopotamuses",
+        "rat",
+        "ratcatdogcat"
     ]);
 }
 
@@ -6610,7 +6618,7 @@ using static System.Net.WebRequestMethods;
                     // append spaces
                     if (spaces > 0)
                     {
-                        var appendSpaces = (int)Math.Ceiling((double)spacesCount / spaces);
+                        var appendSpaces = (int) Math.Ceiling((double) spacesCount / spaces);
                         spacesCount -= appendSpaces;
                         spaces--;
 
@@ -6723,13 +6731,13 @@ using static System.Net.WebRequestMethods;
             qualityWage[i] = (quality[i], wage[i]);
         }
 
-        Array.Sort(qualityWage, (a, b) => ((double)b.Item1 / b.Item2).CompareTo((double)a.Item1 / a.Item2));
+        Array.Sort(qualityWage, (a, b) => ((double) b.Item1 / b.Item2).CompareTo((double) a.Item1 / a.Item2));
         double result = double.MaxValue, totalQuality = 0;
 
         for (int i = 0; i < quality.Length; i++)
         {
             var (curQuality, curWage) = qualityWage[i];
-            var curRatio = (double)curWage / curQuality;
+            var curRatio = (double) curWage / curQuality;
             maxHeap.Enqueue(curQuality, curQuality);
             totalQuality += curQuality;
 
@@ -7001,16 +7009,16 @@ using static System.Net.WebRequestMethods;
 
     //Console.WriteLine(spreadsheet.GetValue("=A1+B2"));
 
-    var spreadsheet = new Spreadsheet(10);
-    spreadsheet.SetCell("Z2", 10); // sets A1 to 10
-    spreadsheet.GetValue("=Z2+Z2");
-    spreadsheet.SetCell("Z2", 20); // sets A1 to 10
-    spreadsheet.GetValue("=Z2+Z2"); // returns 16 (10+6)
+    //var spreadsheet = new Spreadsheet(10);
+    //spreadsheet.SetCell("Z2", 10); // sets A1 to 10
+    //spreadsheet.GetValue("=Z2+Z2");
+    //spreadsheet.SetCell("Z2", 20); // sets A1 to 10
+    //spreadsheet.GetValue("=Z2+Z2"); // returns 16 (10+6)
 
-    spreadsheet.SetCell("Z2", 0); // sets A1 to 10
-    spreadsheet.GetValue("=Z2+Z5"); // returns 16 (10+6)
-    spreadsheet.SetCell("Z10", 20); // sets A1 to 10
-    spreadsheet.GetValue("=Z2+Z10"); // returns 16 (10+6)
+    //spreadsheet.SetCell("Z2", 0); // sets A1 to 10
+    //spreadsheet.GetValue("=Z2+Z5"); // returns 16 (10+6)
+    //spreadsheet.SetCell("Z10", 20); // sets A1 to 10
+    //spreadsheet.GetValue("=Z2+Z10"); // returns 16 (10+6)
 }
 
 {
@@ -7039,4 +7047,67 @@ using static System.Net.WebRequestMethods;
     // https://leetcode.com/problems/count-days-without-meetings/
     var sol = new CountDaysWithoutMeetings();
     sol.CountDays(48, [[26, 39], [46, 47], [9, 33], [6, 33], [28, 40], [37, 39], [14, 45], [13, 40], [14, 17], [12, 39]]);
+}
+
+{
+    // https://leetcode.com/problems/check-if-grid-can-be-cut-into-sections
+    var sol = new CheckIfGridCanBeCutIntoSections();
+    sol.CheckValidCuts(5, [[1, 0, 5, 2], [0, 2, 2, 4], [3, 2, 5, 3], [0, 4, 4, 5]]);
+}
+
+{
+    // https://leetcode.com/problems/single-threaded-cpu/description/
+    int[] GetOrder(int[][] tasks)
+    {
+        // if there are available tasks, it will pick the one with shortest processing time
+        // if multiple tasks, pick with smallest index
+
+        var list = new List<int>(tasks.Length);
+
+        var sortedTasks = new PriorityQueue<int, (int, int, int)>();
+
+        for (int i = 0; i < tasks.Length; i++)
+        {
+            var task = tasks[i];
+            sortedTasks.Enqueue(task[0], (task[0], task[1], i));
+        }
+
+        // (processing time, index) min heap
+        var pq = new PriorityQueue<int, (int, int)>();
+
+        // first task is always the lowest rated one
+        sortedTasks.TryDequeue(out var _, out var t);
+        pq.Enqueue(t.Item1, (t.Item2, t.Item3));
+
+        int curTime = t.Item1;
+
+        while (pq.Count > 0)
+        {
+            pq.TryDequeue(out var _, out var tuple);
+
+            var (processingTime, index) = tuple;
+            curTime += processingTime;
+
+            while (sortedTasks.Count > 0 && sortedTasks.TryPeek(out var _, out var tt))
+            {
+                if (pq.Count == 0 && curTime < tt.Item1)
+                    curTime = tt.Item1;
+
+                if (tt.Item1 > curTime)
+                    break;
+
+                pq.Enqueue(tt.Item1, (tt.Item2, tt.Item3));
+                sortedTasks.Dequeue();
+            }
+
+            list.Add(index);
+        }
+
+        return [.. list];
+    }
+}
+
+{
+    var sol = new MinimumOperationsToMakeAUniValueGrid();
+    sol.MinOperations([[980, 476, 644, 56], [644, 140, 812, 308], [812, 812, 896, 560], [728, 476, 56, 812]], 84);
 }
