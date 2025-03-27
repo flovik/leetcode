@@ -7111,3 +7111,60 @@ using static System.Net.WebRequestMethods;
     var sol = new MinimumOperationsToMakeAUniValueGrid();
     sol.MinOperations([[980, 476, 644, 56], [644, 140, 812, 308], [812, 812, 896, 560], [728, 476, 56, 812]], 84);
 }
+
+{
+    // https://leetcode.com/problems/minimum-index-of-a-valid-split
+    var sol = new MinimumIndexOfAValidSplit();
+    sol.MinimumIndex([2, 1, 3, 1, 1, 1, 7, 1, 2, 1]);
+}
+
+{
+    string ReorganizeString(string s)
+    {
+        // rearrange chars of s so that no adjacent characters are the same
+        var dict = new int[26];
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            dict[s[i] - 'a']++;
+        }
+
+        var maxHeap = new PriorityQueue<int, int>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+
+        for (int i = 0; i < 26; i++)
+        {
+            if (dict[i] == 0)
+                continue;
+
+            maxHeap.Enqueue(i, dict[i]);
+        }
+
+        var sb = new StringBuilder();
+
+        while (maxHeap.Count > 1)
+        {
+            maxHeap.TryDequeue(out var firstCh, out var firstCount);
+            maxHeap.TryDequeue(out var secondCh, out var secondCount);
+
+            sb.Append((char) (firstCh + 'a'));
+            sb.Append((char) (secondCh + 'a'));
+
+            if (firstCount > 1)
+                maxHeap.Enqueue(firstCh, firstCount - 1);
+
+            if (secondCount > 1)
+                maxHeap.Enqueue(secondCh, secondCount - 1);
+        }
+
+        if (!maxHeap.TryDequeue(out var character, out var count))
+            return sb.ToString();
+
+        if (count > 1)
+            return "";
+
+        var ch = (char) (character + 'a');
+        sb.Append(ch);
+
+        return sb.ToString();
+    }
+}
