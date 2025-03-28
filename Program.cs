@@ -7168,3 +7168,55 @@ using static System.Net.WebRequestMethods;
         return sb.ToString();
     }
 }
+
+{
+    // https://leetcode.com/problems/maximum-number-of-points-from-grid-queries
+    var sol = new MaximumNumberOfPointsFromGridQueries();
+    sol.MaxPoints([[1, 2, 3], [2, 5, 7], [3, 5, 1]], [5, 6, 2]);
+}
+
+{
+    string LongestDiverseString(int a, int b, int c)
+    {
+        var maxHeap = new PriorityQueue<char, int>(3, Comparer<int>.Create((a, b) => b.CompareTo(a)));
+        var sb = new StringBuilder(a + b + c);
+
+        if (a > 0)
+            maxHeap.Enqueue('a', a);
+
+        if (b > 0)
+            maxHeap.Enqueue('b', b);
+
+        if (c > 0)
+            maxHeap.Enqueue('c', c);
+
+        while (maxHeap.Count > 0)
+        {
+            maxHeap.TryDequeue(out var ch1, out var p1);
+
+            if (p1 == 0)
+                continue;
+
+            if (sb.Length > 0 && sb[^1] == ch1)
+            {
+                if (!maxHeap.TryDequeue(out var ch2, out var p2) || ch2 == ch1)
+                    break;
+
+                if (p2 >= 2)
+                    maxHeap.Enqueue(ch2, p2 - 1);
+
+                sb.Append(ch2);
+            }
+
+            if (p1 >= 2)
+            {
+                sb.Append(ch1);
+                maxHeap.Enqueue(ch1, p1 - 2);
+            }
+
+            sb.Append(ch1);
+        }
+
+        return sb.ToString();
+    }
+}
