@@ -1,95 +1,94 @@
-﻿namespace Sandbox;
+﻿using System.Text;
+
+namespace Sandbox;
 
 public class Test
 {
-    public int TotalNumbers(int[] digits)
+    private const int diff = 26;
+
+    public int MaxActiveSectionsAfterTrade(string s)
     {
-        var set = new HashSet<int>();
+        // one trade to max active
+        // 1. convert contigious block of '1' that is surrounded by '0' to all '0'
+        // 2. afterwasrd, convert a contigious block of '0' that is surrounded by '1' to all '1's
 
-        for (var i = 0; i < digits.Length; i++)
+        // return max of 1's
+        // consider s is surrounded with 1 to left and right of S string
+        var activeCount = s.Count(e => e == '1');
+        var answer = activeCount;
+        var augm = '1' + s + '1';
+
+        // sliding window
+        var leftZeroFirst = augm.IndexOf('0');
+        var leftZeroLast = augm.IndexOf('1', leftZeroFirst + 1) - 1;
+
+        while (leftZeroLast != -1)
         {
-            if (digits[i] == 0)
-                continue;
+            var rigthZeroFirst = augm.IndexOf('0', leftZeroLast + 1);
+            var rigthZeroLast = augm.IndexOf('1', rigthZeroFirst + 1) - 1;
 
-            for (var j = 0; j < digits.Length; j++)
-            {
-                for (var k = 0; k < digits.Length; k++)
-                {
-                    if (i == j || j == k || i == k)
-                        continue;
+            if (rigthZeroLast == -1)
+                break;
 
-                    if (digits[k] % 2 == 0)
-                    {
-                        var num = digits[i] * 100 + digits[j] * 10 + digits[k];
-                        set.Add(num);
-                    }
-                }
-            }
+            var existingOnes = rigthZeroFirst - leftZeroLast - 1;
+
+            var active = rigthZeroLast - leftZeroFirst + 1;
+
+            answer = Math.Max(answer, activeCount - existingOnes + active);
+
+            leftZeroFirst = rigthZeroFirst;
+            leftZeroLast = rigthZeroLast;
         }
 
-        return set.Count;
-    }
-}
-
-public class Spreadsheet
-{
-    private Dictionary<string, int> _map;
-    private const int A = 65;
-
-    public Spreadsheet(int rows)
-    {
-        _map = new Dictionary<string, int>(rows);
+        return answer;
     }
 
-    public void SetCell(string cell, int value)
+    public IList<int> PartitionLabels(string s)
     {
-        _map.TryAdd(cell, 0);
-        _map[cell] = value;
-    }
+        var list = new List<int>();
+        var dict = new int[26];
 
-    public int FurthestBuilding(int[] heights, int bricks, int ladders)
-    {
-        // you can use one ladder to pass the building
-        // or height[i] - height[i - 1] bricks to pass it
-
-        var bricksMaxHeap = new PriorityQueue<int, int>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
-
-        var i = 0;
-        while (i < heights.Length - 1)
+        for (int i = 0; i < s.Length; i++)
         {
-            if (heights[i + 1] < heights[i])
-            {
-                i++;
-                continue;
-            }
-
-            var diff = heights[i + 1] - heights[i];
-
-            // if current number of bricks is still available for using, use them
-            if (diff < bricks)
-            {
-                bricksMaxHeap.Enqueue(diff, diff);
-                bricks -= diff;
-            }
-            else if (ladders > 0) // need to use ladder, decide which to use for: for previous building or current building?
-            {
-                // previous building is bigger, we can use bricks for current building
-                if (bricksMaxHeap.TryPeek(out var brick, out var _) && diff < brick)
-                {
-                    bricks += brick;
-                    bricksMaxHeap.Dequeue();
-
-                    bricksMaxHeap.Enqueue(diff, diff);
-                    bricks -= diff;
-                }
-
-                ladders--;
-            }
-            else break; // no ladders and bricks avaialable
-
-            i++;
+            dict[s[i] - 'a']++;
         }
 
-        return i;
+        int left = 0, right = 0;
+        var set = new HashSet<char>(26);
+
+        while (right < s.Length)
+        {
+            set.Add(s[left]);
+
+            while (!set.All(e => dict[e - 'a'] == 0) && right < s.Length)
+            {
+                if (!set.Contains(s[right]))
+                    set.Add(s[right]);
+
+                dict[s[right] - 'a']--;
+                right++;
+            }
+
+            list.Add(right - left);
+            set.Clear();
+            left = right;
+        }
+
+        return list;
+    }
+
+    public int ReverseDegree(string s)
+    {
+        var sum = 0;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            var ch = s[i];
+
+            var num = (i + 1) * (diff - (ch - 'a'));
+            sum += num;
+        }
+
+        return sum;
     }
 }
