@@ -2973,7 +2973,7 @@ using static System.Net.WebRequestMethods;
     //var sol = NumSquares(25);
     int NumSquares(int n)
     {
-        var count = (int) Math.Sqrt(n);
+        var count = (int)Math.Sqrt(n);
         var ps = new int[count];
         var dp = new int[n + 1];
 
@@ -3933,7 +3933,7 @@ using static System.Net.WebRequestMethods;
 
         for (var i = 0; i < piles.Length; i++)
         {
-            count += (int) Math.Ceiling((double) piles[i] / amountOfBananas);
+            count += (int)Math.Ceiling((double)piles[i] / amountOfBananas);
         }
 
         return count <= hours;
@@ -4670,7 +4670,7 @@ using static System.Net.WebRequestMethods;
 
                     for (var k = 0; k < 26; k++)
                     {
-                        var letter = (char) ('a' + k);
+                        var letter = (char)('a' + k);
                         sb[j] = letter;
 
                         var str = sb.ToString();
@@ -5310,7 +5310,7 @@ using static System.Net.WebRequestMethods;
             result = Math.Max(result, min * sum);
         }
 
-        return (int) (result % 1_000_000_007);
+        return (int)(result % 1_000_000_007);
     }
 }
 
@@ -5487,7 +5487,7 @@ using static System.Net.WebRequestMethods;
         }
 
         sum %= mod;
-        return (int) sum;
+        return (int)sum;
     }
 }
 
@@ -6618,7 +6618,7 @@ using static System.Net.WebRequestMethods;
                     // append spaces
                     if (spaces > 0)
                     {
-                        var appendSpaces = (int) Math.Ceiling((double) spacesCount / spaces);
+                        var appendSpaces = (int)Math.Ceiling((double)spacesCount / spaces);
                         spacesCount -= appendSpaces;
                         spaces--;
 
@@ -6731,13 +6731,13 @@ using static System.Net.WebRequestMethods;
             qualityWage[i] = (quality[i], wage[i]);
         }
 
-        Array.Sort(qualityWage, (a, b) => ((double) b.Item1 / b.Item2).CompareTo((double) a.Item1 / a.Item2));
+        Array.Sort(qualityWage, (a, b) => ((double)b.Item1 / b.Item2).CompareTo((double)a.Item1 / a.Item2));
         double result = double.MaxValue, totalQuality = 0;
 
         for (int i = 0; i < quality.Length; i++)
         {
             var (curQuality, curWage) = qualityWage[i];
-            var curRatio = (double) curWage / curQuality;
+            var curRatio = (double)curWage / curQuality;
             maxHeap.Enqueue(curQuality, curQuality);
             totalQuality += curQuality;
 
@@ -7146,8 +7146,8 @@ using static System.Net.WebRequestMethods;
             maxHeap.TryDequeue(out var firstCh, out var firstCount);
             maxHeap.TryDequeue(out var secondCh, out var secondCount);
 
-            sb.Append((char) (firstCh + 'a'));
-            sb.Append((char) (secondCh + 'a'));
+            sb.Append((char)(firstCh + 'a'));
+            sb.Append((char)(secondCh + 'a'));
 
             if (firstCount > 1)
                 maxHeap.Enqueue(firstCh, firstCount - 1);
@@ -7162,7 +7162,7 @@ using static System.Net.WebRequestMethods;
         if (count > 1)
             return "";
 
-        var ch = (char) (character + 'a');
+        var ch = (char)(character + 'a');
         sb.Append(ch);
 
         return sb.ToString();
@@ -7219,4 +7219,10 @@ using static System.Net.WebRequestMethods;
 
         return sb.ToString();
     }
+}
+
+{
+    // https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii
+    var sol = new MaximumValueOfAnOrderedTriplet_II();
+    sol.MaximumTripletValue([1000000, 1, 1000000]);
 }
