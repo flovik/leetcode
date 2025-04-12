@@ -7226,3 +7226,21 @@ using static System.Net.WebRequestMethods;
     var sol = new MaximumValueOfAnOrderedTriplet_II();
     sol.MaximumTripletValue([1000000, 1, 1000000]);
 }
+
+{
+    // https://leetcode.com/problems/sum-of-all-subset-xor-totals
+    var sol = new SumOfAllSubsetXORTotals();
+    sol.SubsetXORSum([5, 1, 6]);
+}
+
+{
+    // https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves
+    var sol = new LowestCommonAncestorOfDeepestLeaves();
+    //var one = new TreeNode(1, new TreeNode(0), new TreeNode(8));
+    //var five = new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4)));
+    //sol.LcaDeepestLeaves(new TreeNode(3, five, one));
+
+    var three = new TreeNode(3, null, new TreeNode(6));
+    var four = new TreeNode(4, null, new TreeNode(5));
+    sol.LcaDeepestLeaves(new TreeNode(1, new TreeNode(2, three, four), null));
+}
