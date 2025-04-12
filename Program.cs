@@ -7244,3 +7244,9 @@ using static System.Net.WebRequestMethods;
     var four = new TreeNode(4, null, new TreeNode(5));
     sol.LcaDeepestLeaves(new TreeNode(1, new TreeNode(2, three, four), null));
 }
+
+{
+    // https://leetcode.com/problems/put-marbles-in-bags
+    var sol = new PutMarblesInBag();
+    sol.PutMarbles([1, 3, 5, 1], 2);
+}
