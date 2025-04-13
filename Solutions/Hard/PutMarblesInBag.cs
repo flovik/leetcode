@@ -10,8 +10,8 @@ public class PutMarblesInBag
         // for every pair (i, i + 1) add them in priority queue and pick K-1 largest for maximum and K-1 smallest for minimum
         // formula = weight(0) + weight(^1) + Sum (cuts(i, i+1))
 
-        var minHeap = new PriorityQueue<int, int>(weights.Length);
-        var maxHeap = new PriorityQueue<int, int>(weights.Length, Comparer<int>.Create((a, b) => b.CompareTo(a)));
+        var minHeap = new PriorityQueue<long, long>(weights.Length);
+        var maxHeap = new PriorityQueue<long, long>(weights.Length, Comparer<long>.Create((a, b) => b.CompareTo(a)));
 
         for (int i = 0; i < weights.Length - 1; i++)
         {
@@ -19,8 +19,8 @@ public class PutMarblesInBag
             maxHeap.Enqueue(weights[i] + weights[i + 1], weights[i] + weights[i + 1]);
         }
 
-        var min = weights[0] + weights[^1];
-        var max = weights[0] + weights[^1];
+        long min = weights[0] + weights[^1];
+        long max = weights[0] + weights[^1];
 
         for (int i = 0; i < k - 1; i++)
         {
