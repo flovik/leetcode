@@ -7250,3 +7250,15 @@ using static System.Net.WebRequestMethods;
     var sol = new PutMarblesInBag();
     sol.PutMarbles([1, 3, 5, 1], 2);
 }
+
+{
+    // https://leetcode.com/problems/count-good-numbers
+    var sol = new CountGoodNumbers();
+    sol.CountGoodNumbersSol(1);
+}
+
+{
+    // https://leetcode.com/problems/burst-balloons
+    var sol = new BurstBalloons();
+    sol.MaxCoins([3, 1, 5, 8]);
+}
