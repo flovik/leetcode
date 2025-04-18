@@ -7262,3 +7262,21 @@ using static System.Net.WebRequestMethods;
     var sol = new BurstBalloons();
     sol.MaxCoins([3, 1, 5, 8]);
 }
+
+{
+    // https://leetcode.com/problems/grumpy-bookstore-owner/
+    var sol = new GrumpyBookstoreOwner();
+    sol.MaxSatisfied([10, 1, 7], [0, 0, 0], 2);
+}
+
+{
+    // https://leetcode.com/problems/alternating-groups-ii/
+    var sol = new AlternatingGroupsII();
+    sol.NumberOfAlternatingGroups([0, 1, 0, 1, 0], 3);
+}
+
+{
+    // https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous
+    var sol = new MinimumNumberOfOperationsToMakeArrayContinuous();
+    sol.MinOperations([41, 33, 29, 33, 35, 26, 47, 24, 18, 28]);
+}
