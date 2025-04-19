@@ -7280,3 +7280,9 @@ using static System.Net.WebRequestMethods;
     var sol = new MinimumNumberOfOperationsToMakeArrayContinuous();
     sol.MinOperations([41, 33, 29, 33, 35, 26, 47, 24, 18, 28]);
 }
+
+{
+    // https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/description/
+    var sol = new SmallestRangeCoveringElementsFromKLists();
+    sol.SmallestRange([[4, 10, 15, 24, 26], [0, 9, 12, 20], [5, 18, 22, 30]]);
+}
