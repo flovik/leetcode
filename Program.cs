@@ -7299,3 +7299,9 @@ using static System.Net.WebRequestMethods;
     var c = new Events(new Random().Next(10));
     c.ThresholdReached += (sender, eventArgs) => Console.WriteLine($"The threshold has reached: {eventArgs.Threshold}");
 }
+
+{
+    // https://leetcode.com/problems/number-of-flowers-in-full-bloom/
+    var sol = new NumberOfFlowersInFullBloom();
+    sol.FullBloomFlowers([[1, 6], [3, 7], [9, 12], [4, 13]], [2, 3, 7, 11]);
+}
