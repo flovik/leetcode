@@ -3,6 +3,7 @@ using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using Sandbox;
+using Sandbox.CodingConcepts.Events;
 using Sandbox.DataStructures;
 using Sandbox.Enums;
 using Sandbox.Solutions;
@@ -7285,4 +7286,16 @@ using static System.Net.WebRequestMethods;
     // https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/description/
     var sol = new SmallestRangeCoveringElementsFromKLists();
     sol.SmallestRange([[4, 10, 15, 24, 26], [0, 9, 12, 20], [5, 18, 22, 30]]);
+}
+
+{
+    // https://leetcode.com/problems/find-k-th-smallest-pair-distance/description/
+    var sol = new FindKthSmallestPairDistance();
+    sol.SmallestDistancePair([38, 33, 57, 65, 13, 2, 86, 75, 4, 56], 26);
+}
+
+{
+    // events
+    var c = new Events(new Random().Next(10));
+    c.ThresholdReached += (sender, eventArgs) => Console.WriteLine($"The threshold has reached: {eventArgs.Threshold}");
 }
