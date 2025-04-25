@@ -7305,3 +7305,21 @@ using static System.Net.WebRequestMethods;
     var sol = new NumberOfFlowersInFullBloom();
     sol.FullBloomFlowers([[1, 6], [3, 7], [9, 12], [4, 13]], [2, 3, 7, 11]);
 }
+
+{
+    // https://leetcode.com/problems/count-number-of-nice-subarrays/description/
+    var sol = new CountNumberOfNiceSubarrays();
+    sol.NumberOfSubarrays([2044, 96397, 50143], 1);
+}
+
+{
+    // https://leetcode.com/problems/take-k-of-each-character-from-left-and-right/
+    var sol = new TakeKOfEachCharacterFromLeftAndRight();
+    sol.TakeCharacters("aabbccca", 2);
+}
+
+{
+    //https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/
+    var sol = new MaximumSumOfDistinctSubarraysWithLengthK();
+    sol.MaximumSubarraySum([1, 5, 4, 2, 9, 9, 9])
+}
