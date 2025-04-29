@@ -7321,5 +7321,23 @@ using static System.Net.WebRequestMethods;
 {
     //https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/
     var sol = new MaximumSumOfDistinctSubarraysWithLengthK();
-    sol.MaximumSubarraySum([1, 5, 4, 2, 9, 9, 9])
+    sol.MaximumSubarraySum([1, 5, 4, 2, 9, 9, 9], 3);
+}
+
+{
+    // https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/description/
+    var sol = new LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualLimit();
+    sol.LongestSubarray([3, 8, 6, 4, 7, 2], 3);
+}
+
+{
+    // https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/description/
+    var sol = new MaximumBeautyOfAnArrayAfterApplyingOperation();
+    sol.MaximumBeauty([4, 4, 4, 2], 2);
+}
+
+{
+    // https://leetcode.com/problems/robot-collisions/description/
+    var sol = new RobotCollisions();
+    sol.SurvivedRobotsHealths([3, 5, 2, 6], [10, 10, 15, 12], "RLRL");
 }
