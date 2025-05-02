@@ -7341,3 +7341,27 @@ using static System.Net.WebRequestMethods;
     var sol = new RobotCollisions();
     sol.SurvivedRobotsHealths([3, 5, 2, 6], [10, 10, 15, 12], "RLRL");
 }
+
+{
+    // https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/description/
+    var sol = new ParsingABooleanExpression();
+    sol.ParseBoolExpr("!(&(&(f,t),&(t,t)))");
+}
+
+{
+    // https://leetcode.com/problems/number-of-atoms/description/
+    var sol = new NumberOfAtoms();
+    sol.CountOfAtoms("Mg(Uub)2");
+}
+
+{
+    // https://leetcode.com/problems/filling-bookcase-shelves/
+    var sol = new FillingBookcaseShelves();
+    sol.MinHeightShelves([[1, 1], [2, 3], [2, 3], [1, 1], [1, 1], [1, 1], [1, 2]], 4);
+}
+
+{
+    // https://leetcode.com/problems/single-element-in-a-sorted-array/description/
+    var sol = new SingleElementInASortedArray();
+    sol.SingleNonDuplicate([1, 1, 2, 3, 3]);
+}
