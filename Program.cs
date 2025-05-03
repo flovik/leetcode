@@ -7365,3 +7365,9 @@ using static System.Net.WebRequestMethods;
     var sol = new SingleElementInASortedArray();
     sol.SingleNonDuplicate([1, 1, 2, 3, 3]);
 }
+
+{
+    // https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/description/
+    var sol = new MinimumNumberOfRemovalsToMakeMountainArray();
+    sol.MinimumMountainRemovals([2, 1, 1, 5, 6, 2, 3, 1]);
+}
