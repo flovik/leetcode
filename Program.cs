@@ -7371,3 +7371,9 @@ using static System.Net.WebRequestMethods;
     var sol = new MinimumNumberOfRemovalsToMakeMountainArray();
     sol.MinimumMountainRemovals([2, 1, 1, 5, 6, 2, 3, 1]);
 }
+
+{
+    // https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/description/
+    var sol = new MaximumSumOf3NonOverlappingSubarrays();
+    sol.MaxSumOfThreeSubarrays([1, 2, 1, 2, 6, 7, 5, 1], 2);
+}
