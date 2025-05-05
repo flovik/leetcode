@@ -7377,3 +7377,9 @@ using static System.Net.WebRequestMethods;
     var sol = new MaximumSumOf3NonOverlappingSubarrays();
     sol.MaxSumOfThreeSubarrays([1, 2, 1, 2, 6, 7, 5, 1], 2);
 }
+
+{
+    // https://leetcode.com/problems/minimum-time-to-repair-cars/description/
+    var sol = new MinimumTimeToRepairCars();
+    sol.RepairCars([3, 3, 2], 898585);
+}
