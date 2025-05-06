@@ -7400,3 +7400,9 @@ using static System.Net.WebRequestMethods;
         ],
         ["nw", "eep", "iy", "e", "xutnl", "km"]);
 }
+
+{
+    // https://leetcode.com/problems/number-of-operations-to-make-network-connected/
+    var sol = new NumberOfOperationsToMakeNetworkConnected();
+    sol.MakeConnected(6, [[0, 1], [0, 2], [0, 3], [1, 2], [1, 3]]);
+}
