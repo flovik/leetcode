@@ -7383,3 +7383,9 @@ using static System.Net.WebRequestMethods;
     var sol = new MinimumTimeToRepairCars();
     sol.RepairCars([3, 3, 2], 898585);
 }
+
+{
+    // https://leetcode.com/problems/maximum-number-of-points-with-cost/
+    var sol = new MaximumNumberOfPointsWithCost();
+    sol.MaxPoints([[1, 2, 3], [1, 5, 1], [3, 1, 1]]);
+}
