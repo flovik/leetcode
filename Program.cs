@@ -7389,3 +7389,14 @@ using static System.Net.WebRequestMethods;
     var sol = new MaximumNumberOfPointsWithCost();
     sol.MaxPoints([[1, 2, 3], [1, 5, 1], [3, 1, 1]]);
 }
+
+{
+    // https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/description/
+    var sol = new FindAllPossibleRecipesFromGivenSupplies();
+    sol.FindAllRecipes(["qxyj", "vawos", "nkov", "bec", "qiabz"],
+        [
+            ["mxf"], ["iy", "qxyj", "nkov", "qiabz", "bec"], ["nw", "xutnl", "e"], ["eep", "km", "nw", "xutnl", "e", "iy", "vawos", "qxyj", "qiabz"],
+            ["nyhyc"]
+        ],
+        ["nw", "eep", "iy", "e", "xutnl", "km"]);
+}
