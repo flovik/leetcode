@@ -13,6 +13,7 @@ using Sandbox.Solutions.Medium;
 using Sandbox.Topics.Sorting;
 using Sandbox.Topics.Trees;
 using static System.Net.WebRequestMethods;
+using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
 
 {
     //CopyListWithRandomPointer
@@ -7405,4 +7406,59 @@ using static System.Net.WebRequestMethods;
     // https://leetcode.com/problems/number-of-operations-to-make-network-connected/
     var sol = new NumberOfOperationsToMakeNetworkConnected();
     sol.MakeConnected(6, [[0, 1], [0, 2], [0, 3], [1, 2], [1, 3]]);
+}
+
+{
+    // https://leetcode.com/problems/task-scheduler/
+    var sol = new Test();
+
+    int LeastInterval(char[] tasks, int n)
+    {
+        var map = new int[26];
+
+        foreach (var task in tasks)
+        {
+            map[task - 'A']++;
+        }
+
+        var pq = new PriorityQueue<int, int>(26, Comparer<int>.Create((a, b) => b.CompareTo(a)));
+
+        for (int i = 0; i < 26; i++)
+        {
+            if (map[i] > 0)
+                pq.Enqueue(i, map[i]);
+        }
+
+        var count = 0;
+        var queue = new Queue<int>(26); // store indexes to re-add in pq
+
+        while (pq.Count > 0)
+        {
+            var m = n + 1;
+
+            while (m > 0 && pq.Count > 0)
+            {
+                var deq = pq.Dequeue();
+
+                map[deq]--;
+
+                if (map[deq] > 0)
+                    queue.Enqueue(deq);
+
+                m--;
+                count++;
+            }
+
+            if (pq.Count > 0 || queue.Count > 0)
+                count += m; // idle time
+
+            while (queue.Count > 0)
+            {
+                var i = queue.Dequeue();
+                pq.Enqueue(i, map[i]);
+            }
+        }
+
+        return count;
+    }
 }
