@@ -7462,3 +7462,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
         return count;
     }
 }
+
+{
+    // https://leetcode.com/problems/maximum-candies-allocated-to-k-children/
+    var sol = new MaximumCandiesAllocatedToKChildren();
+    sol.MaximumCandies([9, 10, 1, 2, 10, 9, 9, 10, 2, 2], 3);
+}
