@@ -7468,3 +7468,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new MaximumCandiesAllocatedToKChildren();
     sol.MaximumCandies([9, 10, 1, 2, 10, 9, 9, 10, 2, 2], 3);
 }
+
+{
+    // https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/
+    var sol = new MinimizedMaximumOfProductsDistributedToAnyStore();
+    sol.MinimizedMaximum(7, [15, 10, 10]);
+}
