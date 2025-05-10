@@ -7474,3 +7474,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new MinimizedMaximumOfProductsDistributedToAnyStore();
     sol.MinimizedMaximum(7, [15, 10, 10]);
 }
+
+{
+    // https://leetcode.com/problems/house-robber-iv/description/
+    var sol = new HouseRobber4();
+    sol.MinCapability([2, 7, 9, 3, 1], 2);
+}
