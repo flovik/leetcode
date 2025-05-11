@@ -7480,3 +7480,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new HouseRobber4();
     sol.MinCapability([2, 7, 9, 3, 1], 2);
 }
+
+{
+    // https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/description/
+    var sol = new LengthOfLongestFibonacciSubsequence();
+    sol.LenLongestFibSubseq([1, 3, 4, 7, 11, 18, 29]);
+}
