@@ -7486,3 +7486,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new LengthOfLongestFibonacciSubsequence();
     sol.LenLongestFibSubseq([1, 3, 4, 7, 11, 18, 29]);
 }
+
+{
+    // https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/
+    var sol = new MinimumLengthOfStringAfterDeletingSimilarEnds();
+    sol.MinimumLength("cabaabac");
+}
