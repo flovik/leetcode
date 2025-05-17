@@ -7492,3 +7492,16 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new MinimumLengthOfStringAfterDeletingSimilarEnds();
     sol.MinimumLength("cabaabac");
 }
+
+{
+    // https://leetcode.com/problems/process-tasks-using-servers/
+    var sol = new ProcessTasksUsingServers();
+    sol.AssignTasks(
+        [
+            1, 20, 300
+        ],
+        [
+            10, 9, 8, 1, 1, 1
+        ]
+    );
+}
