@@ -7505,3 +7505,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
         ]
     );
 }
+
+{
+    // https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/description/
+    var sol = new CountOfSubstringsContainingEveryVowelAndKConsonants2();
+    sol.CountOfSubstrings("iiiiiqeaouqi", 2);
+}
