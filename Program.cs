@@ -7511,3 +7511,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new CountOfSubstringsContainingEveryVowelAndKConsonants2();
     sol.CountOfSubstrings("iiiiiqeaouqi", 2);
 }
+
+{
+    // https://leetcode.com/problems/adding-spaces-to-a-string/
+    var sol = new AddingSpacesToAString();
+    sol.AddSpaces("LeetcodeHelpsMeLearn", [8, 13, 15]);
+}
