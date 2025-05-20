@@ -7517,3 +7517,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new AddingSpacesToAString();
     sol.AddSpaces("LeetcodeHelpsMeLearn", [8, 13, 15]);
 }
+
+{
+    // https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/description/
+    var sol = new MinimumLimitOfBallsInABag();
+    sol.MinimumSize([9], 2);
+}
