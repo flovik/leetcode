@@ -7523,3 +7523,13 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new MinimumLimitOfBallsInABag();
     sol.MinimumSize([9], 2);
 }
+
+{
+    // https://leetcode.com/problems/most-beautiful-item-for-each-query/
+    var sol = new MostBeautifulItemForEachQuery();
+    sol.MaximumBeauty(
+    [
+        [571, 936], [648, 906], [751, 308], [165, 256], [354, 606], [565, 560], [238, 764], [479, 351], [909, 267], [215, 902], [258, 698],
+        [945, 805], [108, 363], [813, 591], [443, 262], [863, 255], [967, 935], [685, 582], [898, 138]
+    ], [269, 166, 617, 1169, 1637, 393, 201, 1182, 1404, 1313]);
+}
