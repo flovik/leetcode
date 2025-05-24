@@ -7533,3 +7533,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
         [945, 805], [108, 363], [813, 591], [443, 262], [863, 255], [967, 935], [685, 582], [898, 138]
     ], [269, 166, 617, 1169, 1637, 393, 201, 1182, 1404, 1313]);
 }
+
+{
+    // https://leetcode.com/problems/maximum-number-of-removable-characters/description/
+    var sol = new MaximumNumberOfRemovableCharacters();
+    sol.MaximumRemovals("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbcccccccccccccccccc", "aabc", [15, 16, 17, 18, 19, 30, 31, 32, 33, 34, 45, 46, 47, 48, 49]);
+}
