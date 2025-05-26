@@ -7539,3 +7539,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new MaximumNumberOfRemovableCharacters();
     sol.MaximumRemovals("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbcccccccccccccccccc", "aabc", [15, 16, 17, 18, 19, 30, 31, 32, 33, 34, 45, 46, 47, 48, 49]);
 }
+
+{
+    // https://leetcode.com/problems/count-the-number-of-fair-pairs/description/
+    var sol = new CountTheNumberOfFairPairs();
+    sol.CountFairPairs([0, 0, 0, 0, 0, 0, 0], 0, 0);
+}
