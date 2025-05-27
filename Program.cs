@@ -7545,3 +7545,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new CountTheNumberOfFairPairs();
     sol.CountFairPairs([0, 0, 0, 0, 0, 0, 0], 0, 0);
 }
+
+{
+    // https://leetcode.com/problems/maximum-width-ramp/
+    var sol = new MaximumWidthRamp();
+    sol.MaxWidthRamp([9, 8, 1, 0, 1, 9, 4, 0, 4, 1]);
+}
