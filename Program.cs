@@ -7551,3 +7551,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new MaximumWidthRamp();
     sol.MaxWidthRamp([9, 8, 1, 0, 1, 9, 4, 0, 4, 1]);
 }
+
+{
+    // https://leetcode.com/problems/asteroid-collision/
+    var sol = new AsteroidCollision();
+    sol.AsteroidCollisionSol([8, -8]);
+}
