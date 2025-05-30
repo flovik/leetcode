@@ -7557,3 +7557,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new AsteroidCollision();
     sol.AsteroidCollisionSol([8, -8]);
 }
+
+{
+    // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+    var sol = new RemoveAllAdjacentDuplicatesInStringII();
+    sol.RemoveDuplicates("pbbcggttciiippooaais", 2);
+}
