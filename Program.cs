@@ -7563,3 +7563,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new RemoveAllAdjacentDuplicatesInStringII();
     sol.RemoveDuplicates("pbbcggttciiippooaais", 2);
 }
+
+{
+    // https://leetcode.com/problems/count-square-submatrices-with-all-ones/
+    var sol = new CountSquareSubmatricesWithAllOnes();
+    sol.CountSquares([[0, 1, 1, 1], [1, 1, 1, 1], [0, 1, 1, 1]]);
+}
