@@ -7569,3 +7569,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new CountSquareSubmatricesWithAllOnes();
     sol.CountSquares([[0, 1, 1, 1], [1, 1, 1, 1], [0, 1, 1, 1]]);
 }
+
+{
+    // https://leetcode.com/problems/count-number-of-teams/
+    var sol = new CountNumberOfTeams();
+    sol.NumTeams([1, 2, 3, 4]);
+}
