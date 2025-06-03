@@ -7575,3 +7575,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new CountNumberOfTeams();
     sol.NumTeams([1, 2, 3, 4]);
 }
+
+{
+    // https://leetcode.com/problems/shortest-common-supersequence/
+    var sol = new ShortestCommonSupersequence();
+    sol.ShortestCommonSupersequenceSol("abac", "cab");
+}
