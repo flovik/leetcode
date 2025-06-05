@@ -7581,3 +7581,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new ShortestCommonSupersequence();
     sol.ShortestCommonSupersequenceSol("abac", "cab");
 }
+
+{
+    // https://leetcode.com/problems/count-vowels-permutation/description/
+    var sol = new CountVowelsPermutation();
+    sol.CountVowelPermutation(2);
+}
