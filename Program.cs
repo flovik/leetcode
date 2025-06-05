@@ -7587,3 +7587,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new CountVowelsPermutation();
     sol.CountVowelPermutation(2);
 }
+
+{
+    // https://leetcode.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/description/
+    var sol = new NumberOfWaysToStayInTheSamePlaceAfterSomeSteps();
+    sol.NumWays(4, 2);
+}
