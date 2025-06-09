@@ -7593,3 +7593,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new NumberOfWaysToStayInTheSamePlaceAfterSomeSteps();
     sol.NumWays(4, 2);
 }
+
+{
+    // https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/description/
+    var sol = new MinimumDifficultyOfAJobSchedule();
+    sol.MinDifficulty([6, 5, 4, 3, 2, 1], 2);
+}
