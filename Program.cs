@@ -7609,5 +7609,5 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
 {
     // https://leetcode.com/problems/arithmetic-slices-ii-subsequence/description/
     var sol = new ArithmeticSlices2();
-    sol.NumberOfArithmeticSlices([2, 4, 6, 8, 10]);
+    sol.NumberOfArithmeticSlices([0, 2000000000, -294967296]);
 }
