@@ -7611,3 +7611,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new ArithmeticSlices2();
     sol.NumberOfArithmeticSlices([0, 2000000000, -294967296]);
 }
+
+{
+    // https://leetcode.com/problems/minimum-falling-path-sum-ii/
+    var sol = new MinimumFallingPathSumII();
+    sol.MinFallingPathSum([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+}
