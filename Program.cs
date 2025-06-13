@@ -7617,3 +7617,13 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new MinimumFallingPathSumII();
     sol.MinFallingPathSum([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 }
+
+{
+    // https://leetcode.com/problems/sort-the-jumbled-numbers/description/
+    var sol = new SortTheJumbledNumbers();
+    sol.SortJumbled([1, 0, 2, 3, 4, 5, 6, 7, 8, 9],
+    [
+        111111115, 12, 13, 14, 11111115, 112, 113, 114, 1111115, 1112, 1113, 1114, 111115, 11112, 11113, 11114, 11115, 111112, 111113, 111114, 1115,
+        1111112, 1111113, 1111114, 115, 11111112, 11111113, 11111114, 15, 111111112, 111111113, 111111114
+    ]);
+}
