@@ -7627,3 +7627,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
         1111112, 1111113, 1111114, 115, 11111112, 11111113, 11111114, 15, 111111112, 111111113, 111111114
     ]);
 }
+
+{
+    // https://leetcode.com/problems/cherry-pickup-ii/description/
+    var sol = new CherryPickup2();
+    sol.CherryPickup([[3, 1, 1], [2, 5, 1], [1, 5, 5], [2, 1, 1]]);
+}
