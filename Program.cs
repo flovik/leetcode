@@ -7633,3 +7633,18 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var sol = new CherryPickup2();
     sol.CherryPickup([[3, 1, 1], [2, 5, 1], [1, 5, 5], [2, 1, 1]]);
 }
+
+{
+    // https://leetcode.com/problems/lfu-cache/description/
+    var sol = new LFUCache(2);
+    sol.Put(1, 1);
+    sol.Put(2, 2);
+    sol.Get(1);
+    sol.Put(3, 3);
+    sol.Get(2);
+    sol.Get(3);
+    sol.Put(4, 4);
+    sol.Get(1);
+    sol.Get(3);
+    sol.Get(4);
+}
