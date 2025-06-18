@@ -7648,3 +7648,10 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     sol.Get(3);
     sol.Get(4);
 }
+
+{
+    // https://leetcode.com/problems/remove-nodes-from-linked-list/
+    var sol = new RemoveNodesFromLinkedList();
+    var head = new ListNode(5, new ListNode(2, new ListNode(13, new ListNode(3, new ListNode(8)))));
+    sol.RemoveNodes(head);
+}
