@@ -7655,3 +7655,9 @@ using TaskScheduler = Sandbox.Solutions.Medium.TaskScheduler;
     var head = new ListNode(5, new ListNode(2, new ListNode(13, new ListNode(3, new ListNode(8)))));
     sol.RemoveNodes(head);
 }
+
+{
+    // https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/description/
+    var
+
+}
